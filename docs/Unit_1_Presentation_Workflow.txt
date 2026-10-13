@@ -1,0 +1,37 @@
+UNIT 1 PRESENTATION WORKFLOW
+
+1. Map the lesson before designing.
+Read the supplied note and identify the essential terms, central Catholic teaching, Scripture references, deeper connections and application. Set the total slide count, including the cover. Give each slide one teaching purpose.
+
+2. Teach terms once, then develop them.
+Place contextual and historical definitions at the beginning. Check the later outline for repeated explanations. Merge overlap into the original explanation or its presenter notes. Keep a short retrieval check and a final application question when they serve different purposes.
+
+3. Write for projection and teaching.
+Use short titles, a clear main idea and a few brief points. Put extended explanations and theological nuance in presenter notes. Include NRSV-CE read-aloud references with a listening question, without printing full passages. Link events to salvation, grace, sacramental participation and Christian life. Check additional factual claims against authoritative sources and record them in the notes.
+
+4. Reuse the visual and interaction system.
+Keep the dark background, serif headings, restrained accent colours and existing illustration style. Use responsive dimensions that account for both screen width and height. Let cards size to their content. Preserve keyboard and button navigation, overview, fullscreen, presenter notes and deeper connections. Embed the CSS, scripts and visual assets in one HTML file.
+
+5. Check every slide at both projector sizes.
+Render every slide at 1280x720 and 1920x1080, including reveal states. Measure slide scrolling, clipped text, card boundaries and unintended overlaps. Inspect each screenshot for readable type, contrast, wrapping and spacing. Aim for body copy of about 20px or larger at 1280x720, with proportional scaling at 1920x1080. Shorten crowded copy or move detail into notes before shrinking type.
+
+6. Test the delivered file offline.
+Open the saved HTML with networking disabled. Test arrow keys, Space, Page Up/Down, Home/End, previous/next buttons, chapter links, all 20 overview entries, notes, deeper connections, answer reveals, fullscreen and Escape. Check a narrow window for usable reflow. Confirm the final count and ensure there are no missing assets or browser errors. Deliver the HTML only after the final version passes.
+
+PASCHAL MYSTERY REVISION
+
+Final count: 20 slides.
+The opening six slides retain the four term explanations and their synthesis.
+Six later slides were consolidated: the separate opening question, sin/death setup, repeated Passover comparison, repeated Gethsemane explanation, separate Incarnation/Ascension connection and second four-event recap. Their useful content is retained in the relevant slides or notes.
+
+Source basis: the existing 26-slide Paschal_Mystery_Lecture.html and Unit 1.5, "The Paschal Mystery," in the HRE4M1 Unit 1 Resource Pack, pp. 37-48. Catechism references appear in presenter notes.
+
+CONTROLS
+
+Next/previous: arrow keys, Space, Page Down/Page Up, or the buttons.
+First/last slide: Home/End.
+Fullscreen: F.
+Presenter notes: N.
+Deeper connection: D, when available.
+Slide overview: O.
+Close a panel: Escape.

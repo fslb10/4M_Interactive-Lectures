@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a121b">
+<title>The Paschal Mystery | HRE4M Lecture</title>
+<style>
+:root{--bg:#07121d;--panel:#111e2a;--white:#f6f1e7;--muted:#b7b9bc;--gold:#efc47f;--sea:#90d8c8;--rose:#f0a391;--blue:#9cc9ef;--accent:var(--gold);--ink:#08131d;--ease:cubic-bezier(.19,1,.22,1)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}body{overflow:hidden;background:#060e16;color:var(--white);font-family:Inter,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}button:disabled{opacity:.27;cursor:not-allowed}#app{height:100dvh;min-height:540px;display:flex;flex-direction:column;padding:clamp(12px,1.7vh,20px) clamp(14px,2vw,32px) 0;gap:clamp(9px,1.5vh,16px)}
+.topbar{min-height:54px;display:flex;align-items:center;gap:20px;position:relative;z-index:5}.brand{display:flex;align-items:center;gap:13px;min-width:220px}.brand-emblem{width:39px;height:39px;display:grid;place-items:center;border:1px solid #aa997e77;border-radius:50%;font:25px Georgia,serif;color:var(--gold)}.brand-name{font-weight:800;letter-spacing:.12em;font-size:12px}.brand-sub{font-size:11px;color:#aebbc3;letter-spacing:.065em;margin-top:5px}.stages{display:flex;flex:1;justify-content:center;gap:5px;min-width:0}.stage-btn{background:transparent;border:1px solid transparent;color:#85929e;border-radius:999px;min-height:34px;padding:7px 11px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;white-space:nowrap;transition:background .2s,color .2s}.stage-btn:hover{color:var(--white);background:#ffffff0c}.stage-btn.active{background:#eec88e16;border-color:#eec88e45;color:var(--gold)}.utilities{display:flex;align-items:center;gap:7px;justify-content:flex-end}.utility-btn{width:38px;height:38px;border:1px solid #ffffff29;background:#ffffff09;color:#d6d9d9;border-radius:12px;display:grid;place-items:center;transition:.2s}.utility-btn:hover,.utility-btn.active{color:var(--gold);border-color:#efc47f77;background:#efc47f14}.utility-btn svg{width:18px;height:18px;stroke:currentColor;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+#stage{position:relative;flex:1;min-height:0;border:1px solid #e8d8b229;border-radius:20px;overflow:hidden;isolation:isolate;background:#102030;box-shadow:0 20px 90px #0005}.scene{--a:#efc47f;width:100%;height:100%;position:relative;overflow:hidden;padding:clamp(27px,4.5vw,70px) clamp(34px,5.8vw,100px) clamp(22px,3vw,48px);background:radial-gradient(ellipse 75% 110% at 92% 45%,color-mix(in srgb,var(--a) 10%,transparent),transparent 75%),linear-gradient(115deg,#101e2d,#06111c 70%,#14283a);display:flex;flex-direction:column;animation:scene-in .55s var(--ease) both}.scene::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#fff2 1px,transparent 1px),linear-gradient(90deg,#fff2 1px,transparent 1px);background-size:78px 78px;opacity:.04;pointer-events:none}.scene::after{content:"";position:absolute;left:45%;top:-14%;width:70%;height:105%;background:radial-gradient(ellipse,#ffffff0b,transparent 67%);z-index:-1;pointer-events:none}.theme-opening{--a:#efc47f}.tone-gold{--a:#efc47f}.tone-blue{--a:#9cc9ef}.tone-rose{--a:#f0a391}.tone-sea{--a:#90d8c8}.theme-passover{--a:#efc47f}.theme-passion{--a:#d39d8c}.theme-death{--a:#bca5d4}.theme-resurrection{--a:#ffe09a}.theme-ascension{--a:#9cc9ef}.theme-living{--a:#9fddc4}
+@keyframes scene-in{from{opacity:.18;transform:translateY(12px) scale(1.007)}to{opacity:1;transform:translateY(0) scale(1)}}
+.kicker{font-weight:850;letter-spacing:.19em;font-size:clamp(11px,.94vw,14px);text-transform:uppercase;color:var(--a);display:flex;gap:11px;align-items:center;position:relative;z-index:1}.kicker::before{content:"";width:26px;height:1px;background:currentColor;display:inline-block}.headline{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.045em;font-size:clamp(46px,5.5vw,92px);line-height:1.06;margin:clamp(13px,2vh,25px) 0 15px;position:relative;z-index:1;max-width:920px}.headline em{color:var(--a);font-style:italic;font-weight:400}.dek{color:#d2d6d6;line-height:1.46;font-size:clamp(17px,1.5vw,25px);max-width:765px;margin:0;position:relative;z-index:1}.quiet{color:#a7b3bf}.split-layout{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.09fr) minmax(0,.9fr);gap:clamp(15px,3vw,50px);align-items:center;position:relative;z-index:1}.copy-column{max-width:825px;min-width:0}.split-layout .headline{font-size:clamp(45px,5vw,85px)}.split-layout .dek{font-size:clamp(18px,1.58vw,26px);max-width:680px}.points{list-style:none;margin:clamp(24px,3vh,42px) 0 0;padding:0;display:grid;gap:clamp(12px,1.8vh,20px);max-width:780px}.points li{display:flex;align-items:baseline;gap:17px;font-size:clamp(17px,1.42vw,24px);line-height:1.4;color:#e6e6e2;max-width:800px}.bullet-mark{color:var(--a);font-family:Georgia,serif;font-size:1.35em;line-height:0;flex-shrink:0}.points strong{font-weight:800;color:#fff3d9}.points li span.txt{display:inline-block}.reading-bar{margin-top:auto;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(12px,1.6vw,28px);min-height:80px;padding-top:clamp(15px,2.3vh,30px);position:relative}.read-box,.salvation-box{border-top:1px solid #ffffff31;padding:clamp(12px,1.2vw,19px) 0 0;display:flex;gap:16px;align-items:flex-start}.read-box{color:#dbddd9}.salvation-box{border-color:color-mix(in srgb,var(--a),transparent 55%)}.minilabel{font-size:10px;font-weight:850;letter-spacing:.15em;text-transform:uppercase;color:#bcb4a3;white-space:nowrap;margin-top:5px}.salvation-box .minilabel{color:var(--a)}.read-copy{font-size:clamp(13px,1.11vw,17px);font-weight:700;line-height:1.4}.read-copy small{display:block;font-size:clamp(12px,.92vw,15px);font-weight:450;color:#aab7be;margin-top:4px}.saviour-text{font-size:clamp(13px,1.15vw,18px);font-weight:680;line-height:1.4}.read-glyph{width:28px;height:28px;border:1px solid #d7d0be77;border-radius:6px;display:grid;place-items:center;flex-shrink:0;color:var(--gold);font-family:Georgia,serif;font-size:17px;margin-top:1px}.art-container{position:relative;min-width:0;display:flex;justify-content:center;align-items:center;height:min(100%,690px)}.illustration{width:100%;height:100%;max-height:600px;overflow:visible;filter:drop-shadow(0 18px 35px #0003)}.art-caption{position:absolute;bottom:2%;right:0;max-width:85%;font-size:12px;line-height:1.35;color:#bfc5c7;letter-spacing:.012em;text-align:right}.art-word{position:absolute;top:6%;left:8%;font-family:Georgia,serif;font-size:clamp(60px,9.5vw,175px);color:color-mix(in srgb,var(--a) 15%,transparent);font-style:italic;pointer-events:none}.scene--title{justify-content:center}.scene--title .headline{font-size:clamp(64px,8.3vw,154px);max-width:1200px;line-height:.98;margin:17px 0 25px}.scene--title .dek{max-width:730px;font-size:clamp(21px,2vw,35px)}.scene--title .reading-bar{margin-top:3.5vh;max-width:850px}.scene--title .reading-bar .salvation-box{display:none}.scene--title .hero-art{position:absolute;right:-2%;top:3%;width:52%;height:92%;opacity:.92;pointer-events:none}.scene--title .copy-column{position:relative;z-index:3}.scene--title .art-caption{right:4%;bottom:4%}.title-eyebrow{font-size:clamp(12px,1vw,17px);color:var(--a);letter-spacing:.25em;font-weight:900}.opening-quote{font-family:Georgia,serif;font-style:italic;font-size:clamp(24px,2.7vw,46px);color:#f6dfb9;line-height:1.25;max-width:780px;margin-top:25px}.small-callout{color:var(--a);border-left:3px solid var(--a);font-size:clamp(16px,1.4vw,22px);padding-left:16px;max-width:650px;margin-top:clamp(20px,3vh,34px);line-height:1.4}
+.scene--question{justify-content:center}.scene--question .headline{font-size:clamp(54px,6.1vw,110px);max-width:1100px}.scene--question .dek{max-width:950px}.question-mark{position:absolute;right:7%;top:12%;font:clamp(340px,35vw,700px) Georgia,serif;color:#efc47f0a;line-height:.9;pointer-events:none}.scene--question .reading-bar{width:min(100%,1070px)}
+.scene--overview .headline{max-width:1000px}.overview-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.5vw,26px);margin:clamp(25px,4.5vh,57px) 0 auto;flex:1;min-height:0;max-height:460px}.overview-card{border:1px solid #ffffff36;background:linear-gradient(150deg,#ffffff12,#ffffff05);border-radius:14px;padding:clamp(15px,2vw,31px);display:flex;flex-direction:column;position:relative;overflow:hidden;min-height:180px}.overview-card .num{font:italic clamp(52px,5.9vw,97px) Georgia,serif;color:var(--gold);opacity:.5;line-height:.85}.overview-card .word{font:clamp(22px,2.25vw,38px) Georgia,serif;margin-top:auto}.overview-card .desc{color:#c0c7cb;line-height:1.42;font-size:clamp(14px,1.15vw,18px);margin-top:13px}.overview-card .icon{position:absolute;top:21px;right:21px;font-size:26px;color:#ffe6bc9c}.overview-line{font:italic clamp(20px,2vw,30px) Georgia,serif;color:var(--gold);margin-top:25px}
+.scene--compare .headline{font-size:clamp(42px,4.7vw,78px)}.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,32px);margin:clamp(21px,3.7vh,45px) 0 auto;flex:1;min-height:0;max-height:465px}.compare-col{padding:clamp(18px,2.4vw,37px);border-radius:14px;border:1px solid #ffffff2b;background:#ffffff0b;display:flex;flex-direction:column}.compare-col:last-child{background:linear-gradient(130deg,#efd09819,#ffffff06);border-color:#efd09872}.compare-col small{text-transform:uppercase;letter-spacing:.15em;color:#c1bcc0;font-weight:850;font-size:12px}.compare-col h3{font:clamp(30px,3vw,49px) Georgia,serif;font-weight:500;margin:8px 0 16px}.comparison-point{font-size:clamp(17px,1.44vw,24px);color:#e4e6e1;line-height:1.33;padding:clamp(10px,1.65vh,19px) 0;border-top:1px solid #ffffff21}.comparison-point strong{color:var(--gold);font-weight:800}.compare-note{font-size:clamp(12px,.95vw,15px);color:#bac1bd;line-height:1.4;margin-top:13px}.compare-arrow{position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);width:42px;height:42px;background:#e9c48a;color:#07121d;border-radius:50%;display:grid;place-items:center;font-size:26px;z-index:2;box-shadow:0 4px 15px #0005}
+.scene--three .headline{font-size:clamp(44px,4.9vw,83px)}.three-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(13px,1.8vw,31px);margin:clamp(26px,4vh,52px) 0 auto;flex:1;min-height:0;max-height:420px}.three-card{border:1px solid #ffffff36;border-top:3px solid var(--a);padding:clamp(22px,2.4vw,40px);border-radius:12px;background:#ffffff0c;display:flex;flex-direction:column}.three-card .sym{font:italic clamp(42px,5vw,82px) Georgia,serif;color:var(--a);opacity:.75}.three-card h3{font:clamp(24px,2.5vw,40px) Georgia,serif;margin:20px 0 14px;font-weight:500}.three-card p{font-size:clamp(16px,1.28vw,22px);color:#d6d8d7;line-height:1.47;margin:0}
+.scene--diagram .headline{font-size:clamp(39px,4.5vw,73px)}.scene--diagram .flowline{margin:clamp(20px,3vh,39px) 0 auto;max-height:230px}.scene--diagram .flow-node{min-height:168px}.scene--diagram .flow-below{margin:12px 0 3px;font-size:clamp(19px,1.75vw,27px)}.flowline{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:clamp(11px,1.2vw,20px);margin:clamp(34px,6vh,73px) 0 auto;max-height:285px}.flow-node{border:1px solid #ffffff36;background:#ffffff08;border-radius:14px;padding:clamp(14px,2.3vw,31px);min-height:215px;display:flex;flex-direction:column;justify-content:space-between}.flow-node .num{font-size:13px;letter-spacing:.2em;color:var(--a);font-weight:800}.flow-node h3{font:clamp(25px,2.8vw,44px) Georgia,serif;font-weight:500;margin:13px 0 6px}.flow-node p{font-size:clamp(16px,1.31vw,21px);color:#bbc5ce;line-height:1.4;margin:0}.flow-arrow{align-self:center;color:var(--gold);font-size:32px}.flow-below{font:italic clamp(21px,2vw,31px) Georgia,serif;color:#eccc98;margin:22px 0 8px}
+.scene--reveal .headline{font-size:clamp(48px,5.7vw,96px);max-width:1200px}.reveal-well{max-width:1040px;margin:clamp(17px,3vh,32px) 0 auto;min-height:155px;border:1px solid #efd09867;border-radius:18px;background:#ffffff09;display:flex;align-items:center;justify-content:center;text-align:center;padding:clamp(18px,3vw,50px)}.reveal-well .hidden-text{font:italic clamp(23px,2.75vw,44px) Georgia,serif;color:#f5e0b7;line-height:1.32}.reveal-well .before-reveal{font-size:clamp(17px,1.4vw,24px);color:#b9c3cc}.reveal-button{padding:15px 24px;border-radius:999px;border:1px solid #eec98f;background:#eec98f;color:#08131e;font-size:14px;font-weight:850;letter-spacing:.06em;display:inline-flex;align-items:center;gap:11px;margin:13px 0 0;align-self:flex-start}.reveal-button:hover{background:#ffe0ab}.reveal-button[aria-pressed="true"]{border-color:#fff6da;background:#fff2d4}
+.scene--sacraments .headline{font-size:clamp(42px,4.7vw,78px)}.sacrament-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,28px);margin:clamp(20px,4vh,40px) 0 auto;max-height:445px;flex:1;min-height:0}.sacrament-card{background:#ffffff0c;border:1px solid #ffffff35;border-radius:16px;padding:clamp(24px,3.1vw,49px);position:relative;overflow:hidden}.sacrament-card .glyph{font:italic clamp(65px,7.8vw,128px) Georgia,serif;color:#e1c18769;position:absolute;right:30px;top:7px}.sacrament-card .over{font-size:12px;letter-spacing:.18em;color:var(--a);font-weight:800;text-transform:uppercase}.sacrament-card h3{font:clamp(34px,4vw,59px) Georgia,serif;font-weight:500;margin:10px 0 17px}.sacrament-card p{font-size:clamp(18px,1.48vw,25px);line-height:1.45;color:#e0e5e1;max-width:570px;margin:0}.sacrament-card small{display:block;margin-top:28px;color:#aab9bc;font-weight:700;font-size:clamp(14px,1.1vw,18px)}
+.scene--recap .headline{font-size:clamp(39px,4.4vw,72px)}.scene--recap .dek{font-size:clamp(17px,1.38vw,22px)}.scene--recap .reading-bar{min-height:72px;padding-top:7px}.recap-rows{display:grid;gap:0;margin:clamp(13px,2vh,26px) 0 auto;max-width:1290px}.recap-row{display:grid;grid-template-columns:240px minmax(0,1fr) minmax(0,1.2fr);gap:24px;align-items:center;border-bottom:1px solid #ffffff30;padding:clamp(8px,1.3vh,15px) 8px}.recap-row .recap-label{font:clamp(22px,2.05vw,33px) Georgia,serif;color:var(--gold)}.recap-row .recap-event{font-size:clamp(16px,1.28vw,20px);font-weight:750}.recap-row .recap-gift{font-size:clamp(16px,1.17vw,19px);color:#d0d7dc}.recap-result{font:italic clamp(18px,1.8vw,29px) Georgia,serif;color:var(--gold);margin-top:18px}
+.scene--final{justify-content:flex-start}.scene--final .headline{font-size:clamp(50px,6.15vw,112px);max-width:1270px}.scene--final .dek{font-size:clamp(21px,2vw,33px);max-width:1000px}.scene--final .reading-bar{margin-top:auto;max-width:980px}
+.insight-toggle{position:absolute;right:clamp(27px,4.7vw,82px);top:clamp(25px,3.7vw,62px);border:1px solid #ffffff44;background:#081a2880;color:#e9dfcc;border-radius:999px;padding:10px 15px;z-index:3;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px}.insight-toggle:hover{border-color:var(--gold);color:var(--gold)}.insight-toggle .dot{width:7px;height:7px;background:var(--gold);border-radius:50%;box-shadow:0 0 12px var(--gold)}.insight-panel{position:absolute;z-index:7;top:clamp(70px,8vw,127px);right:clamp(25px,4.8vw,85px);width:min(450px,40vw);background:#f3e8d6;color:#172633;padding:26px 30px;border:1px solid #fff4e0;border-radius:15px;box-shadow:0 18px 55px #0008;animation:scene-in .25s ease}.insight-panel h4{margin:0 0 12px;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#8f6039}.insight-panel p{font-size:clamp(17px,1.27vw,21px);line-height:1.45;margin:0}.insight-panel button{float:right;background:transparent;border:none;color:#39495c;font-size:22px;margin:-12px -14px 4px 12px}
+.bottombar{min-height:63px;display:flex;align-items:center;gap:16px;justify-content:space-between;z-index:5;padding-bottom:clamp(7px,1.3vh,15px)}.nav-btn{border:1px solid #ffffff40;border-radius:11px;background:#fff0;color:#f2f0e9;min-height:44px;padding:0 18px;display:flex;align-items:center;gap:13px;font-size:13px;font-weight:850;letter-spacing:.05em;transition:.17s}.nav-btn:hover:not(:disabled){background:#ffffff15;border-color:#f0ca90}.nav-btn.next{color:#081522;background:#edc590;border-color:#edc590}.nav-btn.next:hover{background:#ffdfb1}.progress-center{max-width:750px;flex:1;display:flex;align-items:center;gap:14px;color:#a6b4c1;font-size:11px;letter-spacing:.09em;font-weight:800;text-transform:uppercase}.progress-track{height:3px;background:#ffffff25;border-radius:8px;flex:1;overflow:hidden}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#ce7a72,#eec58a);transition:width .3s ease}.progress-num{min-width:57px;color:#edc790}.key-hint{min-width:120px;text-align:center;color:#8194a2}
+.overlay{position:fixed;inset:0;background:#02080ee8;z-index:15;display:none;padding:clamp(18px,4vw,65px);overflow:auto;backdrop-filter:blur(15px)}.overlay.open{display:block}.overlay-header{max-width:1300px;margin:0 auto 26px;display:flex;justify-content:space-between;align-items:center;gap:20px}.overlay-title{font:clamp(37px,4vw,60px) Georgia,serif;margin:0;font-weight:500}.overlay-desc{color:#b6c1c9;margin-top:7px}.overlay-close{border:1px solid #ffffff48;background:#ffffff08;color:#fff;border-radius:10px;padding:12px 17px;font-weight:700}.overview-list{max-width:1300px;margin:auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.overview-choice{border:1px solid #ffffff30;text-align:left;color:var(--white);background:#14212d;padding:23px;border-radius:12px;min-height:150px;transition:.2s}.overview-choice:hover,.overview-choice.selected{border-color:#eac389;background:#1d3040;transform:translateY(-2px)}.overview-choice .slide-number{font:italic 34px Georgia,serif;color:var(--gold);display:block}.overview-choice .overview-stage{font-size:10px;color:#98abb6;letter-spacing:.1em;text-transform:uppercase;margin-top:8px}.overview-choice .overview-title{display:block;margin-top:9px;font-size:17px;line-height:1.32;font-weight:700}.notes-shell{max-width:850px;margin:3vh auto;padding:30px;background:#142635;border:1px solid #ffffff3a;border-radius:14px}.notes-shell h3{font:38px Georgia,serif;font-weight:500;margin:0 0 10px}.notes-shell .ref-note{color:#e7c18b;margin:19px 0;font-weight:800}.notes-shell ol{padding-left:28px}.notes-shell li{font-size:19px;line-height:1.55;margin:16px 0;color:#e4e7e5}.notes-shell .teacher-prompt{border-top:1px solid #ffffff35;padding-top:20px;color:#eccb95;font-size:21px;line-height:1.45}.help-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:760px;margin:auto}.help-item{display:flex;justify-content:space-between;gap:20px;padding:14px 20px;background:#ffffff0a;border-radius:8px;font-size:18px}.key{font-weight:850;color:var(--gold)}
+@media(min-width:1900px){.scene{padding-top:65px;padding-bottom:40px}.reading-bar{min-height:115px}.topbar{min-height:63px}.nav-btn{min-height:53px}.bottombar{min-height:75px}}
+@media(max-width:1120px){.stages{display:none}.brand{min-width:0;margin-right:auto}.scene{padding:30px 40px}.split-layout{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}.points li{font-size:clamp(16px,1.7vw,21px)}.scene--title .hero-art{opacity:.58}.overview-grid{gap:12px}.overview-card{padding:18px}.overview-list{grid-template-columns:repeat(3,1fr)}.recap-row{grid-template-columns:145px 1fr 1.2fr}}
+@media(max-width:750px){body{overflow:auto}#app{min-height:100dvh;height:auto;padding:9px 9px 0;gap:8px}.topbar{min-height:50px}.brand-emblem{width:34px;height:34px;font-size:21px}.brand-name{font-size:11px}.brand-sub{font-size:10px}.utility-btn{width:34px;height:34px;border-radius:8px}.utilities{gap:4px}#stage{height:auto;min-height:calc(100dvh - 139px);border-radius:13px}.scene{min-height:calc(100dvh - 141px);padding:24px 22px 20px;overflow:visible}.split-layout{display:flex;flex-direction:column;align-items:stretch;gap:10px;flex:unset}.split-layout .headline,.headline{font-size:clamp(40px,9vw,60px);line-height:1.09;margin:15px 0}.split-layout .dek,.dek{font-size:17px}.points{margin:23px 0;gap:13px}.points li{font-size:17px;gap:10px}.art-container{height:180px;margin:-8px 0 0}.art-caption{display:none}.scene--title .headline{font-size:clamp(58px,13vw,94px)}.scene--title{min-height:calc(100dvh - 141px)}.scene--title .hero-art{right:0;top:5%;height:50%;width:90%;opacity:.25}.scene--title .dek{font-size:23px}.scene--title .reading-bar{margin-top:auto}.scene--title .art-caption{display:none}.reading-bar{grid-template-columns:1fr;margin-top:auto;padding-top:10px;gap:8px}.read-box,.salvation-box{padding-top:10px;gap:11px}.minilabel{font-size:9px}.read-copy,.saviour-text{font-size:13px}.read-glyph{display:none}.scene--question .headline{font-size:clamp(48px,10vw,70px)}.question-mark{right:0;font-size:330px}.overview-grid,.compare-grid,.three-grid,.sacrament-grid{grid-template-columns:1fr;max-height:unset;margin:25px 0;flex:unset}.overview-card{min-height:140px}.overview-card .num{font-size:60px}.overview-card .word{font-size:25px}.overview-card .desc{font-size:16px}.compare-grid{gap:8px}.compare-arrow{position:static;transform:none;margin:-5px auto}.compare-col h3{font-size:31px}.comparison-point{font-size:17px;padding:12px 0}.three-grid{gap:10px}.three-card{padding:20px}.three-card .sym{font-size:42px}.three-card h3{font-size:27px;margin:4px 0 10px}.three-card p{font-size:16px}.flowline{grid-template-columns:1fr;gap:5px;margin:22px 0}.flow-node{min-height:unset;gap:8px;padding:17px}.flow-node h3{font-size:26px;margin:0}.flow-node p{font-size:16px}.flow-arrow{text-align:center;transform:rotate(90deg);font-size:25px}.sacrament-card{padding:22px}.sacrament-card h3{font-size:39px}.sacrament-card p{font-size:18px}.sacrament-card small{margin-top:12px}.recap-row{grid-template-columns:1fr;gap:6px;padding:15px 4px}.recap-row .recap-label{font-size:26px}.recap-row .recap-event,.recap-row .recap-gift{font-size:16px}.recap-result{font-size:22px}.scene--final .headline{font-size:clamp(48px,10vw,75px)}.scene--reveal .headline{font-size:clamp(45px,10vw,68px)}.reveal-well{min-height:160px;padding:20px}.reveal-well .hidden-text{font-size:26px}.insight-toggle{top:12px;right:14px;padding:7px 9px;font-size:9px}.insight-panel{width:calc(100% - 40px);top:54px;right:20px;padding:25px}.scene .kicker{padding-right:100px}.bottombar{min-height:61px;padding-bottom:8px}.nav-btn{min-height:44px;padding:0 10px;font-size:11px}.progress-center{gap:6px}.key-hint{display:none}.overlay{padding:17px 12px}.overlay-title{font-size:39px}.overview-list{grid-template-columns:repeat(2,1fr);gap:8px}.overview-choice{padding:13px;min-height:125px}.overview-choice .overview-title{font-size:15px}.notes-shell{padding:19px}.notes-shell h3{font-size:30px}.notes-shell li{font-size:17px}.help-grid{grid-template-columns:1fr}}
+@media(max-height:840px) and (min-width:751px){.scene--diagram .flowline{margin-top:15px;max-height:190px}.scene--diagram .flow-node{min-height:147px;padding:17px}.scene--diagram .flow-node h3{font-size:clamp(24px,2.35vw,34px)}.scene--diagram .flow-node p{font-size:clamp(15px,1.15vw,17px)}.scene--diagram .flow-below{margin:8px 0 0;font-size:22px}}
+@media(max-height:740px) and (min-width:751px){.scene{padding-top:24px;padding-bottom:19px}.headline{margin-top:10px;margin-bottom:10px;font-size:clamp(39px,5vw,75px)}.split-layout .headline{font-size:clamp(37px,4.2vw,70px)}.points{margin-top:16px;gap:9px}.points li{font-size:clamp(15px,1.3vw,20px)}.reading-bar{padding-top:10px;min-height:67px}.overview-grid,.compare-grid,.three-grid,.sacrament-grid{margin-top:15px;max-height:330px}.recap-rows{margin-top:12px}.recap-row{padding:10px 6px}.flowline{margin-top:20px}.flow-node{min-height:180px}.stage-btn{font-size:9px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+<style>
+/* Projection layout: dimensions respond to both available width and height. */
+@media (min-width:751px){
+ :root{--u:min(1vw,1.77778dvh)}
+ #app{min-height:0;height:100dvh;padding:calc(var(--u)*.9) calc(var(--u)*1.5) 0;gap:calc(var(--u)*.7)}
+ .topbar{min-height:calc(var(--u)*3.8);gap:calc(var(--u)*1.1);flex-shrink:0}
+ .brand{min-width:0;gap:calc(var(--u)*.8)}
+ .brand-name{font-size:calc(var(--u)*.85)}.brand-sub{font-size:calc(var(--u)*.75)}
+ .brand-emblem{width:calc(var(--u)*3);height:calc(var(--u)*3);font-size:calc(var(--u)*2)}
+ .stage-btn{font-size:calc(var(--u)*.75);padding:calc(var(--u)*.5) calc(var(--u)*.7);min-height:calc(var(--u)*2.6)}
+ .utilities{gap:calc(var(--u)*.5)}.utility-btn{width:calc(var(--u)*3);height:calc(var(--u)*3)}
+ .utility-btn svg{width:calc(var(--u)*1.5);height:calc(var(--u)*1.5)}
+ #stage{border-radius:calc(var(--u)*1.5)}
+ .scene{padding:calc(var(--u)*2) calc(var(--u)*3.5) calc(var(--u)*1.5);overflow:auto}
+ .scene::after{left:30%;width:70%}
+ .scene>*{flex-shrink:0}
+ .kicker,.title-eyebrow{font-size:calc(var(--u)*.96);line-height:1.25;letter-spacing:.16em}
+ .kicker{padding-right:calc(var(--u)*22)}
+ .headline,.scene--overview .headline,.scene--three .headline,.scene--sacraments .headline,.scene--recap .headline{font-size:calc(var(--u)*4.15);line-height:1.1;margin:calc(var(--u)*.9) 0 calc(var(--u)*.8);padding-bottom:.08em;max-width:none}
+ .dek,.scene--recap .dek{font-size:calc(var(--u)*1.65);line-height:1.4;max-width:calc(var(--u)*85)}
+ .split-layout{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:calc(var(--u)*2.5);align-items:center;flex:1 0 auto;min-height:0}
+ .copy-column{max-width:none}
+ .split-layout .headline{font-size:calc(var(--u)*3.8);line-height:1.1}
+ .split-layout .kicker{padding-right:0}
+ .split-layout .dek{font-size:calc(var(--u)*1.65);line-height:1.4;max-width:none}
+ .points{margin:calc(var(--u)*1.3) 0 0;gap:calc(var(--u)*.75);max-width:none}
+ .points li{font-size:calc(var(--u)*1.65);line-height:1.4;gap:calc(var(--u)*.85);max-width:none}
+ .art-container{height:calc(var(--u)*27);margin:0;align-self:center}
+ .illustration{max-height:100%}.art-caption{font-size:calc(var(--u)*1.03);line-height:1.35;max-width:95%;bottom:0}
+ .reading-bar,.scene--recap .reading-bar{margin-top:auto;min-height:0;padding-top:calc(var(--u)*1.2);gap:calc(var(--u)*2);grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);flex-shrink:0}
+ .read-box,.salvation-box{display:grid;grid-template-columns:1fr;gap:calc(var(--u)*.35);align-content:start;padding:calc(var(--u)*.65) 0 0}
+ .read-glyph{display:none}.minilabel{font-size:calc(var(--u)*.82);line-height:1.25;margin:0}
+ .read-copy,.saviour-text{font-size:calc(var(--u)*1.45);line-height:1.35}
+ .read-copy small{font-size:calc(var(--u)*1.15);line-height:1.35;margin-top:calc(var(--u)*.3)}
+ .scene--title .copy-column{max-width:70%}.scene--title .headline{font-size:calc(var(--u)*7.6);line-height:1.04;margin:calc(var(--u)*1.1) 0;max-width:none}
+ .scene--title .dek{font-size:calc(var(--u)*2);max-width:calc(var(--u)*57)}
+ .small-callout{font-size:calc(var(--u)*1.65);margin-top:calc(var(--u)*1.7);max-width:calc(var(--u)*58)}
+ .scene--title .reading-bar{margin-top:calc(var(--u)*2.2);max-width:calc(var(--u)*65)}
+ .scene--title .hero-art{width:48%;height:94%;top:1%;right:0}.scene--title .art-caption{max-width:30%;right:3%;bottom:3%}
+ .overview-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:calc(var(--u)*1.2);margin:calc(var(--u)*1.3) 0 0;max-height:none;min-height:0;flex:0 0 auto}
+ .overview-card{padding:calc(var(--u)*1.35);min-height:0;overflow:visible;display:grid;grid-template-rows:auto auto 1fr;gap:calc(var(--u)*.7)}
+ .overview-card .num{font-size:calc(var(--u)*3.6);line-height:1;opacity:.65}
+ .overview-card .word{font-size:calc(var(--u)*2.04);line-height:1.12;margin:0;overflow-wrap:normal}
+ .overview-card .desc{font-size:calc(var(--u)*1.55);line-height:1.4;margin:0}
+ .overview-card .icon{font-size:calc(var(--u)*1.8);top:calc(var(--u)*1.35);right:calc(var(--u)*1.35)}
+ .overview-line{font-size:calc(var(--u)*2);line-height:1.25;margin:calc(var(--u)*1.1) 0 0}
+ .three-grid{gap:calc(var(--u)*1.35);margin:calc(var(--u)*1.35) 0 0;max-height:none;flex:0 0 auto;min-height:0}
+ .three-card{padding:calc(var(--u)*1.5);border-radius:calc(var(--u)*.9)}
+ .three-card .sym{font-size:calc(var(--u)*3.2);line-height:1}
+ .three-card h3{font-size:calc(var(--u)*2.25);line-height:1.15;margin:calc(var(--u)*.8) 0}
+ .three-card p{font-size:calc(var(--u)*1.65);line-height:1.4}
+ .recap-rows{margin:calc(var(--u)*1) 0 0;max-width:none}
+ .recap-row{grid-template-columns:minmax(0,.5fr) minmax(0,1fr) minmax(0,1.1fr);gap:calc(var(--u)*1.5);padding:calc(var(--u)*.65) calc(var(--u)*.5)}
+ .recap-row .recap-label{font-size:calc(var(--u)*2.05)}.recap-row .recap-event,.recap-row .recap-gift{font-size:calc(var(--u)*1.5);line-height:1.35}
+ .recap-result{font-size:calc(var(--u)*1.8);line-height:1.25;margin-top:calc(var(--u)*.95)}
+ .scene--reveal .headline{font-size:calc(var(--u)*4.5);line-height:1.1;max-width:none}
+ .reveal-well{min-height:0;max-width:none;margin:calc(var(--u)*1.3) 0 0;padding:calc(var(--u)*2)}
+ .reveal-well .hidden-text{font-size:calc(var(--u)*2.6);line-height:1.3}.reveal-well .before-reveal{font-size:calc(var(--u)*1.9)}
+ .reveal-button{font-size:calc(var(--u)*1.1);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1)}
+ .sacrament-grid{gap:calc(var(--u)*1.5);margin:calc(var(--u)*1.2) 0 0;max-height:none;flex:0 0 auto;min-height:0}
+ .sacrament-card{padding:calc(var(--u)*1.7);overflow:visible}
+ .sacrament-card .over{font-size:calc(var(--u)*.9);padding-right:calc(var(--u)*2)}
+ .sacrament-card h3{font-size:calc(var(--u)*3.2);line-height:1.1;margin:calc(var(--u)*.75) 0}
+ .sacrament-card p{font-size:calc(var(--u)*1.65);line-height:1.4;margin:0}
+ .sacrament-card small{font-size:calc(var(--u)*1.3);line-height:1.35;margin-top:calc(var(--u)*1);display:block}
+ .sacrament-card .glyph{font-size:calc(var(--u)*4.5);right:calc(var(--u)*1.5);top:calc(var(--u)*.4)}
+ .scene--final .headline{font-size:calc(var(--u)*5);line-height:1.1;max-width:calc(var(--u)*86)}
+ .scene--final .dek{font-size:calc(var(--u)*2);max-width:calc(var(--u)*80)}
+ .opening-quote{font-size:calc(var(--u)*2.8);line-height:1.3;max-width:calc(var(--u)*75);margin-top:calc(var(--u)*2)}
+ .scene--final .reading-bar{max-width:none}
+ .insight-toggle{right:calc(var(--u)*3.5);top:calc(var(--u)*1.65);font-size:calc(var(--u)*.8);padding:calc(var(--u)*.6) calc(var(--u)*.9)}
+ .insight-panel{top:calc(var(--u)*5);right:calc(var(--u)*3.5);width:calc(var(--u)*31);max-height:calc(100% - var(--u)*7);overflow:auto;padding:calc(var(--u)*2)}
+ .insight-panel h4{font-size:calc(var(--u)*1);margin-bottom:calc(var(--u)*1)}.insight-panel p{font-size:calc(var(--u)*1.6);line-height:1.45}
+ .bottombar{min-height:calc(var(--u)*4.5);padding-bottom:calc(var(--u)*.7);gap:calc(var(--u)*1.2);flex-shrink:0}
+ .nav-btn{min-height:calc(var(--u)*3.4);padding:0 calc(var(--u)*1.3);font-size:calc(var(--u)*1);gap:calc(var(--u)*1)}
+ .progress-center{font-size:calc(var(--u)*.85);gap:calc(var(--u)*1.1);max-width:60%;}.progress-num{min-width:calc(var(--u)*4.5)}
+ .key-hint{min-width:calc(var(--u)*10)}
+}
+/* On smaller or unusually short screens, content reflows and remains reachable. */
+@media (max-width:1000px) and (min-width:751px){
+ .stages{display:none}.brand{margin-right:auto}.split-layout{grid-template-columns:minmax(0,1.8fr) minmax(0,1fr)}
+ .overview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:750px){
+ .overview-card{overflow:visible}.overview-card .word{margin:10px 0}.overview-card .desc{margin:0}
+ .scene--recap .headline,.scene--three .headline,.scene--sacraments .headline{font-size:clamp(34px,8vw,56px)}
+ .insight-panel{max-height:calc(100dvh - 100px);overflow:auto}
+ .scene .kicker{padding-right:0;margin-top:24px}.scene:has(.insight-toggle) .kicker{padding-top:15px}
+ .reading-bar{margin-top:22px}.read-box,.salvation-box{flex-wrap:wrap}.minilabel{white-space:normal}
+ .notes-shell{overflow-wrap:anywhere}
+}
+.notes-sources{font-size:15px;line-height:1.5;border-top:1px solid #ffffff35;padding-top:16px;color:#bfcbd2}
+.notes-sources a{color:#efc47f}.scene>*{min-width:0}
+
+</style>
+</head>
+<body>
+<div id="app">
+ <header class="topbar">
+   <div class="brand"><div class="brand-emblem" aria-hidden="true">✝</div><div><div class="brand-name">HRE4M1 · CHRIST & CULTURE</div><div class="brand-sub">UNIT 1.5 · FOUNDATIONS OF FAITH</div></div></div>
+   <nav class="stages" aria-label="Lecture chapters" id="chapterNav"></nav>
+   <div class="utilities">
+     <button class="utility-btn" id="notesBtn" title="Presenter notes (N)" aria-label="Presenter notes"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h8M8 17h5"/></svg></button>
+     <button class="utility-btn" id="overviewBtn" title="Slide overview (O)" aria-label="Slide overview"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></button>
+     <button class="utility-btn" id="fullBtn" title="Fullscreen (F)" aria-label="Fullscreen"><svg viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button>
+     <button class="utility-btn" id="helpBtn" title="Keyboard shortcuts (?)" aria-label="Help"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.7 9a2.5 2.5 0 1 1 4.4 1.6c-.7.7-2.1 1.2-2.1 2.7M12 17h.01"/></svg></button>
+   </div>
+ </header>
+ <main id="stage" aria-label="Lecture slide" aria-live="polite"></main>
+ <footer class="bottombar">
+   <button class="nav-btn prev" id="prevBtn">← <span>PREVIOUS</span></button>
+   <div class="progress-center"><span class="progress-num" id="progressNum">01 / 20</span><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div><span class="key-hint">← → TO NAVIGATE</span></div>
+   <button class="nav-btn next" id="nextBtn"><span>NEXT SLIDE</span> →</button>
+ </footer>
+</div>
+<div id="overlay" class="overlay" role="dialog" aria-modal="true" aria-labelledby="overlayTitle"></div>
+<script>
+'use strict';
+const slides=[
+  {
+    "kind": "title",
+    "stage": "opening",
+    "eyebrow": "THE HEART OF CHRISTIAN FAITH",
+    "title": "The <em>Paschal</em> Mystery",
+    "dek": "How the Passion, Death, Resurrection and Ascension of Jesus accomplish salvation.",
+    "art": "cross",
+    "artCaption": "The Cross is understood in the light of the Resurrection.",
+    "scripture": "1 Corinthians 15:3–4",
+    "listen": "Paul names the essential saving events.",
+    "notes": [
+      "Guiding question: How can a death bring life? Recall the Roman purpose of crucifixion, then let students consider why the Cross became a Christian sign of hope. Return to their answers at the end.",
+      "Paschal comes from Pascha, meaning Passover. The events are one unified mystery of salvation, not disconnected miracles.",
+      "Students will read every Scripture passage directly from their NRSV-CE Bibles; the slides provide references rather than full quotations."
+    ],
+    "prompt": "How can an execution become the center of a religion?",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": []
+  },
+  {
+    "kind": "split",
+    "stage": "opening",
+    "tone": "gold",
+    "eyebrow": "WORD 01 · THE LANGUAGE OF PASSOVER",
+    "title": "Paschal: the <em>Passover</em>",
+    "dek": "Paschal means “of Passover.” Hebrew Pesach gives the word its history of liberation.",
+    "points": [
+      "Jewish Passover remembers how God <strong>delivered Israel</strong> from slavery in Egypt.",
+      "The lamb and blood on the doorposts were signs of protection and deliverance.",
+      "Christians recognize Jesus as the <strong>new Passover Lamb</strong>, whose sacrifice brings a deeper freedom."
+    ],
+    "art": "chalice",
+    "artCaption": "The Last Supper connects the Exodus Passover with Christ’s sacrifice.",
+    "scripture": "Exodus 12:5–13; 1 Corinthians 5:7",
+    "listen": "Listen for the lamb, the blood and deliverance.",
+    "salvation": "Christ’s Passover is liberation from sin and death, opening the way to life with God.",
+    "insight": "This is called typology: an earlier biblical event foreshadows a later fulfillment. Passover also remains a sacred, living observance in Judaism.",
+    "notes": [
+      "Paschal comes through Latin paschalis and Greek Pascha, from the Aramaic form of Hebrew Pesach. The word carries the Exodus memory of liberation into Christian language.",
+      "Ask students to distinguish the historical Exodus story from the Christian interpretation of Jesus as the Paschal Lamb. The comparison is about deliverance, covenant and liberation.",
+      "Read Exodus 12:5–13 and then Paul’s brief statement in 1 Corinthians 5:7. Emphasize that Jewish Passover has its own continuing religious significance."
+    ],
+    "prompt": "What is different about freedom from Egypt and freedom from sin?",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": []
+  },
+  {
+    "kind": "split",
+    "stage": "opening",
+    "tone": "blue",
+    "eyebrow": "WORD 02 · A DIVINE PLAN REVEALED",
+    "title": "Mystery: God’s plan <em>revealed</em>",
+    "dek": "Greek mystērion: a hidden divine purpose made known through revelation.",
+    "points": [
+      "In ordinary speech, a mystery is a puzzle. In theology, it is a <strong>truth revealed by God</strong>.",
+      "St. Paul uses this word for God’s saving plan made known in Christ.",
+      "We can understand its real meaning through faith and reason, without exhausting its full depth."
+    ],
+    "art": "bridge",
+    "artCaption": "A bridge suggests God’s initiative to restore what sin has divided.",
+    "scripture": "Ephesians 1:7–10",
+    "listen": "What divine plan has now been made known?",
+    "salvation": "The Paschal Mystery reveals how God brings humanity back into communion through Jesus Christ.",
+    "insight": "A divine mystery is not an excuse to stop thinking. Catholic theology holds that revealed truth invites deeper understanding through both faith and reason.",
+    "notes": [
+      "Explain the difference between mystery as “unsolved crime” and mystery as “revealed reality.” Christianity does not claim the events are unknown; it claims their divine significance is revealed.",
+      "St. Paul speaks of the mystery of God’s will in Ephesians 1. God’s purpose is to bring all things together in Christ.",
+      "Clarify that “beyond reason alone” does not mean irrational. Faith receives revelation, and reason helps explain its meaning."
+    ],
+    "prompt": "Can something be genuinely understood without being completely understood? Give an example.",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": []
+  },
+  {
+    "kind": "split",
+    "stage": "opening",
+    "tone": "rose",
+    "eyebrow": "WORD 03 · THE MEANING OF SUFFERING",
+    "title": "Passion: the meaning of <em>suffering</em>",
+    "dek": "Latin passio, from pati: to suffer or endure. This is the historical meaning of Christ’s Passion.",
+    "points": [
+      "The Passion includes Gethsemane, betrayal, arrest, trial, scourging and crucifixion.",
+      "Jesus’ suffering is <strong>fully human and real</strong>; his obedience is freely chosen.",
+      "Its saving significance is <strong>self-giving love</strong>, not the idea that suffering is good in itself."
+    ],
+    "art": "garden",
+    "artCaption": "Gethsemane shows both Jesus’ anguish and his freely chosen obedience.",
+    "scripture": "Mark 14:32–36; John 15:13",
+    "listen": "Hear both Jesus’ human fear and his loving decision.",
+    "salvation": "Christ responds to human sin with faithful obedience and freely gives himself for humanity.",
+    "insight": "When Christians speak of Christ’s Passion, they mean his suffering and death, understood as an act of love. The word did not originally mean having an intense interest in something.",
+    "notes": [
+      "Contrast common modern phrases such as “I am passionate about sports” with the historical Latin sense of undergoing suffering.",
+      "List the sequence of the Passion. Highlight the humanity of Christ in Gethsemane and the fact that he is not a helpless victim in the theological account.",
+      "Christian faith does not celebrate pain for its own sake. His freely offered love and obedience give the Passion its saving meaning.",
+      "Gethsemane makes the choice concrete. Read Mark 14:32–36 slowly, identifying anguish, prayer and obedience. Jesus’ humanity and freedom matter to the Catholic understanding of redemption."
+    ],
+    "prompt": "Why does it matter that Jesus accepts the Passion freely rather than being forced to suffer?",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": [
+      [
+        "Catechism: Christ’s sacrifice",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_4/paragraph_2_jesus_died_crucified.html"
+      ]
+    ]
+  },
+  {
+    "kind": "split",
+    "stage": "opening",
+    "tone": "sea",
+    "eyebrow": "WORD 04 · RESCUE AND RESTORATION",
+    "title": "Salvation: to be <em>rescued</em>",
+    "dek": "Hebrew yeshuʿah • Greek sōtēria • Latin salvatio: deliverance, safety and restoration.",
+    "points": [
+      "In the Old Testament, God saves people from danger, slavery and oppression.",
+      "In Christianity, Christ <strong>liberates from sin and death</strong> and restores relationship with God.",
+      "Salvation is a <strong>gift of grace</strong> lived now, and fulfilled in eternal communion with God."
+    ],
+    "art": "tombLight",
+    "artCaption": "The opened tomb is a sign of the new life salvation makes possible.",
+    "scripture": "Romans 5:8–11; Ephesians 2:8–10",
+    "listen": "Who takes the initiative in restoring our relationship with God?",
+    "salvation": "Redemption frees, reconciliation restores and grace makes a transformed life possible.",
+    "insight": "Salvation is more than “going to heaven” or avoiding punishment. It begins with God’s gracious initiative, inviting a human response in faith and love.",
+    "notes": [
+      "Begin with ordinary meanings of rescue and deliverance, then recall how the Exodus is a concrete story of salvation in Israel’s history.",
+      "The New Testament expands the meaning to forgiveness of sin, reconciliation with God, liberation from death and a share in divine life.",
+      "Connect salvation with grace. In Catholic teaching it is initiated by God, received in faith, and lived through an ongoing response of love and cooperation with grace.",
+      "Sin damages communion with God and neighbour. Human effort alone cannot heal that rupture or conquer death. God takes the initiative, and grace enables our free response. CCC 1996–2002."
+    ],
+    "prompt": "Why is salvation more than simply being a good person or getting to heaven?",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": [
+      [
+        "Catechism: grace and our response",
+        "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_three/article_2/ii_grace.html"
+      ]
+    ]
+  },
+  {
+    "kind": "recap",
+    "stage": "opening",
+    "tone": "gold",
+    "eyebrow": "BRINGING THE FOUR WORDS TOGETHER",
+    "title": "Four words. <em>One saving story.</em>",
+    "dek": "The language itself explains what Christians mean when they call Jesus the Saviour.",
+    "rows": [
+      [
+        "Paschal",
+        "A new Passover",
+        "From slavery to lasting freedom"
+      ],
+      [
+        "Mystery",
+        "God’s plan revealed",
+        "Salvation made known in Christ"
+      ],
+      [
+        "Passion",
+        "Suffering freely accepted",
+        "Love and obedience to the end"
+      ],
+      [
+        "Salvation",
+        "Rescue and restoration",
+        "From sin and death into new life"
+      ]
+    ],
+    "after": "The central claim: through Jesus, God brings humanity back into communion with him.",
+    "scripture": "CCC 654",
+    "listen": "Connect liberation from sin with the gift of new life.",
+    "salvation": "The Cross and Resurrection are not merely history. Together they are the heart of Christian redemption.",
+    "insight": "The Catechism (CCC 654) connects Christ’s death with liberation from sin and his Resurrection with the gift of new life.",
+    "notes": [
+      "Pause and ask students to define each word without looking at the slide. Then connect the terms in a complete sentence.",
+      "Paschal places Jesus within the pattern of Exodus liberation. Mystery identifies divine revelation. Passion names the suffering freely accepted. Salvation identifies what Christ achieves.",
+      "Use this as a brief retrieval check of the four terms. Then move to the four events of the saving mystery."
+    ],
+    "prompt": "Explain the Paschal Mystery in one sentence, without repeating either word.",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": [
+      [
+        "Catechism: Resurrection and salvation",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_5/paragraph_2_on_the_third_day_he_rose_from_the_dead.index.html"
+      ]
+    ]
+  },
+  {
+    "kind": "overview",
+    "stage": "opening",
+    "eyebrow": "ONE MYSTERY · FOUR MOVEMENTS",
+    "title": "The whole story of <em>salvation</em>",
+    "dek": "Each event has a distinct meaning, but none stands alone.",
+    "cards": [
+      [
+        "01",
+        "Passion",
+        "Jesus freely enters suffering in obedient love.",
+        "✦"
+      ],
+      [
+        "02",
+        "Death",
+        "His self-offering reconciles humanity with God.",
+        "✝"
+      ],
+      [
+        "03",
+        "Resurrection",
+        "Christ rises bodily and opens new life.",
+        "✶"
+      ],
+      [
+        "04",
+        "Ascension",
+        "Jesus brings our humanity into heavenly glory.",
+        "↑"
+      ]
+    ],
+    "quote": "One saving action of Christ, fulfilled once for all.",
+    "scripture": "CCC 571; 638; 659–667",
+    "listen": "Catechism references for this central Christian teaching.",
+    "salvation": "These events belong to one saving work that brings us into communion with God.",
+    "notes": [
+      "Use this slide as the route through the events. The word definitions have already been established. Ask students how each movement contributes to the one saving work.",
+      "The Paschal Mystery comprises Passion, Death, Resurrection and Ascension; the latter includes Christ’s entrance into heavenly glory.",
+      "In the Catholic understanding, the Cross and Resurrection are inseparable at the heart of salvation."
+    ],
+    "prompt": "What does each event contribute to the saving story as a whole?",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": [
+      [
+        "Catechism: Resurrection and salvation",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_5/paragraph_2_on_the_third_day_he_rose_from_the_dead.index.html"
+      ]
+    ]
+  },
+  {
+    "kind": "split",
+    "stage": "passover",
+    "eyebrow": "HOLY THURSDAY · THE NEW COVENANT",
+    "title": "The Last Supper: the <em>new covenant</em>",
+    "dek": "Jesus interprets his coming death through the Passover meal.",
+    "points": [
+      "He identifies the bread and cup with his self-giving life.",
+      "He speaks of a <strong>new covenant</strong> between God and humanity.",
+      "The meal becomes the foundation of the Eucharist."
+    ],
+    "art": "chalice",
+    "artCaption": "Bread and cup point to Christ’s life given for others.",
+    "scripture": "Luke 22:14–20",
+    "listen": "Pay attention to the words “given” and “covenant.”",
+    "salvation": "Jesus does not simply suffer a tragedy. He knowingly offers himself in love.",
+    "insight": "Covenant means a binding relationship. Jesus establishes the New Covenant through his self-offering, not merely by teaching new rules.",
+    "notes": [
+      "Recall the original Passover meal and ask why the Last Supper is more than a goodbye dinner.",
+      "The meaning of Jesus’ death is already expressed at the table: freely given body and blood, new covenant, communion.",
+      "Connect this forward to Eucharist, where Catholic worship participates in Christ’s one sacrifice."
+    ],
+    "prompt": "How does Jesus’ language at the Last Supper change the meaning of Good Friday?",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": []
+  },
+  {
+    "kind": "split",
+    "stage": "passion",
+    "eyebrow": "AN OLDER PROMISE · A DEEPER CONNECTION",
+    "title": "The suffering <em>servant</em>",
+    "dek": "Christians read Isaiah’s account of a suffering servant as foreshadowing Jesus.",
+    "points": [
+      "The servant bears suffering on behalf of others.",
+      "The innocent one does not answer violence with revenge.",
+      "Christ’s love enters humanity’s brokenness to heal it."
+    ],
+    "art": "servant",
+    "artCaption": "One figure bears the weight of a wounded world.",
+    "scripture": "Isaiah 53:4–6; 1 Corinthians 15:3",
+    "listen": "What does the servant carry, and for whom?",
+    "salvation": "Redemption is self-giving love acting within the reality of human evil.",
+    "insight": "This is another example of Christian typology. The interpretation looks back from Christ to the prophetic Scriptures.",
+    "notes": [
+      "Use Isaiah 53 selectively, especially verses 4–6, then connect to Paul’s “in accordance with the Scriptures.”",
+      "Explain that Christians do not conclude every act of suffering is divinely required or that victims should seek harm.",
+      "The moral point is about Christ bearing the consequences of sin and responding with mercy."
+    ],
+    "prompt": "How does bearing another’s burden differ from punishing them for it?",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": [
+      [
+        "Catechism: Christ’s sacrifice",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_4/paragraph_2_jesus_died_crucified.html"
+      ]
+    ]
+  },
+  {
+    "kind": "split",
+    "stage": "death",
+    "eyebrow": "MOVEMENT 02 · GOOD FRIDAY",
+    "title": "The Cross: “It is <em>finished</em>.”",
+    "dek": "What looked like defeat becomes the decisive self-offering of Christ.",
+    "points": [
+      "Jesus truly dies by Roman crucifixion.",
+      "He remains faithful in love to the end.",
+      "His death accomplishes redemption <strong>once for all</strong>."
+    ],
+    "art": "cross",
+    "artCaption": "The Cross: an instrument of execution transformed into a sign of salvation.",
+    "scripture": "John 19:28–30",
+    "listen": "What does Jesus mean by “finished”?",
+    "salvation": "Christ’s self-offering addresses sin at its root and opens the way to reconciliation.",
+    "insight": "In John’s Gospel, “It is finished” signals completion of Jesus’ mission, not the collapse of his hopes.",
+    "notes": [
+      "Avoid implying every Gospel reports exactly the same final saying; “It is finished” is specifically the Johannine account.",
+      "Read John 19:28–30 aloud. Pause and ask what is finished: not Jesus’ influence but his saving self-gift.",
+      "Crucifixion was shameful public punishment in the Roman world. The Christian claim is a radical reversal of its meaning."
+    ],
+    "prompt": "Why does the Church call the Cross a victory rather than simply a tragedy?",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": [
+      [
+        "Catechism: Christ’s sacrifice",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_4/paragraph_2_jesus_died_crucified.html"
+      ]
+    ]
+  },
+  {
+    "kind": "three",
+    "stage": "death",
+    "eyebrow": "THE CROSS AND THE NEW COVENANT",
+    "title": "Christ’s <em>one sacrifice</em>",
+    "dek": "Jesus gives himself to reconcile humanity with God.",
+    "cards": [
+      [
+        "01",
+        "Priest and offering",
+        "Jesus offers himself. His own life is the gift that brings us to God."
+      ],
+      [
+        "02",
+        "Once for all",
+        "His unique sacrifice is complete. Every Mass makes that one sacrifice present."
+      ],
+      [
+        "03",
+        "The New Adam",
+        "Christ’s obedience answers human disobedience and opens a new life of grace."
+      ]
+    ],
+    "scripture": "Hebrews 9:11–14; Romans 5:18–19",
+    "listen": "Who offers the sacrifice, and how does Christ’s obedience help others?",
+    "salvation": "Christ’s loving self-offering atones for sin and restores communion with God.",
+    "insight": "Atonement addresses the rupture caused by sin. The saving value of Christ’s sacrifice comes from his divine person and love to the end (CCC 613–618).",
+    "notes": [
+      "Hebrews presents Jesus as both High Priest and the one who offers himself. Explain sacrifice as his complete gift of love and obedience to the Father for us.",
+      "Read Romans 5:18–19 to develop the New Adam connection. Paul sets Adam’s disobedience beside Christ’s obedience and its consequences for humanity.",
+      "The Father and Son share one saving purpose. The Cross does not portray a loving Son persuading an unwilling Father to love us.",
+      "Once for all means that Christ’s sacrifice does not need repeating. The Eucharist makes it sacramentally present, a connection developed on the sacrament slide."
+    ],
+    "prompt": "How does describing Jesus as both priest and offering help explain his death?",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": [
+      [
+        "Catechism: Christ’s sacrifice",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_4/paragraph_2_jesus_died_crucified.html"
+      ]
+    ]
+  },
+  {
+    "kind": "split",
+    "stage": "death",
+    "eyebrow": "ONE SMALL DETAIL · AN ENORMOUS MEANING",
+    "title": "The curtain <em>tears</em>",
+    "dek": "At Jesus’ death, the Gospel describes the veil of the Temple being torn.",
+    "points": [
+      "The Temple veil marked an especially sacred boundary.",
+      "Its tearing becomes a sign of <strong>new access to God</strong>.",
+      "Christ’s sacrifice opens the way for humanity to approach the Father."
+    ],
+    "art": "veil",
+    "artCaption": "A divided curtain opens toward light, symbolizing access to God.",
+    "scripture": "Matthew 27:50–51; Hebrews 10:19–22",
+    "listen": "What changes in the relationship between God and humanity?",
+    "salvation": "Reconciliation means a once-broken relationship can be restored.",
+    "insight": "Interesting connection: Hebrews uses sanctuary and priesthood imagery to interpret Jesus as the one who opens access to God.",
+    "notes": [
+      "Read the Matthew account first, then ask why Matthew highlights the veil instead of focusing only on dramatic signs.",
+      "Explain the Holy of Holies carefully as part of ancient Israelite Temple worship.",
+      "Use Hebrews 10 to connect this image with Christian theological interpretation."
+    ],
+    "prompt": "How does a physical image of an open doorway help explain salvation?",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": [
+      [
+        "Catechism: Christ’s sacrifice",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_4/paragraph_2_jesus_died_crucified.html"
+      ]
+    ]
+  },
+  {
+    "kind": "split",
+    "stage": "death",
+    "eyebrow": "HOLY SATURDAY · THE SILENCE BETWEEN",
+    "title": "Jesus really entered <em>death</em>",
+    "dek": "The burial matters: Christianity does not teach that Jesus only appeared to die.",
+    "points": [
+      "His body is placed in a tomb.",
+      "The Creed speaks of his descent to the dead.",
+      "Even the realm of death is reached by Christ’s saving work."
+    ],
+    "art": "tombDark",
+    "artCaption": "A sealed tomb recalls the silence of Holy Saturday.",
+    "scripture": "Mark 15:42–47",
+    "listen": "Notice the details establishing that Jesus was truly buried.",
+    "salvation": "Christ enters the full reality of human death so that death will not have the last word.",
+    "insight": "The Creed’s “descended into hell” refers here to the realm of the dead, not the hell of the damned (CCC 633).",
+    "notes": [
+      "This is a short interlude, not an additional event replacing the four-part framework.",
+      "Do not explain the Resurrection as mere symbolic survival of Jesus’ ideas; the Church teaches a real death followed by bodily Resurrection."
+    ],
+    "prompt": "Why does the burial matter for the truth of the Resurrection?",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": []
+  },
+  {
+    "kind": "split",
+    "stage": "resurrection",
+    "eyebrow": "MOVEMENT 03 · EASTER SUNDAY",
+    "title": "The tomb is <em>empty</em>",
+    "dek": "The Resurrection is not a metaphor for hope. Christianity proclaims that Jesus rose bodily from the dead.",
+    "points": [
+      "The women discover the empty tomb.",
+      "The risen Jesus appears to his followers.",
+      "He is the same Jesus, now living in glorified life."
+    ],
+    "art": "tombLight",
+    "artCaption": "The opened tomb and dawn symbolize the Resurrection and new creation.",
+    "scripture": "Luke 24:1–8",
+    "listen": "What news changes the meaning of the empty tomb?",
+    "salvation": "The Resurrection reveals that death is defeated and new life is possible in Christ.",
+    "insight": "The Gospels identify women as the first discoverers of the empty tomb. Their witness is central to the Easter narratives.",
+    "notes": [
+      "Read Luke 24:1–8, and later refer to John 20:24–29 if time allows.",
+      "Make the key distinction: the risen Christ does not simply resume his previous mortal life as Lazarus did. He enters glorified bodily life.",
+      "Treat the empty tomb as one sign in the Gospel account, together with the disciples’ encounters with the risen Lord."
+    ],
+    "prompt": "Why does bodily Resurrection matter more than a claim that Jesus “lives on in our hearts”?",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": [
+      [
+        "Catechism: Resurrection and salvation",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_5/paragraph_2_on_the_third_day_he_rose_from_the_dead.index.html"
+      ]
+    ]
+  },
+  {
+    "kind": "reveal",
+    "stage": "resurrection",
+    "eyebrow": "ST. PAUL’S THOUGHT EXPERIMENT",
+    "title": "What if Christ <em>had not risen</em>?",
+    "dek": "St. Paul asks this directly. The Christian answer is more challenging than many people expect.",
+    "hidden": "Without the Resurrection, Christian preaching and faith would be empty. The Cross and Easter cannot be separated.",
+    "scripture": "1 Corinthians 15:12–22",
+    "listen": "What does Paul say would follow if there were no Resurrection?",
+    "salvation": "Easter is not an optional happy ending. It is indispensable to the Christian claim of salvation.",
+    "notes": [
+      "Before revealing the conclusion, ask students to predict Paul’s reasoning.",
+      "After reading verse 14, pause and reveal the answer.",
+      "The Resurrection confirms Jesus’ identity, vindicates his work and begins the new life offered to others (CCC 651–655)."
+    ],
+    "prompt": "Could Christianity keep its essential message if Jesus never rose from the dead?",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": [
+      [
+        "Catechism: Resurrection and salvation",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_5/paragraph_2_on_the_third_day_he_rose_from_the_dead.index.html"
+      ]
+    ]
+  },
+  {
+    "kind": "split",
+    "stage": "resurrection",
+    "eyebrow": "A DEEPER EASTER CONNECTION",
+    "title": "The firstfruits of a <em>new humanity</em>",
+    "dek": "Jesus’ Resurrection is presented as the beginning of something greater.",
+    "points": [
+      "In a harvest, the <strong>firstfruits</strong> signal more to come.",
+      "Christ rises first; the faithful hope to share in his Resurrection.",
+      "Salvation reaches the whole human person, including the body."
+    ],
+    "art": "harvest",
+    "artCaption": "New growth after winter illustrates Paul’s “firstfruits” image.",
+    "scripture": "1 Corinthians 15:20–23",
+    "listen": "Why does Paul compare Resurrection to a harvest?",
+    "salvation": "The hope of Christianity is not merely an immortal soul, but the resurrection of the body and life with God.",
+    "insight": "Paul speaks of “firstfruits,” not a one-time exception. The risen Christ is the beginning of the promised renewal of creation.",
+    "notes": [
+      "Illustrate firstfruits with the first ripe crop that signals the wider harvest.",
+      "Catholic teaching expects a future resurrection of the body; it is not simply a story of heaven as an escape from material existence.",
+      "Connect back to human dignity: bodies matter because salvation concerns the whole person."
+    ],
+    "prompt": "How might belief in bodily Resurrection change the way Christians value human life?",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": [
+      [
+        "Catechism: Resurrection and salvation",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_5/paragraph_2_on_the_third_day_he_rose_from_the_dead.index.html"
+      ]
+    ]
+  },
+  {
+    "kind": "split",
+    "stage": "ascension",
+    "eyebrow": "MOVEMENT 04 · THE ASCENSION",
+    "title": "The Ascension: our humanity <em>with God</em>",
+    "dek": "Forty days after Easter, the risen Christ enters heavenly glory.",
+    "points": [
+      "The Son who became human now brings that <strong>humanity into glory</strong>.",
+      "He reigns at the Father’s right hand and <strong>intercedes for us</strong>.",
+      "He promises the Spirit and sends his disciples as witnesses."
+    ],
+    "art": "ascension",
+    "artCaption": "The rising light signifies Christ’s exaltation and heavenly glory.",
+    "scripture": "Acts 1:6–11",
+    "listen": "What do the messengers tell the disciples to expect?",
+    "salvation": "In Christ, human nature enters the glory and life of God.",
+    "insight": "Incarnation and Ascension belong together: the Son takes our human nature, then brings it into heavenly glory. Sharing God’s life means participation by grace, not becoming separate gods (CCC 661).",
+    "notes": [
+      "The “forty days” comes from Acts 1. The Catechism describes the definitive entrance of Jesus’ humanity into heavenly glory (CCC 659, 665).",
+      "Explain that Ascension does not mean Jesus becomes divine for the first time. The Incarnation united divinity and humanity from the beginning.",
+      "Christ’s ongoing intercession means the saving work remains effective and the Church is sent on mission.",
+      "Recall John 1:14 and John 14:2–3 from the Incarnation connection. The humanity Jesus assumed is the humanity that enters glory. Jesus remains fully God and fully human.",
+      "Participation in divine life is a gift of grace. It does not erase human identity or make people independent gods.",
+      "Acts 1:3 gives the forty days. Acts 1:6–11 links Ascension with the promise of the Spirit, the Church’s mission and Christ’s return."
+    ],
+    "prompt": "What is the difference between “Jesus went away” and “Jesus was exalted”?",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": [
+      [
+        "Catechism: Ascension",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_6/he_ascended_into_heaven_and_is_seated_at_the_right_hand_of_the_father.html"
+      ]
+    ]
+  },
+  {
+    "kind": "sacraments",
+    "stage": "living",
+    "eyebrow": "THE PASCHAL MYSTERY IS STILL PRESENT",
+    "title": "Sharing in Christ’s <em>saving work</em>",
+    "dek": "The Church’s sacraments unite believers to Christ’s saving work.",
+    "left": {
+      "over": "DYING AND RISING",
+      "heading": "Baptism",
+      "text": "Baptism unites us to Christ’s death and Resurrection, cleanses sin and begins new life in him.",
+      "verse": "Romans 6:3–5",
+      "glyph": "≈"
+    },
+    "right": {
+      "over": "ONE SACRIFICE, MADE PRESENT",
+      "heading": "Eucharist",
+      "text": "At Mass, Christ’s one sacrifice becomes sacramentally present. We receive the risen Lord in Communion.",
+      "verse": "1 Corinthians 11:23–26",
+      "glyph": "✝"
+    },
+    "scripture": "Romans 6:3–5; 1 Corinthians 11:23–26",
+    "listen": "What do “buried,” “raised” and “proclaim” reveal?",
+    "salvation": "The Paschal Mystery is accomplished once for all, yet its grace reaches believers today.",
+    "insight": "Baptism joins Christians to Christ. The Eucharist nourishes that communion (CCC 1213, 1324, 1366–1367).",
+    "notes": [
+      "Baptism incorporates a person into Christ’s death and Resurrection (Romans 6).",
+      "At Mass, the one sacrifice is made sacramentally present. The Church does not claim Jesus dies repeatedly on the altar.",
+      "Catholics believe that the Eucharist truly is Christ’s Body and Blood. Participation draws the Church into his offering and nourishes communion with him. CCC 1324, 1362–1367."
+    ],
+    "prompt": "How can an event happen once in history but matter in every Mass?",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": [
+      [
+        "Catechism: Eucharist",
+        "https://www.vatican.va/content/catechism/en/part_two/section_two/chapter_one/article_3/v_the_sacramental_sacrifice_thanksgiving_memorial_presence.html"
+      ]
+    ]
+  },
+  {
+    "kind": "three",
+    "stage": "living",
+    "eyebrow": "FROM BELIEF TO LIFE",
+    "title": "Living the Paschal <em>pattern</em>",
+    "dek": "Grace invites a transformed life, not just intellectual agreement.",
+    "cards": [
+      [
+        "01",
+        "Die to selfishness",
+        "Choose forgiveness over revenge and generosity over pride."
+      ],
+      [
+        "02",
+        "Rise to new life",
+        "Allow grace to renew habits, relationships and hope."
+      ],
+      [
+        "03",
+        "Become a witness",
+        "Show sacrificial love through service and solidarity."
+      ]
+    ],
+    "scripture": "Galatians 2:19–20; 1 Peter 1:3–5",
+    "listen": "How does Paul speak about his life in Christ?",
+    "salvation": "Good works are a response to God’s grace, not a way to purchase salvation.",
+    "insight": "The mystery gives Christians a different way to face suffering. It does not make pain desirable, but it gives hope and a call to love amid it.",
+    "notes": [
+      "Bring the doctrine into Grade 12 experience without implying all hardship is holy or deserved.",
+      "Examples: costly forgiveness, protecting a vulnerable student, self-giving care in family life, service to people in need.",
+      "Keep grace before works: Christian action flows from participation in Christ, not a claim to earn heaven on one’s own.",
+      "Allow a historical or hypothetical example rather than requiring disclosure of personal suffering. Suffering does not automatically produce growth, and Christian love includes resisting harm and seeking help.",
+      "Connect Christian action with grace: faith, hope and charity express an ongoing response to God. Forgiveness, service and justice put that response into practice."
+    ],
+    "prompt": "What does it mean to “die” to a habit and “rise” to something better?",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": [
+      [
+        "Catechism: grace and our response",
+        "https://www.vatican.va/content/catechism/en/part_three/section_one/chapter_three/article_2/ii_grace.html"
+      ]
+    ]
+  },
+  {
+    "kind": "final",
+    "stage": "living",
+    "eyebrow": "FINAL REFLECTION · DISCUSS",
+    "title": "Why is the Cross a sign of <em>victory</em>?",
+    "dek": "Use at least two events of the Paschal Mystery to explain how Jesus makes salvation possible.",
+    "scripture": "Romans 8:37–39",
+    "listen": "What is stronger than death?",
+    "salvation": "Through Christ, love is stronger than sin, and life is stronger than death.",
+    "insight": "Exit prompt: “Without the Resurrection, the Cross would mean ________. With the Resurrection, it means ________.”",
+    "notes": [
+      "Ask for a short spoken or written exit response using two precise theological concepts such as redemption, reconciliation, covenant, new life or Ascension.",
+      "Strong answers connect at least two events causally, rather than listing four unrelated facts.",
+      "Optional final question: What would be missing from Christian salvation if there were no Ascension?",
+      "Listen for a causal explanation: Christ’s loving sacrifice addresses sin, his bodily Resurrection brings new life, and his Ascension opens our destiny in communion with God. Ask for one concrete implication for living."
+    ],
+    "prompt": "Challenge: explain the Christian idea of salvation to someone using no religious jargon.",
+    "sourceNote": "Lesson source: Unit 1.5, “The Paschal Mystery,” in the HRE4M1 Unit 1 Resource Pack, pp. 37–48. Scripture prompts use NRSV-CE references.",
+    "sources": [
+      [
+        "Catechism: Resurrection and salvation",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_two/article_5/paragraph_2_on_the_third_day_he_rose_from_the_dead.index.html"
+      ]
+    ]
+  }
+];
+
+const stages=[['opening','Introduction'],['passover','Passover'],['passion','Passion'],['death','Death'],['resurrection','Resurrection'],['ascension','Ascension'],['living','Living it']];
+let current=0, reveal=false, insight=false, overlayMode=null;
+const byId=id=>document.getElementById(id);
+const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const progressStr=n=>String(n).padStart(2,'0');
+function artSVG(type){
+const defs=`<defs><radialGradient id="halo"><stop stop-color="#ffe4aa" stop-opacity=".8"/><stop offset=".45" stop-color="#ffb968" stop-opacity=".23"/><stop offset="1" stop-color="#e59c5b" stop-opacity="0"/></radialGradient><linearGradient id="shine" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#fff3cf"/><stop offset=".5" stop-color="#d6ac73"/><stop offset="1" stop-color="#946f5a"/></linearGradient><linearGradient id="darksky" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#9bb6c9" stop-opacity=".3"/><stop offset="1" stop-color="#0e1f31" stop-opacity=".05"/></linearGradient><linearGradient id="pathGlow" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffe6a8" stop-opacity=".8"/><stop offset="1" stop-color="#ffe6a8" stop-opacity="0"/></linearGradient></defs>`;
+const stars=`<g fill="#e7dfcc" opacity=".6"><circle cx="130" cy="88" r="2"/><circle cx="450" cy="137" r="1.8"/><circle cx="390" cy="67" r="2"/><circle cx="205" cy="174" r="1.4"/><circle cx="540" cy="260" r="1.7"/></g>`;
+const ground=`<path d="M30 504 Q175 471 300 498 Q426 473 603 509 L603 580 L30 580Z" fill="#112331"/><path d="M39 506 Q170 478 294 501 T591 509" fill="none" stroke="#c19b70" stroke-opacity=".4" stroke-width="2"/>`;
+const cross=`<g fill="#070f18"><path d="M286 137h47v364h-47z"/><path d="M180 241h258v43H180z"/></g><path d="M291 137h4v363h-4M180 244h258" stroke="#cf9a65" opacity=".3" stroke-width="2"/>`;
+let body='';
+switch(type){
+case 'cross': body=`<circle cx="322" cy="280" r="283" fill="url(#halo)"/><g fill="none" stroke="#d2b387" opacity=".19"><circle cx="324" cy="292" r="238"/><circle cx="324" cy="292" r="193"/><circle cx="324" cy="292" r="148"/></g>${stars}${cross}${ground}<path d="M36 556 Q305 525 590 557" stroke="#ecc889" opacity=".3" stroke-width="2" fill="none"/>`;break;
+case 'garden': body=`<circle cx="362" cy="228" r="229" fill="url(#halo)" opacity=".4"/>${stars}<path d="M475 580V190Q495 130 541 106M475 302Q423 239 377 224M475 250Q536 207 581 187" fill="none" stroke="#b9a385" stroke-width="25" stroke-linecap="round" opacity=".67"/><g fill="#5c917e" opacity=".55"><ellipse cx="374" cy="214" rx="79" ry="25" transform="rotate(-25 374 214)"/><ellipse cx="554" cy="184" rx="72" ry="25" transform="rotate(19 554 184)"/><ellipse cx="546" cy="104" rx="80" ry="31" transform="rotate(-34 546 104)"/></g><path d="M115 548Q218 434 330 479Q408 435 568 520" fill="#273441" opacity=".75"/><path d="M265 483q-50-42-60-100c-9-43 15-84 47-88 28-3 53 27 45 55-5 16-24 31-24 31q73 26 72 108" fill="#e6c8a9" opacity=".7"/><path d="M203 388q37-2 73 15l24 86h-136z" fill="#884f52" opacity=".85"/><path d="M138 530q87-62 199-20" fill="none" stroke="#d3b38b" stroke-width="2" opacity=".3"/>`;break;
+case 'servant': body=`<circle cx="326" cy="244" r="272" fill="url(#halo)" opacity=".32"/><g fill="none" stroke="#bfc5ba" opacity=".25" stroke-width="2"><path d="M80 142Q314 63 536 142M80 207Q314 128 536 207M81 274Q312 195 537 274"/></g><path d="M240 522q20-152 42-203c14-29 59-34 79 0q39 89 54 203" fill="#a67366" opacity=".66"/><circle cx="319" cy="260" r="59" fill="#d4af8b" opacity=".65"/><path d="M168 333Q319 255 466 355" fill="none" stroke="#e8d2b1" opacity=".3" stroke-width="8"/><path d="M170 353q145-54 294 9" fill="none" stroke="#dfc8aa" opacity=".4" stroke-width="50" stroke-linecap="round"/><path d="M184 381q146-50 274 4" stroke="#7d4c52" opacity=".7" stroke-width="9" fill="none"/><path d="M153 523Q323 500 505 529" stroke="#e8c89a" opacity=".3" stroke-width="2" fill="none"/>`;break;
+case 'chalice':body=`<circle cx="320" cy="265" r="274" fill="url(#halo)" opacity=".51"/><g fill="none" stroke="#ddbe8c" stroke-width="2" opacity=".4"><circle cx="320" cy="276" r="215"/><circle cx="320" cy="276" r="172"/></g><path d="M184 204Q312 178 429 204L416 287Q389 381 322 388Q254 383 207 294Z" fill="#cb9c63" opacity=".83" stroke="#f7dbaa" stroke-width="4"/><path d="M200 229Q316 250 417 228" fill="none" stroke="#6a3644" stroke-width="18"/><path d="M315 389V485M260 502H378" fill="none" stroke="#e1be82" stroke-width="19" stroke-linecap="round"/><path d="M117 507q46-63 110-41q56 9 77 49q-88 29-187-8z" fill="#efd0a0" opacity=".85"/><path d="M117 507Q213 476 302 515" fill="none" stroke="#bb8957" stroke-width="3" opacity=".65"/><path d="M134 506Q198 525 296 516" fill="none" stroke="#b89566" stroke-width="3"/>`;break;
+case 'veil':body=`<circle cx="311" cy="309" r="249" fill="url(#halo)"/><path d="M305 95v413" stroke="url(#pathGlow)" stroke-width="120" opacity=".57"/><path d="M101 105h423v378H101z" fill="none" stroke="#e5c696" stroke-width="9"/><path d="M101 112h169l-65 255 73 113H101z" fill="#926e76" stroke="#bc9391" stroke-width="3"/><path d="M523 112H353l65 255-73 113h178z" fill="#906d77" stroke="#b98c8f" stroke-width="3"/><g stroke="#c8a3a1" opacity=".4" stroke-width="6"><path d="M137 117Q220 280 137 476M196 117Q266 310 209 458M488 117Q404 280 488 476M427 117Q367 310 408 457" fill="none"/></g><path d="M280 482l25-365 37 363z" fill="url(#pathGlow)" opacity=".6"/>`;break;
+case 'tombDark':body=`<circle cx="356" cy="216" r="270" fill="url(#halo)" opacity=".26"/>${stars}<path d="M100 501V329q5-131 205-145 215 8 230 157v160z" fill="#77828a" opacity=".35"/><path d="M161 503V346q7-123 153-123t148 123v157" fill="#09151f" stroke="#8b938e" stroke-width="10"/><circle cx="461" cy="427" r="110" fill="#8c8e86" stroke="#a2a098" stroke-width="12"/><path d="M392 365Q457 355 522 417" fill="none" stroke="#d3bc9e" stroke-width="5" opacity=".2"/>${ground}`;break;
+case 'tombLight':body=`<circle cx="330" cy="213" r="305" fill="url(#halo)"/><g stroke="#eed49c" stroke-width="4" opacity=".34"><path d="M302 15L291 140M493 50L433 160M573 237L465 260M128 60L208 177M50 235L158 262"/></g><path d="M85 510V335q9-143 226-162 223 18 238 162v175" fill="#8e918d" opacity=".55"/><path d="M152 512V352q5-119 160-119t154 119v160" fill="#061522" stroke="#e3c99f" stroke-width="9"/><path d="M197 510q15-144 114-172q91 31 113 173" fill="#ffe2a0" opacity=".24"/><circle cx="496" cy="441" r="105" fill="#7e8889" stroke="#c4bba5" stroke-width="13"/><path d="M446 394Q501 373 544 421" fill="none" stroke="#fff1d2" stroke-width="6" opacity=".26"/>${ground}<path d="M191 510L311 352 419 509" fill="url(#pathGlow)" opacity=".4"/>`;break;
+case 'harvest':body=`<circle cx="326" cy="229" r="260" fill="url(#halo)" opacity=".6"/>${ground}<g fill="none" stroke="#9dbb95" stroke-width="6" stroke-linecap="round"><path d="M319 528V224M242 529V322M396 529V340M168 527V423M465 527V414"/></g><g fill="#e6c27e" opacity=".82"><ellipse cx="285" cy="240" rx="15" ry="29" transform="rotate(-34 285 240)"/><ellipse cx="353" cy="232" rx="15" ry="29" transform="rotate(35 353 232)"/><ellipse cx="295" cy="284" rx="14" ry="28" transform="rotate(-38 295 284)"/><ellipse cx="347" cy="283" rx="14" ry="28" transform="rotate(38 347 283)"/><ellipse cx="216" cy="352" rx="13" ry="24" transform="rotate(-35 216 352)"/><ellipse cx="272" cy="362" rx="13" ry="24" transform="rotate(35 272 362)"/><ellipse cx="374" cy="365" rx="13" ry="25" transform="rotate(-35 374 365)"/><ellipse cx="419" cy="357" rx="13" ry="25" transform="rotate(30 419 357)"/><ellipse cx="147" cy="450" rx="12" ry="22" transform="rotate(-27 147 450)"/><ellipse cx="192" cy="455" rx="12" ry="22" transform="rotate(28 192 455)"/><ellipse cx="442" cy="450" rx="12" ry="23" transform="rotate(-25 442 450)"/><ellipse cx="489" cy="444" rx="12" ry="23" transform="rotate(30 489 444)"/></g><path d="M318 216v-69" stroke="#fee3a7" stroke-width="4" opacity=".8"/>`;break;
+case 'ascension':body=`<circle cx="313" cy="248" r="290" fill="url(#halo)" opacity=".65"/><g fill="none" stroke="#f3daa2" opacity=".35"><ellipse cx="317" cy="266" rx="204" ry="258" stroke-width="3"/><ellipse cx="317" cy="266" rx="149" ry="206" stroke-width="2"/></g><path d="M315 55l-63 389h126z" fill="url(#pathGlow)" opacity=".22"/><g fill="#fff0cd" opacity=".85"><circle cx="317" cy="175" r="31"/><path d="M286 212q31-31 62 0l30 131-118 0z"/><path d="M285 228l-70 68 16 18 79-48M351 226l76 70-17 18-84-52"/></g><g fill="#9bb6c7" opacity=".35"><ellipse cx="170" cy="483" rx="153" ry="45"/><ellipse cx="403" cy="501" rx="159" ry="54"/><ellipse cx="313" cy="471" rx="190" ry="37"/></g><path d="M110 500Q310 467 525 501" stroke="#e4cca4" stroke-width="2" opacity=".5" fill="none"/>`;break;
+case 'bridge':body=`<circle cx="305" cy="244" r="286" fill="url(#halo)" opacity=".58"/><g fill="none" stroke="#e1cfb3" opacity=".22"><circle cx="306" cy="253" r="219" stroke-width="3"/><circle cx="306" cy="253" r="166" stroke-width="2"/></g><path d="M50 506Q168 485 240 420T324 280Q348 229 367 204Q390 168 469 126" fill="none" stroke="#e6c692" stroke-width="37" opacity=".67" stroke-linecap="round"/><path d="M50 506Q168 485 240 420T324 280Q348 229 367 204Q390 168 469 126" fill="none" stroke="#fff1cb" stroke-width="6" opacity=".8" stroke-linecap="round"/><g fill="#ead7b4" opacity=".5"><circle cx="469" cy="126" r="37"/><circle cx="50" cy="506" r="24"/></g><path d="M39 544H589" stroke="#a3bdc8" opacity=".25" stroke-width="2"/>`;break;
+default:body=`<circle cx="312" cy="255" r="270" fill="url(#halo)"/>${cross}${ground}`;
+}
+return `<svg class="illustration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 600" role="img" aria-label="Symbolic religious illustration">${defs}${body}</svg>`;
+}
+function readingMarkup(s){if(!s.scripture&&!s.salvation)return'';return `<div class="reading-bar"><div class="read-box"><span class="read-glyph" aria-hidden="true">✝</span><span class="minilabel">${s.scripture?.startsWith('CCC')?'CATECHISM':'READ ALOUD · NRSV-CE'}</span><div class="read-copy">${escapeHTML(s.scripture||'')}<small>${escapeHTML(s.listen||'Refer to the notes.')}</small></div></div><div class="salvation-box"><span class="minilabel">SALVATION</span><div class="saviour-text">${escapeHTML(s.salvation||'Read, reflect and connect the event to Christian salvation.')}</div></div></div>`}
+function insightMarkup(s){if(!s.insight)return'';return `<button class="insight-toggle" id="insightBtn" aria-pressed="${insight}" aria-expanded="${insight}"><span class="dot"></span>DEEPER CONNECTION ${insight?'−':'+'}</button>${insight?`<div class="insight-panel" id="insightPanel"><button id="insightClose" aria-label="Close insight">×</button><h4>GO A LEVEL DEEPER</h4><p>${escapeHTML(s.insight)}</p></div>`:''}`}
+function cardHeading(s){return `<div class="kicker">${escapeHTML(s.eyebrow)}</div><h1 class="headline">${s.title}</h1>${s.dek?`<p class="dek">${escapeHTML(s.dek)}</p>`:''}`}
+function renderBody(s){switch(s.kind){
+case 'title':return `<div class="copy-column"><div class="title-eyebrow">${escapeHTML(s.eyebrow)}</div><h1 class="headline">${s.title}</h1><p class="dek">${escapeHTML(s.dek)}</p><div class="small-callout">From slavery to freedom. From sin to forgiveness. From death to life.</div></div><div class="hero-art">${artSVG(s.art)}</div><span class="art-caption">${escapeHTML(s.artCaption)}</span>${readingMarkup(s)}`;
+case 'question':return `<div class="question-mark" aria-hidden="true">?</div>${cardHeading(s)}${readingMarkup(s)}`;
+case 'overview':return `${cardHeading(s)}<div class="overview-grid">${s.cards.map(c=>`<div class="overview-card"><span class="num">${c[0]}</span><span class="icon" aria-hidden="true">${c[3]}</span><h3 class="word">${c[1]}</h3><div class="desc">${c[2]}</div></div>`).join('')}</div><div class="overview-line">${escapeHTML(s.quote)}</div>${readingMarkup(s)}`;
+case 'compare':return `${cardHeading(s)}<div class="compare-grid">${[s.left,s.right].map(o=>`<div class="compare-col"><small>${escapeHTML(o.over)}</small><h3>${escapeHTML(o.heading)}</h3>${o.points.map(p=>`<div class="comparison-point">${escapeHTML(p)}</div>`).join('')}</div>`).join('')}<div class="compare-arrow" aria-hidden="true">→</div></div>${readingMarkup(s)}`;
+case 'split':return `<div class="split-layout"><div class="copy-column">${cardHeading(s)}<ul class="points">${s.points.map(p=>`<li><span class="bullet-mark">✧</span><span class="txt">${p}</span></li>`).join('')}</ul></div><figure class="art-container">${artSVG(s.art)}<figcaption class="art-caption">${escapeHTML(s.artCaption)}</figcaption></figure></div>${readingMarkup(s)}`;
+case 'three':return `${cardHeading(s)}<div class="three-grid">${s.cards.map(c=>`<div class="three-card"><span class="sym">${c[0]}</span><h3>${escapeHTML(c[1])}</h3><p>${escapeHTML(c[2])}</p></div>`).join('')}</div>${readingMarkup(s)}`;
+case 'diagram':return `${cardHeading(s)}<div class="flowline">${s.nodes.map((c,i)=>`${i?'<div class="flow-arrow" aria-hidden="true">→</div>':''}<div class="flow-node"><span class="num">${c[0]}</span><h3>${escapeHTML(c[1])}</h3><p>${escapeHTML(c[2])}</p></div>`).join('')}</div><div class="flow-below">${escapeHTML(s.after)}</div>${readingMarkup(s)}`;
+case 'reveal':return `${cardHeading(s)}<div class="reveal-well">${reveal?`<div class="hidden-text">${escapeHTML(s.hidden)}</div>`:`<div class="before-reveal">Read Paul’s argument aloud. Ask students to predict his conclusion.</div>`}</div><button class="reveal-button" id="revealBtn" aria-pressed="${reveal}">${reveal?'↶  HIDE THE ANSWER':'✦  REVEAL PAUL’S ANSWER'}</button>${readingMarkup(s)}`;
+case 'sacraments':return `${cardHeading(s)}<div class="sacrament-grid">${[s.left,s.right].map(c=>`<div class="sacrament-card"><span class="glyph" aria-hidden="true">${c.glyph}</span><div class="over">${escapeHTML(c.over)}</div><h3>${escapeHTML(c.heading)}</h3><p>${escapeHTML(c.text)}</p><small>READ: ${escapeHTML(c.verse)}</small></div>`).join('')}</div>${readingMarkup(s)}`;
+case 'recap':return `${cardHeading(s)}<div class="recap-rows">${s.rows.map(c=>`<div class="recap-row"><div class="recap-label">${escapeHTML(c[0])}</div><div class="recap-event">${escapeHTML(c[1])}</div><div class="recap-gift">${escapeHTML(c[2])}</div></div>`).join('')}</div><div class="recap-result">${escapeHTML(s.after)}</div>${readingMarkup(s)}`;
+case 'final':return `${cardHeading(s)}<div class="opening-quote">The last word is not death. It is life in Christ.</div>${readingMarkup(s)}`;
+default:return cardHeading(s)}
+}
+function render(){const s=slides[current];document.title=`${progressStr(current+1)} · ${s.title.replace(/<[^>]*>/g,'')} | Paschal Mystery`;byId('stage').innerHTML=`<section class="scene scene--${s.kind} theme-${s.stage}${s.tone?' tone-'+s.tone:''}" aria-label="Slide ${current+1} of ${slides.length}">${renderBody(s)}${insightMarkup(s)}</section>`;
+byId('progressNum').textContent=`${progressStr(current+1)} / ${progressStr(slides.length)}`;byId('progressFill').style.width=`${(current+1)/slides.length*100}%`;byId('prevBtn').disabled=current===0;byId('nextBtn').disabled=current===slides.length-1;byId('nextBtn').querySelector('span').textContent=current===slides.length-1?'END OF LECTURE':'NEXT SLIDE';
+byId('chapterNav').innerHTML=stages.map(([id,label])=>`<button class="stage-btn ${s.stage===id?'active':''}" data-stage="${id}" aria-current="${s.stage===id?'step':'false'}">${label}</button>`).join('');document.querySelectorAll('[data-stage]').forEach(btn=>btn.addEventListener('click',()=>go(slides.findIndex(x=>x.stage===btn.dataset.stage))));
+const iBtn=byId('insightBtn');if(iBtn)iBtn.onclick=()=>{insight=!insight;render()};const iClose=byId('insightClose');if(iClose)iClose.onclick=()=>{insight=false;render()};const rBtn=byId('revealBtn');if(rBtn)rBtn.onclick=()=>{reveal=!reveal;render()};
+}
+function go(index){if(index<0||index>=slides.length)return;if(index===current){closeOverlay();return}current=index;reveal=false;insight=false;closeOverlay();render();}
+function showOverlay(mode){overlayMode=mode;const wrap=byId('overlay');if(mode==='overview'){wrap.innerHTML=`<div class="overlay-header"><div><h2 class="overlay-title" id="overlayTitle">All slides</h2><div class="overlay-desc">Select any part of the lecture to jump there.</div></div><button class="overlay-close" id="closeBtn">✕ Close (Esc)</button></div><div class="overview-list">${slides.map((s,i)=>`<button class="overview-choice ${i===current?'selected':''}" data-index="${i}"><span class="slide-number">${progressStr(i+1)}</span><span class="overview-stage">${stages.find(x=>x[0]===s.stage)?.[1]}</span><span class="overview-title">${s.title.replace(/<[^>]*>/g,'')}</span></button>`).join('')}</div>`}else if(mode==='notes'){
+const s=slides[current];wrap.innerHTML=`<div class="overlay-header"><div><h2 class="overlay-title" id="overlayTitle">Presenter notes</h2><div class="overlay-desc">Slide ${current+1} of ${slides.length} · ${stages.find(x=>x[0]===s.stage)?.[1]}</div></div><button class="overlay-close" id="closeBtn">✕ Close (Esc)</button></div><div class="notes-shell"><h3>${s.title.replace(/<[^>]*>/g,'')}</h3><div class="ref-note">${s.scripture?.startsWith('CCC')?'Catechism':'Scripture (NRSV-CE)'}: ${escapeHTML(s.scripture||'—')}</div><ol>${(s.notes||[]).map(n=>`<li>${escapeHTML(n)}</li>`).join('')}</ol><div class="teacher-prompt"><strong>ASK STUDENTS:</strong> ${escapeHTML(s.prompt||'What stands out?')}</div><div class="notes-sources">${escapeHTML(s.sourceNote)}${s.sources.length?'<br>'+s.sources.map(([label,url])=>`<a href="${escapeHTML(url)}" target="_blank" rel="noopener">${escapeHTML(label)}</a>`).join(' · '):''}</div></div>`;
+}else{wrap.innerHTML=`<div class="overlay-header"><div><h2 class="overlay-title" id="overlayTitle">Presentation controls</h2><div class="overlay-desc">Works entirely offline in your browser. No sign-in required.</div></div><button class="overlay-close" id="closeBtn">✕ Close (Esc)</button></div><div class="help-grid"><div class="help-item"><span>Next slide</span><span class="key">→ / Space / Page Down</span></div><div class="help-item"><span>Previous slide</span><span class="key">← / Page Up</span></div><div class="help-item"><span>Go to first / last slide</span><span class="key">Home / End</span></div><div class="help-item"><span>Slide overview</span><span class="key">O</span></div><div class="help-item"><span>Presenter notes</span><span class="key">N</span></div><div class="help-item"><span>Fullscreen</span><span class="key">F</span></div><div class="help-item"><span>Deeper connection</span><span class="key">D</span></div><div class="help-item"><span>Close panel</span><span class="key">Esc</span></div></div>`}
+wrap.classList.add('open');wrap.querySelector('#closeBtn').onclick=closeOverlay;wrap.querySelectorAll('[data-index]').forEach(b=>b.onclick=()=>go(Number(b.dataset.index)));wrap.scrollTop=0;byId('app').inert=true;wrap.querySelector('#closeBtn').focus();
+}
+function closeOverlay(){const restore=overlayMode;overlayMode=null;byId('app').inert=false;byId('overlay').classList.remove('open');byId('overlay').innerHTML='';if(restore)byId(restore==='notes'?'notesBtn':restore==='overview'?'overviewBtn':'helpBtn').focus()}
+function toggleOverlay(mode){if(overlayMode===mode)closeOverlay();else showOverlay(mode)}
+function toggleFull(){if(document.fullscreenElement){document.exitFullscreen?.()}else{document.documentElement.requestFullscreen?.().catch(()=>{})}}
+byId('prevBtn').onclick=()=>go(current-1);byId('nextBtn').onclick=()=>go(current+1);
+byId('notesBtn').onclick=()=>toggleOverlay('notes');byId('overviewBtn').onclick=()=>toggleOverlay('overview');byId('fullBtn').onclick=toggleFull;byId('helpBtn').onclick=()=>toggleOverlay('help');
+byId('overlay').addEventListener('click',e=>{if(e.target===byId('overlay'))closeOverlay()});
+document.addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey)return;const key=e.key;if(e.target.closest('input,textarea,select')||((key===' '||key==='Enter')&&e.target.closest('button,a')))return;if(['ArrowRight','ArrowLeft','PageDown','PageUp',' ','Home','End','Escape'].includes(key))e.preventDefault();if(key==='Escape'){if(overlayMode)closeOverlay();else if(insight){insight=false;render()}return}if(overlayMode){if(key.toLowerCase()==='n'&&overlayMode==='notes'||key.toLowerCase()==='o'&&overlayMode==='overview')closeOverlay();return}if(key==='ArrowRight'||key==='PageDown'||key===' '){go(current+1)}else if(key==='ArrowLeft'||key==='PageUp'){go(current-1)}else if(key==='Home'){go(0)}else if(key==='End'){go(slides.length-1)}else if(key.toLowerCase()==='o'){showOverlay('overview')}else if(key.toLowerCase()==='n'){showOverlay('notes')}else if(key.toLowerCase()==='f'){toggleFull()}else if(key.toLowerCase()==='d'&&slides[current].insight){insight=!insight;render()}else if(key==='?'){showOverlay('help')}});
+let touchX=0,touchY=0;byId('stage').addEventListener('touchstart',e=>{touchX=e.changedTouches[0].screenX;touchY=e.changedTouches[0].screenY},{passive:true});byId('stage').addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-touchX,dy=e.changedTouches[0].screenY-touchY;if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.5){go(current+(dx<0?1:-1))}},{passive:true});
+document.addEventListener('keydown',e=>{if(e.key!=='Tab'||!overlayMode)return;const focusable=[...byId('overlay').querySelectorAll('button,a[href]')];const first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}});
+render();
+</script>
+</body>
+</html>

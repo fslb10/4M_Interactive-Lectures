@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07121d">
+  <meta name="description" content="HRE4M1 interactive lectures, organized by unit and lesson. Open a lecture for class or download it to present offline.">
+  <title>Interactive Lectures | HRE4M1</title>
+  <style>
+    :root{color-scheme:dark;--bg:#07121d;--surface:#10202e;--text:#f6f1e7;--muted:#b6c0c9;--gold:#efc47f;--line:#30404b}
+    *{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:24px}body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 "Segoe UI",Arial,sans-serif}a{color:inherit;text-underline-offset:5px}a:focus-visible{outline:3px solid var(--gold);outline-offset:5px}a:hover{color:var(--gold)}
+    .skip{position:absolute;left:20px;top:-100px;padding:12px;background:var(--gold);color:var(--bg);z-index:3}.skip:focus{top:12px}
+    .shell{max-width:1440px;margin:auto;padding:0 clamp(24px,5vw,80px)}
+    header{padding:32px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:24px}.brand{font-size:14px;font-weight:700;letter-spacing:.16em}.brand span{color:var(--gold)}.repository{font-size:14px;color:var(--muted);white-space:nowrap}
+    .layout{display:grid;grid-template-columns:190px minmax(0,1fr);gap:clamp(40px,6vw,88px);padding:56px 0 64px}.sidebar{align-self:start;position:sticky;top:24px}.eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 20px}.unit-nav{display:grid;gap:8px}.unit-nav a{display:flex;align-items:center;justify-content:space-between;min-height:48px;text-decoration:none;padding:9px 14px;border-left:2px solid transparent;transition:background .16s,border-color .16s}.unit-nav a:hover{background:var(--surface);border-color:var(--gold)}.unit-nav .available{color:var(--gold);border-left-color:var(--gold);background:var(--surface)}.count{font-size:12px;color:var(--muted)}
+    main{min-width:0}.intro{padding-bottom:34px}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1.12}h1{font-size:clamp(40px,4.5vw,64px);letter-spacing:-.035em;margin:0 0 16px}.intro p{color:var(--muted);margin:0;max-width:650px}
+    .unit{border-top:1px solid var(--line);padding:27px 0 32px;scroll-margin-top:24px}.unit-heading{display:flex;gap:24px;align-items:baseline;justify-content:space-between;margin-bottom:25px}h2{font-size:30px;margin:0}.status{font-size:13px;color:var(--muted)}.lesson{display:grid;grid-template-columns:64px minmax(0,1fr);gap:20px;align-items:start}.lesson-number{font:26px Georgia,serif;color:var(--gold);padding-top:5px}h3{font-size:clamp(29px,3vw,38px);letter-spacing:-.02em;margin:0 0 12px}.lesson p{color:var(--muted);margin:0;max-width:650px}.metadata{font-size:13px;margin-top:16px!important;letter-spacing:.01em}.actions{display:flex;align-items:center;flex-wrap:wrap;gap:18px 24px;margin:24px 0 2px}.primary{display:inline-flex;min-height:48px;align-items:center;justify-content:center;gap:20px;padding:11px 20px;border-radius:4px;background:var(--gold);color:var(--bg);font-weight:700;text-decoration:none;transition:background .16s,transform .16s}.primary:hover{color:var(--bg);background:#ffda9f;transform:translateY(-2px)}.download{font-size:15px;padding:10px 0}.planned{font-size:14px;color:var(--muted);margin:30px 0 0 84px}.empty .unit-heading{margin-bottom:9px}.empty p{color:var(--muted);font-size:15px;margin:0}.empty{padding-bottom:27px}
+    .guide{margin-top:12px;padding:24px 0 0;border-top:1px solid var(--line)}.guide h2{font:600 16px "Segoe UI",Arial,sans-serif;margin:0 0 12px}.guide p{font-size:14px;color:var(--muted);margin:7px 0}.guide strong{color:var(--text);font-weight:600}kbd{display:inline-block;min-width:23px;text-align:center;border:1px solid var(--line);border-radius:4px;padding:0 5px;color:var(--text);font:12px/1.8 "Segoe UI",Arial,sans-serif}
+    footer{border-top:1px solid var(--line);padding:22px 0 30px;display:flex;justify-content:space-between;gap:16px;color:var(--muted);font-size:13px}footer p{margin:0}
+    @media(max-width:760px){header{padding:23px 0}.layout{grid-template-columns:1fr;gap:30px;padding:28px 0 40px}.sidebar{position:static}.sidebar .eyebrow{margin-bottom:10px}.unit-nav{grid-template-columns:repeat(4,minmax(0,1fr));gap:3px}.unit-nav a{justify-content:center;padding:9px 3px;font-size:14px;border-left:0;border-bottom:2px solid transparent}.unit-nav .available{border-left:0;border-bottom-color:var(--gold)}.unit-nav a:hover{border-bottom-color:var(--gold)}.count{display:none}.intro{padding-bottom:28px}.lesson{grid-template-columns:42px minmax(0,1fr);gap:12px}.lesson-number{font-size:22px}.planned{margin-left:54px}.unit-heading{gap:12px}footer{flex-direction:column;gap:7px}.repository{font-size:12px}.brand{font-size:12px;letter-spacing:.1em}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip" href="#lectures">Skip to lectures</a>
+  <div class="shell">
+    <header>
+      <div class="brand"><span>HRE4M1</span> / COURSE LIBRARY</div>
+      <a class="repository" href="https://github.com/fslb10/4M_Interactive-Lectures">View on GitHub ↗</a>
+    </header>
+    <div class="layout">
+      <aside class="sidebar">
+        <p class="eyebrow">Browse by unit</p>
+        <nav class="unit-nav" aria-label="Course units">
+          <a class="available" href="#unit-1">Unit 1 <span class="count">1 lesson</span></a>
+          <a href="#unit-2">Unit 2</a>
+          <a href="#unit-3">Unit 3</a>
+          <a href="#unit-4">Unit 4</a>
+        </nav>
+      </aside>
+      <main id="lectures">
+        <div class="intro">
+          <h1>Interactive Lectures</h1>
+          <p>Choose a lesson to present in class, or download a copy to use offline.</p>
+        </div>
+        <section class="unit" id="unit-1" aria-labelledby="unit-1-title">
+          <div class="unit-heading"><h2 id="unit-1-title">Unit 1</h2><span class="status">1 lesson available</span></div>
+          <article class="lesson">
+            <span class="lesson-number">1.5</span>
+            <div>
+              <h3>The Paschal Mystery</h3>
+              <p>Christ’s Passion, Death, Resurrection and Ascension — and our participation in his saving work.</p>
+              <p class="metadata">20 slides · Presenter notes · Scripture prompts · Deeper connections</p>
+              <div class="actions">
+                <a class="primary" href="units/unit-1/1-5-paschal-mystery.html" target="_blank" rel="noopener" aria-label="Open The Paschal Mystery lecture in a new tab">Open lecture <span aria-hidden="true">↗</span></a>
+                <a class="download" href="units/unit-1/1-5-paschal-mystery.html" download="Paschal_Mystery_Lecture.html">Download for offline use</a>
+              </div>
+            </div>
+          </article>
+          <p class="planned">Earlier Unit 1 lessons will be added here as they are completed.</p>
+        </section>
+        <section class="unit empty" id="unit-2" aria-labelledby="unit-2-title">
+          <div class="unit-heading"><h2 id="unit-2-title">Unit 2</h2><span class="status">Planned</span></div>
+          <p>Lectures will appear here as they are completed.</p>
+        </section>
+        <section class="unit empty" id="unit-3" aria-labelledby="unit-3-title">
+          <div class="unit-heading"><h2 id="unit-3-title">Unit 3</h2><span class="status">Planned</span></div>
+          <p>Lectures will appear here as they are completed.</p>
+        </section>
+        <section class="unit empty" id="unit-4" aria-labelledby="unit-4-title">
+          <div class="unit-heading"><h2 id="unit-4-title">Unit 4</h2><span class="status">Planned</span></div>
+          <p>Lectures will appear here as they are completed.</p>
+        </section>
+        <section class="guide" aria-labelledby="teaching-title">
+          <h2 id="teaching-title">Presenting a lesson</h2>
+          <p><strong>Move through slides:</strong> arrow keys or the on-screen buttons. <kbd>F</kbd> Fullscreen · <kbd>N</kbd> Notes · <kbd>D</kbd> Deeper connection · <kbd>O</kbd> Overview</p>
+          <p>Lectures open in a new tab. To present without internet, download the HTML file and open it in your browser.</p>
+        </section>
+      </main>
+    </div>
+    <footer><p>HRE4M1 · Interactive Lectures</p><a href="docs/Unit_1_Presentation_Workflow.txt">Lesson design &amp; QA workflow</a></footer>
+  </div>
+</body>
+</html>
