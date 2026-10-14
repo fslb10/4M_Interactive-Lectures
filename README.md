@@ -12,6 +12,8 @@ A course library organized by unit and lesson. Each lecture is a self-contained 
 
 | 1 | 1.6 | [One True Baptism — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-6-one-true-baptism.html) |
 
+| 1 | 1.7 | [Jesus: Priest, Prophet and King — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-7-priest-prophet-king.html) |
+
 Lessons 1.1–1.4 and subsequent lessons will be added as they are completed. The library includes sections for Units 1–4; only completed lessons have launch links.
 
 ## Present a lesson
@@ -38,9 +40,11 @@ units/
   unit-1/
     1-5-paschal-mystery.html              Approved Unit 1.5 presentation
     1-6-one-true-baptism.html             Unit 1.6 presentation
+    1-7-priest-prophet-king.html           Unit 1.7 presentation
 docs/
   Unit_1_Presentation_Workflow.txt        Content, design and QA checklist
-  Unit_1_6_Teaching_Guide.md              Coverage map and Scripture reading plan
+  Unit_1_6_Teaching_Guide.md              Baptism coverage map and reading plan
+  Unit_1_7_Teaching_Guide.md              Threefold mission coverage and reading plan
 .nojekyll                                Serve these static files directly
 ```
 
@@ -64,3 +68,5 @@ GitHub Pages serves the root of the `main` branch. No build system or external l
 The uploaded Paschal Mystery file is the approved presentation, copied without changes. Its source basis is Unit 1.5 in the HRE4M1 Unit 1 Resource Pack; source documents are not included in this repository. Catechism references are recorded in the presenter notes.
 
 Unit 1.6 follows the supplied “Unit 1.6.docx” note and connects Baptism to Lessons 1.1–1.5. Its [teaching guide](docs/Unit_1_6_Teaching_Guide.md) maps note coverage, lists the seven core NRSV-CE readings, and explains Catholic teaching clarifications. All 20 slides, presenter notes, reveals and controls were checked at 1280×720 and 1920×1080; narrow-screen reflow and offline operation were also checked.
+
+Unit 1.7 follows the supplied “Unit 1.7.docx” note and develops the threefold mission introduced in Baptism. Its [teaching guide](docs/Unit_1_7_Teaching_Guide.md) maps all five note sections, lists seven core Scripture readings and outlines classroom activities and assessment. The lecture retains offline use and the established design, notes, controls and projector checks.
