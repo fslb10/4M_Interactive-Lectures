@@ -13,6 +13,7 @@ A course library organized by unit and lesson. Each lecture is a self-contained 
 | 1 | 1.7 | [Jesus: Priest, Prophet and King — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-7-priest-prophet-king.html) |
 | 1 | 1.8 | [Humanity: What Does It Mean to Be Human? — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-8-humanity.html) |
 | 1 | 1.9 | [The Soul — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-9-the-soul.html) |
+| 1 | 1.10 | [Faith and Reason — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-10-faith-and-reason.html) |
 
 Lessons 1.1–1.4 and subsequent lessons will be added as they are completed. The library includes sections for Units 1–4; only completed lessons have launch links.
 
@@ -43,12 +44,14 @@ units/
     1-7-priest-prophet-king.html           Unit 1.7 presentation
     1-8-humanity.html                     Unit 1.8 presentation
     1-9-the-soul.html                     Unit 1.9 presentation
+    1-10-faith-and-reason.html            Unit 1.10 presentation
 docs/
   Unit_1_Presentation_Workflow.txt        Content, design and QA checklist
   Unit_1_6_Teaching_Guide.md              Baptism coverage map and reading plan
   Unit_1_7_Teaching_Guide.md              Threefold mission coverage and reading plan
   Unit_1_8_Teaching_Guide.md              Humanity coverage and reading plan
   Unit_1_9_Teaching_Guide.md              Soul coverage and reading plan
+  Unit_1_10_Teaching_Guide.md             Faith and reason coverage and reading plan
 .nojekyll                                Serve these static files directly
 ```
 
@@ -78,3 +81,5 @@ Unit 1.7 follows the supplied “Unit 1.7.docx” note and develops the threefol
 Unit 1.8 follows the supplied “Unit 1.8.docx” and connects human dignity, freedom, salvation, vocation and social responsibility with Lessons 1.1–1.7. Its [teaching guide](docs/Unit_1_8_Teaching_Guide.md) maps all eight source sections and lists the seven core Scripture readings, activities and teaching clarifications. It retains the established standalone design and projector checks.
 
 Unit 1.9 follows the supplied “Unit 1.9.docx” and develops body–soul unity, immortality, resurrection, eternal destiny and daily care. Its [teaching guide](docs/Unit_1_9_Teaching_Guide.md) maps all four note sections, seven core NRSV-CE readings, activities and teaching clarifications. It connects with Lessons 1.1–1.8 and retains the established standalone presentation format.
+
+Unit 1.10 follows the supplied “Unit 1.10.docx” and covers reason, the gift of faith, their harmony, natural law and practical applications. Its [teaching guide](docs/Unit_1_10_Teaching_Guide.md) maps all five source sections, seven NRSV-CE readings, activities and teaching clarifications. It connects with Lessons 1.1–1.9 and retains the established standalone format.
