@@ -1,0 +1,952 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0a121b">
+<title>The Soul | HRE4M1 Unit 1.9</title>
+<style>
+:root{--bg:#07121d;--panel:#111e2a;--white:#f6f1e7;--muted:#b7b9bc;--gold:#efc47f;--sea:#90d8c8;--rose:#f0a391;--blue:#9cc9ef;--accent:var(--gold);--ink:#08131d;--ease:cubic-bezier(.19,1,.22,1)}
+*{box-sizing:border-box}html,body{height:100%;margin:0}body{overflow:hidden;background:#060e16;color:var(--white);font-family:Inter,"Segoe UI",Arial,sans-serif;-webkit-font-smoothing:antialiased}
+button{font:inherit;cursor:pointer}button:focus-visible,a:focus-visible{outline:3px solid var(--gold);outline-offset:4px}button:disabled{opacity:.27;cursor:not-allowed}#app{height:100dvh;min-height:540px;display:flex;flex-direction:column;padding:clamp(12px,1.7vh,20px) clamp(14px,2vw,32px) 0;gap:clamp(9px,1.5vh,16px)}
+.topbar{min-height:54px;display:flex;align-items:center;gap:20px;position:relative;z-index:5}.brand{display:flex;align-items:center;gap:13px;min-width:220px}.brand-emblem{width:39px;height:39px;display:grid;place-items:center;border:1px solid #aa997e77;border-radius:50%;font:25px Georgia,serif;color:var(--gold)}.brand-name{font-weight:800;letter-spacing:.12em;font-size:12px}.brand-sub{font-size:11px;color:#aebbc3;letter-spacing:.065em;margin-top:5px}.stages{display:flex;flex:1;justify-content:center;gap:5px;min-width:0}.stage-btn{background:transparent;border:1px solid transparent;color:#85929e;border-radius:999px;min-height:34px;padding:7px 11px;font-size:10px;letter-spacing:.1em;text-transform:uppercase;font-weight:800;white-space:nowrap;transition:background .2s,color .2s}.stage-btn:hover{color:var(--white);background:#ffffff0c}.stage-btn.active{background:#eec88e16;border-color:#eec88e45;color:var(--gold)}.utilities{display:flex;align-items:center;gap:7px;justify-content:flex-end}.utility-btn{width:38px;height:38px;border:1px solid #ffffff29;background:#ffffff09;color:#d6d9d9;border-radius:12px;display:grid;place-items:center;transition:.2s}.utility-btn:hover,.utility-btn.active{color:var(--gold);border-color:#efc47f77;background:#efc47f14}.utility-btn svg{width:18px;height:18px;stroke:currentColor;stroke-width:1.7;fill:none;stroke-linecap:round;stroke-linejoin:round}
+#stage{position:relative;flex:1;min-height:0;border:1px solid #e8d8b229;border-radius:20px;overflow:hidden;isolation:isolate;background:#102030;box-shadow:0 20px 90px #0005}.scene{--a:#efc47f;width:100%;height:100%;position:relative;overflow:hidden;padding:clamp(27px,4.5vw,70px) clamp(34px,5.8vw,100px) clamp(22px,3vw,48px);background:radial-gradient(ellipse 75% 110% at 92% 45%,color-mix(in srgb,var(--a) 10%,transparent),transparent 75%),linear-gradient(115deg,#101e2d,#06111c 70%,#14283a);display:flex;flex-direction:column;animation:scene-in .55s var(--ease) both}.scene::before{content:"";position:absolute;inset:0;background-image:linear-gradient(#fff2 1px,transparent 1px),linear-gradient(90deg,#fff2 1px,transparent 1px);background-size:78px 78px;opacity:.04;pointer-events:none}.scene::after{content:"";position:absolute;left:45%;top:-14%;width:70%;height:105%;background:radial-gradient(ellipse,#ffffff0b,transparent 67%);z-index:-1;pointer-events:none}.theme-opening{--a:#efc47f}.tone-gold{--a:#efc47f}.tone-blue{--a:#9cc9ef}.tone-rose{--a:#f0a391}.tone-sea{--a:#90d8c8}.theme-passover{--a:#efc47f}.theme-passion{--a:#d39d8c}.theme-death{--a:#bca5d4}.theme-resurrection{--a:#ffe09a}.theme-ascension{--a:#9cc9ef}.theme-living{--a:#9fddc4}
+@keyframes scene-in{from{opacity:.18;transform:translateY(12px) scale(1.007)}to{opacity:1;transform:translateY(0) scale(1)}}
+.kicker{font-weight:850;letter-spacing:.19em;font-size:clamp(11px,.94vw,14px);text-transform:uppercase;color:var(--a);display:flex;gap:11px;align-items:center;position:relative;z-index:1}.kicker::before{content:"";width:26px;height:1px;background:currentColor;display:inline-block}.headline{font-family:Georgia,"Times New Roman",serif;font-weight:500;letter-spacing:-.045em;font-size:clamp(46px,5.5vw,92px);line-height:1.06;margin:clamp(13px,2vh,25px) 0 15px;position:relative;z-index:1;max-width:920px}.headline em{color:var(--a);font-style:italic;font-weight:400}.dek{color:#d2d6d6;line-height:1.46;font-size:clamp(17px,1.5vw,25px);max-width:765px;margin:0;position:relative;z-index:1}.quiet{color:#a7b3bf}.split-layout{flex:1;min-height:0;display:grid;grid-template-columns:minmax(0,1.09fr) minmax(0,.9fr);gap:clamp(15px,3vw,50px);align-items:center;position:relative;z-index:1}.copy-column{max-width:825px;min-width:0}.split-layout .headline{font-size:clamp(45px,5vw,85px)}.split-layout .dek{font-size:clamp(18px,1.58vw,26px);max-width:680px}.points{list-style:none;margin:clamp(24px,3vh,42px) 0 0;padding:0;display:grid;gap:clamp(12px,1.8vh,20px);max-width:780px}.points li{display:flex;align-items:baseline;gap:17px;font-size:clamp(17px,1.42vw,24px);line-height:1.4;color:#e6e6e2;max-width:800px}.bullet-mark{color:var(--a);font-family:Georgia,serif;font-size:1.35em;line-height:0;flex-shrink:0}.points strong{font-weight:800;color:#fff3d9}.points li span.txt{display:inline-block}.reading-bar{margin-top:auto;z-index:2;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);gap:clamp(12px,1.6vw,28px);min-height:80px;padding-top:clamp(15px,2.3vh,30px);position:relative}.read-box,.salvation-box{border-top:1px solid #ffffff31;padding:clamp(12px,1.2vw,19px) 0 0;display:flex;gap:16px;align-items:flex-start}.read-box{color:#dbddd9}.salvation-box{border-color:color-mix(in srgb,var(--a),transparent 55%)}.minilabel{font-size:10px;font-weight:850;letter-spacing:.15em;text-transform:uppercase;color:#bcb4a3;white-space:nowrap;margin-top:5px}.salvation-box .minilabel{color:var(--a)}.read-copy{font-size:clamp(13px,1.11vw,17px);font-weight:700;line-height:1.4}.read-copy small{display:block;font-size:clamp(12px,.92vw,15px);font-weight:450;color:#aab7be;margin-top:4px}.saviour-text{font-size:clamp(13px,1.15vw,18px);font-weight:680;line-height:1.4}.read-glyph{width:28px;height:28px;border:1px solid #d7d0be77;border-radius:6px;display:grid;place-items:center;flex-shrink:0;color:var(--gold);font-family:Georgia,serif;font-size:17px;margin-top:1px}.art-container{position:relative;min-width:0;display:flex;justify-content:center;align-items:center;height:min(100%,690px)}.illustration{width:100%;height:100%;max-height:600px;overflow:visible;filter:drop-shadow(0 18px 35px #0003)}.art-caption{position:absolute;bottom:2%;right:0;max-width:85%;font-size:12px;line-height:1.35;color:#bfc5c7;letter-spacing:.012em;text-align:right}.art-word{position:absolute;top:6%;left:8%;font-family:Georgia,serif;font-size:clamp(60px,9.5vw,175px);color:color-mix(in srgb,var(--a) 15%,transparent);font-style:italic;pointer-events:none}.scene--title{justify-content:center}.scene--title .headline{font-size:clamp(64px,8.3vw,154px);max-width:1200px;line-height:.98;margin:17px 0 25px}.scene--title .dek{max-width:730px;font-size:clamp(21px,2vw,35px)}.scene--title .reading-bar{margin-top:3.5vh;max-width:850px}.scene--title .reading-bar .salvation-box{display:none}.scene--title .hero-art{position:absolute;right:-2%;top:3%;width:52%;height:92%;opacity:.92;pointer-events:none}.scene--title .copy-column{position:relative;z-index:3}.scene--title .art-caption{right:4%;bottom:4%}.title-eyebrow{font-size:clamp(12px,1vw,17px);color:var(--a);letter-spacing:.25em;font-weight:900}.opening-quote{font-family:Georgia,serif;font-style:italic;font-size:clamp(24px,2.7vw,46px);color:#f6dfb9;line-height:1.25;max-width:780px;margin-top:25px}.small-callout{color:var(--a);border-left:3px solid var(--a);font-size:clamp(16px,1.4vw,22px);padding-left:16px;max-width:650px;margin-top:clamp(20px,3vh,34px);line-height:1.4}
+.scene--question{justify-content:center}.scene--question .headline{font-size:clamp(54px,6.1vw,110px);max-width:1100px}.scene--question .dek{max-width:950px}.question-mark{position:absolute;right:7%;top:12%;font:clamp(340px,35vw,700px) Georgia,serif;color:#efc47f0a;line-height:.9;pointer-events:none}.scene--question .reading-bar{width:min(100%,1070px)}
+.scene--overview .headline{max-width:1000px}.overview-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:clamp(12px,1.5vw,26px);margin:clamp(25px,4.5vh,57px) 0 auto;flex:1;min-height:0;max-height:460px}.overview-card{border:1px solid #ffffff36;background:linear-gradient(150deg,#ffffff12,#ffffff05);border-radius:14px;padding:clamp(15px,2vw,31px);display:flex;flex-direction:column;position:relative;overflow:hidden;min-height:180px}.overview-card .num{font:italic clamp(52px,5.9vw,97px) Georgia,serif;color:var(--gold);opacity:.5;line-height:.85}.overview-card .word{font:clamp(22px,2.25vw,38px) Georgia,serif;margin-top:auto}.overview-card .desc{color:#c0c7cb;line-height:1.42;font-size:clamp(14px,1.15vw,18px);margin-top:13px}.overview-card .icon{position:absolute;top:21px;right:21px;font-size:26px;color:#ffe6bc9c}.overview-line{font:italic clamp(20px,2vw,30px) Georgia,serif;color:var(--gold);margin-top:25px}
+.scene--compare .headline{font-size:clamp(42px,4.7vw,78px)}.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,32px);margin:clamp(21px,3.7vh,45px) 0 auto;flex:1;min-height:0;max-height:465px}.compare-col{padding:clamp(18px,2.4vw,37px);border-radius:14px;border:1px solid #ffffff2b;background:#ffffff0b;display:flex;flex-direction:column}.compare-col:last-child{background:linear-gradient(130deg,#efd09819,#ffffff06);border-color:#efd09872}.compare-col small{text-transform:uppercase;letter-spacing:.15em;color:#c1bcc0;font-weight:850;font-size:12px}.compare-col h3{font:clamp(30px,3vw,49px) Georgia,serif;font-weight:500;margin:8px 0 16px}.comparison-point{font-size:clamp(17px,1.44vw,24px);color:#e4e6e1;line-height:1.33;padding:clamp(10px,1.65vh,19px) 0;border-top:1px solid #ffffff21}.comparison-point strong{color:var(--gold);font-weight:800}.compare-note{font-size:clamp(12px,.95vw,15px);color:#bac1bd;line-height:1.4;margin-top:13px}.compare-arrow{position:absolute;left:50%;top:49%;transform:translate(-50%,-50%);width:42px;height:42px;background:#e9c48a;color:#07121d;border-radius:50%;display:grid;place-items:center;font-size:26px;z-index:2;box-shadow:0 4px 15px #0005}
+.scene--three .headline{font-size:clamp(44px,4.9vw,83px)}.three-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(13px,1.8vw,31px);margin:clamp(26px,4vh,52px) 0 auto;flex:1;min-height:0;max-height:420px}.three-card{border:1px solid #ffffff36;border-top:3px solid var(--a);padding:clamp(22px,2.4vw,40px);border-radius:12px;background:#ffffff0c;display:flex;flex-direction:column}.three-card .sym{font:italic clamp(42px,5vw,82px) Georgia,serif;color:var(--a);opacity:.75}.three-card h3{font:clamp(24px,2.5vw,40px) Georgia,serif;margin:20px 0 14px;font-weight:500}.three-card p{font-size:clamp(16px,1.28vw,22px);color:#d6d8d7;line-height:1.47;margin:0}
+.scene--diagram .headline{font-size:clamp(39px,4.5vw,73px)}.scene--diagram .flowline{margin:clamp(20px,3vh,39px) 0 auto;max-height:230px}.scene--diagram .flow-node{min-height:168px}.scene--diagram .flow-below{margin:12px 0 3px;font-size:clamp(19px,1.75vw,27px)}.flowline{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;align-items:stretch;gap:clamp(11px,1.2vw,20px);margin:clamp(34px,6vh,73px) 0 auto;max-height:285px}.flow-node{border:1px solid #ffffff36;background:#ffffff08;border-radius:14px;padding:clamp(14px,2.3vw,31px);min-height:215px;display:flex;flex-direction:column;justify-content:space-between}.flow-node .num{font-size:13px;letter-spacing:.2em;color:var(--a);font-weight:800}.flow-node h3{font:clamp(25px,2.8vw,44px) Georgia,serif;font-weight:500;margin:13px 0 6px}.flow-node p{font-size:clamp(16px,1.31vw,21px);color:#bbc5ce;line-height:1.4;margin:0}.flow-arrow{align-self:center;color:var(--gold);font-size:32px}.flow-below{font:italic clamp(21px,2vw,31px) Georgia,serif;color:#eccc98;margin:22px 0 8px}
+.scene--reveal .headline{font-size:clamp(48px,5.7vw,96px);max-width:1200px}.reveal-well{max-width:1040px;margin:clamp(17px,3vh,32px) 0 auto;min-height:155px;border:1px solid #efd09867;border-radius:18px;background:#ffffff09;display:flex;align-items:center;justify-content:center;text-align:center;padding:clamp(18px,3vw,50px)}.reveal-well .hidden-text{font:italic clamp(23px,2.75vw,44px) Georgia,serif;color:#f5e0b7;line-height:1.32}.reveal-well .before-reveal{font-size:clamp(17px,1.4vw,24px);color:#b9c3cc}.reveal-button{padding:15px 24px;border-radius:999px;border:1px solid #eec98f;background:#eec98f;color:#08131e;font-size:14px;font-weight:850;letter-spacing:.06em;display:inline-flex;align-items:center;gap:11px;margin:13px 0 0;align-self:flex-start}.reveal-button:hover{background:#ffe0ab}.reveal-button[aria-pressed="true"]{border-color:#fff6da;background:#fff2d4}
+.scene--sacraments .headline{font-size:clamp(42px,4.7vw,78px)}.sacrament-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(14px,2vw,28px);margin:clamp(20px,4vh,40px) 0 auto;max-height:445px;flex:1;min-height:0}.sacrament-card{background:#ffffff0c;border:1px solid #ffffff35;border-radius:16px;padding:clamp(24px,3.1vw,49px);position:relative;overflow:hidden}.sacrament-card .glyph{font:italic clamp(65px,7.8vw,128px) Georgia,serif;color:#e1c18769;position:absolute;right:30px;top:7px}.sacrament-card .over{font-size:12px;letter-spacing:.18em;color:var(--a);font-weight:800;text-transform:uppercase}.sacrament-card h3{font:clamp(34px,4vw,59px) Georgia,serif;font-weight:500;margin:10px 0 17px}.sacrament-card p{font-size:clamp(18px,1.48vw,25px);line-height:1.45;color:#e0e5e1;max-width:570px;margin:0}.sacrament-card small{display:block;margin-top:28px;color:#aab9bc;font-weight:700;font-size:clamp(14px,1.1vw,18px)}
+.scene--recap .headline{font-size:clamp(39px,4.4vw,72px)}.scene--recap .dek{font-size:clamp(17px,1.38vw,22px)}.scene--recap .reading-bar{min-height:72px;padding-top:7px}.recap-rows{display:grid;gap:0;margin:clamp(13px,2vh,26px) 0 auto;max-width:1290px}.recap-row{display:grid;grid-template-columns:240px minmax(0,1fr) minmax(0,1.2fr);gap:24px;align-items:center;border-bottom:1px solid #ffffff30;padding:clamp(8px,1.3vh,15px) 8px}.recap-row .recap-label{font:clamp(22px,2.05vw,33px) Georgia,serif;color:var(--gold)}.recap-row .recap-event{font-size:clamp(16px,1.28vw,20px);font-weight:750}.recap-row .recap-gift{font-size:clamp(16px,1.17vw,19px);color:#d0d7dc}.recap-result{font:italic clamp(18px,1.8vw,29px) Georgia,serif;color:var(--gold);margin-top:18px}
+.scene--final{justify-content:flex-start}.scene--final .headline{font-size:clamp(50px,6.15vw,112px);max-width:1270px}.scene--final .dek{font-size:clamp(21px,2vw,33px);max-width:1000px}.scene--final .reading-bar{margin-top:auto;max-width:980px}
+.insight-toggle{position:absolute;right:clamp(27px,4.7vw,82px);top:clamp(25px,3.7vw,62px);border:1px solid #ffffff44;background:#081a2880;color:#e9dfcc;border-radius:999px;padding:10px 15px;z-index:3;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:8px}.insight-toggle:hover{border-color:var(--gold);color:var(--gold)}.insight-toggle .dot{width:7px;height:7px;background:var(--gold);border-radius:50%;box-shadow:0 0 12px var(--gold)}.insight-panel{position:absolute;z-index:7;top:clamp(70px,8vw,127px);right:clamp(25px,4.8vw,85px);width:min(450px,40vw);background:#f3e8d6;color:#172633;padding:26px 30px;border:1px solid #fff4e0;border-radius:15px;box-shadow:0 18px 55px #0008;animation:scene-in .25s ease}.insight-panel h4{margin:0 0 12px;font-size:12px;letter-spacing:.15em;text-transform:uppercase;color:#8f6039}.insight-panel p{font-size:clamp(17px,1.27vw,21px);line-height:1.45;margin:0}.insight-panel button{float:right;background:transparent;border:none;color:#39495c;font-size:22px;margin:-12px -14px 4px 12px}
+.bottombar{min-height:63px;display:flex;align-items:center;gap:16px;justify-content:space-between;z-index:5;padding-bottom:clamp(7px,1.3vh,15px)}.nav-btn{border:1px solid #ffffff40;border-radius:11px;background:#fff0;color:#f2f0e9;min-height:44px;padding:0 18px;display:flex;align-items:center;gap:13px;font-size:13px;font-weight:850;letter-spacing:.05em;transition:.17s}.nav-btn:hover:not(:disabled){background:#ffffff15;border-color:#f0ca90}.nav-btn.next{color:#081522;background:#edc590;border-color:#edc590}.nav-btn.next:hover{background:#ffdfb1}.progress-center{max-width:750px;flex:1;display:flex;align-items:center;gap:14px;color:#a6b4c1;font-size:11px;letter-spacing:.09em;font-weight:800;text-transform:uppercase}.progress-track{height:3px;background:#ffffff25;border-radius:8px;flex:1;overflow:hidden}.progress-fill{height:100%;width:0;background:linear-gradient(90deg,#ce7a72,#eec58a);transition:width .3s ease}.progress-num{min-width:57px;color:#edc790}.key-hint{min-width:120px;text-align:center;color:#8194a2}
+.overlay{position:fixed;inset:0;background:#02080ee8;z-index:15;display:none;padding:clamp(18px,4vw,65px);overflow:auto;backdrop-filter:blur(15px)}.overlay.open{display:block}.overlay-header{max-width:1300px;margin:0 auto 26px;display:flex;justify-content:space-between;align-items:center;gap:20px}.overlay-title{font:clamp(37px,4vw,60px) Georgia,serif;margin:0;font-weight:500}.overlay-desc{color:#b6c1c9;margin-top:7px}.overlay-close{border:1px solid #ffffff48;background:#ffffff08;color:#fff;border-radius:10px;padding:12px 17px;font-weight:700}.overview-list{max-width:1300px;margin:auto;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}.overview-choice{border:1px solid #ffffff30;text-align:left;color:var(--white);background:#14212d;padding:23px;border-radius:12px;min-height:150px;transition:.2s}.overview-choice:hover,.overview-choice.selected{border-color:#eac389;background:#1d3040;transform:translateY(-2px)}.overview-choice .slide-number{font:italic 34px Georgia,serif;color:var(--gold);display:block}.overview-choice .overview-stage{font-size:10px;color:#98abb6;letter-spacing:.1em;text-transform:uppercase;margin-top:8px}.overview-choice .overview-title{display:block;margin-top:9px;font-size:17px;line-height:1.32;font-weight:700}.notes-shell{max-width:850px;margin:3vh auto;padding:30px;background:#142635;border:1px solid #ffffff3a;border-radius:14px}.notes-shell h3{font:38px Georgia,serif;font-weight:500;margin:0 0 10px}.notes-shell .ref-note{color:#e7c18b;margin:19px 0;font-weight:800}.notes-shell ol{padding-left:28px}.notes-shell li{font-size:19px;line-height:1.55;margin:16px 0;color:#e4e7e5}.notes-shell .teacher-prompt{border-top:1px solid #ffffff35;padding-top:20px;color:#eccb95;font-size:21px;line-height:1.45}.help-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:760px;margin:auto}.help-item{display:flex;justify-content:space-between;gap:20px;padding:14px 20px;background:#ffffff0a;border-radius:8px;font-size:18px}.key{font-weight:850;color:var(--gold)}
+@media(min-width:1900px){.scene{padding-top:65px;padding-bottom:40px}.reading-bar{min-height:115px}.topbar{min-height:63px}.nav-btn{min-height:53px}.bottombar{min-height:75px}}
+@media(max-width:1120px){.stages{display:none}.brand{min-width:0;margin-right:auto}.scene{padding:30px 40px}.split-layout{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr)}.points li{font-size:clamp(16px,1.7vw,21px)}.scene--title .hero-art{opacity:.58}.overview-grid{gap:12px}.overview-card{padding:18px}.overview-list{grid-template-columns:repeat(3,1fr)}.recap-row{grid-template-columns:145px 1fr 1.2fr}}
+@media(max-width:750px){body{overflow:auto}#app{min-height:100dvh;height:auto;padding:9px 9px 0;gap:8px}.topbar{min-height:50px}.brand-emblem{width:34px;height:34px;font-size:21px}.brand-name{font-size:11px}.brand-sub{font-size:10px}.utility-btn{width:34px;height:34px;border-radius:8px}.utilities{gap:4px}#stage{height:auto;min-height:calc(100dvh - 139px);border-radius:13px}.scene{min-height:calc(100dvh - 141px);padding:24px 22px 20px;overflow:visible}.split-layout{display:flex;flex-direction:column;align-items:stretch;gap:10px;flex:unset}.split-layout .headline,.headline{font-size:clamp(40px,9vw,60px);line-height:1.09;margin:15px 0}.split-layout .dek,.dek{font-size:17px}.points{margin:23px 0;gap:13px}.points li{font-size:17px;gap:10px}.art-container{height:180px;margin:-8px 0 0}.art-caption{display:none}.scene--title .headline{font-size:clamp(58px,13vw,94px)}.scene--title{min-height:calc(100dvh - 141px)}.scene--title .hero-art{right:0;top:5%;height:50%;width:90%;opacity:.25}.scene--title .dek{font-size:23px}.scene--title .reading-bar{margin-top:auto}.scene--title .art-caption{display:none}.reading-bar{grid-template-columns:1fr;margin-top:auto;padding-top:10px;gap:8px}.read-box,.salvation-box{padding-top:10px;gap:11px}.minilabel{font-size:9px}.read-copy,.saviour-text{font-size:13px}.read-glyph{display:none}.scene--question .headline{font-size:clamp(48px,10vw,70px)}.question-mark{right:0;font-size:330px}.overview-grid,.compare-grid,.three-grid,.sacrament-grid{grid-template-columns:1fr;max-height:unset;margin:25px 0;flex:unset}.overview-card{min-height:140px}.overview-card .num{font-size:60px}.overview-card .word{font-size:25px}.overview-card .desc{font-size:16px}.compare-grid{gap:8px}.compare-arrow{position:static;transform:none;margin:-5px auto}.compare-col h3{font-size:31px}.comparison-point{font-size:17px;padding:12px 0}.three-grid{gap:10px}.three-card{padding:20px}.three-card .sym{font-size:42px}.three-card h3{font-size:27px;margin:4px 0 10px}.three-card p{font-size:16px}.flowline{grid-template-columns:1fr;gap:5px;margin:22px 0}.flow-node{min-height:unset;gap:8px;padding:17px}.flow-node h3{font-size:26px;margin:0}.flow-node p{font-size:16px}.flow-arrow{text-align:center;transform:rotate(90deg);font-size:25px}.sacrament-card{padding:22px}.sacrament-card h3{font-size:39px}.sacrament-card p{font-size:18px}.sacrament-card small{margin-top:12px}.recap-row{grid-template-columns:1fr;gap:6px;padding:15px 4px}.recap-row .recap-label{font-size:26px}.recap-row .recap-event,.recap-row .recap-gift{font-size:16px}.recap-result{font-size:22px}.scene--final .headline{font-size:clamp(48px,10vw,75px)}.scene--reveal .headline{font-size:clamp(45px,10vw,68px)}.reveal-well{min-height:160px;padding:20px}.reveal-well .hidden-text{font-size:26px}.insight-toggle{top:12px;right:14px;padding:7px 9px;font-size:9px}.insight-panel{width:calc(100% - 40px);top:54px;right:20px;padding:25px}.scene .kicker{padding-right:100px}.bottombar{min-height:61px;padding-bottom:8px}.nav-btn{min-height:44px;padding:0 10px;font-size:11px}.progress-center{gap:6px}.key-hint{display:none}.overlay{padding:17px 12px}.overlay-title{font-size:39px}.overview-list{grid-template-columns:repeat(2,1fr);gap:8px}.overview-choice{padding:13px;min-height:125px}.overview-choice .overview-title{font-size:15px}.notes-shell{padding:19px}.notes-shell h3{font-size:30px}.notes-shell li{font-size:17px}.help-grid{grid-template-columns:1fr}}
+@media(max-height:840px) and (min-width:751px){.scene--diagram .flowline{margin-top:15px;max-height:190px}.scene--diagram .flow-node{min-height:147px;padding:17px}.scene--diagram .flow-node h3{font-size:clamp(24px,2.35vw,34px)}.scene--diagram .flow-node p{font-size:clamp(15px,1.15vw,17px)}.scene--diagram .flow-below{margin:8px 0 0;font-size:22px}}
+@media(max-height:740px) and (min-width:751px){.scene{padding-top:24px;padding-bottom:19px}.headline{margin-top:10px;margin-bottom:10px;font-size:clamp(39px,5vw,75px)}.split-layout .headline{font-size:clamp(37px,4.2vw,70px)}.points{margin-top:16px;gap:9px}.points li{font-size:clamp(15px,1.3vw,20px)}.reading-bar{padding-top:10px;min-height:67px}.overview-grid,.compare-grid,.three-grid,.sacrament-grid{margin-top:15px;max-height:330px}.recap-rows{margin-top:12px}.recap-row{padding:10px 6px}.flowline{margin-top:20px}.flow-node{min-height:180px}.stage-btn{font-size:9px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}}
+</style>
+<style>
+/* Projection layout: dimensions respond to both available width and height. */
+@media (min-width:751px){
+ :root{--u:min(1vw,1.77778dvh)}
+ #app{min-height:0;height:100dvh;padding:calc(var(--u)*.9) calc(var(--u)*1.5) 0;gap:calc(var(--u)*.7)}
+ .topbar{min-height:calc(var(--u)*3.8);gap:calc(var(--u)*1.1);flex-shrink:0}
+ .brand{min-width:0;gap:calc(var(--u)*.8)}
+ .brand-name{font-size:calc(var(--u)*.85)}.brand-sub{font-size:calc(var(--u)*.75)}
+ .brand-emblem{width:calc(var(--u)*3);height:calc(var(--u)*3);font-size:calc(var(--u)*2)}
+ .stage-btn{font-size:calc(var(--u)*.75);padding:calc(var(--u)*.5) calc(var(--u)*.7);min-height:calc(var(--u)*2.6)}
+ .utilities{gap:calc(var(--u)*.5)}.utility-btn{width:calc(var(--u)*3);height:calc(var(--u)*3)}
+ .utility-btn svg{width:calc(var(--u)*1.5);height:calc(var(--u)*1.5)}
+ #stage{border-radius:calc(var(--u)*1.5)}
+ .scene{padding:calc(var(--u)*2) calc(var(--u)*3.5) calc(var(--u)*1.5);overflow:auto}
+ .scene::after{left:30%;width:70%}
+ .scene>*{flex-shrink:0}
+ .kicker,.title-eyebrow{font-size:calc(var(--u)*.96);line-height:1.25;letter-spacing:.16em}
+ .kicker{padding-right:calc(var(--u)*22)}
+ .headline,.scene--overview .headline,.scene--three .headline,.scene--sacraments .headline,.scene--recap .headline{font-size:calc(var(--u)*4.15);line-height:1.1;margin:calc(var(--u)*.9) 0 calc(var(--u)*.8);padding-bottom:.08em;max-width:none}
+ .dek,.scene--recap .dek{font-size:calc(var(--u)*1.65);line-height:1.4;max-width:calc(var(--u)*85)}
+ .split-layout{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:calc(var(--u)*2.5);align-items:center;flex:1 0 auto;min-height:0}
+ .copy-column{max-width:none}
+ .split-layout .headline{font-size:calc(var(--u)*3.8);line-height:1.1}
+ .split-layout .kicker{padding-right:0}
+ .split-layout .dek{font-size:calc(var(--u)*1.65);line-height:1.4;max-width:none}
+ .points{margin:calc(var(--u)*1.3) 0 0;gap:calc(var(--u)*.75);max-width:none}
+ .points li{font-size:calc(var(--u)*1.65);line-height:1.4;gap:calc(var(--u)*.85);max-width:none}
+ .art-container{height:calc(var(--u)*27);margin:0;align-self:center}
+ .illustration{max-height:100%}.art-caption{font-size:calc(var(--u)*1.03);line-height:1.35;max-width:95%;bottom:0}
+ .reading-bar,.scene--recap .reading-bar{margin-top:auto;min-height:0;padding-top:calc(var(--u)*1.2);gap:calc(var(--u)*2);grid-template-columns:minmax(0,1fr) minmax(0,1.25fr);flex-shrink:0}
+ .read-box,.salvation-box{display:grid;grid-template-columns:1fr;gap:calc(var(--u)*.35);align-content:start;padding:calc(var(--u)*.65) 0 0}
+ .read-glyph{display:none}.minilabel{font-size:calc(var(--u)*.82);line-height:1.25;margin:0}
+ .read-copy,.saviour-text{font-size:calc(var(--u)*1.45);line-height:1.35}
+ .read-copy small{font-size:calc(var(--u)*1.15);line-height:1.35;margin-top:calc(var(--u)*.3)}
+ .scene--title .copy-column{max-width:70%}.scene--title .headline{font-size:calc(var(--u)*7.6);line-height:1.04;margin:calc(var(--u)*1.1) 0;max-width:none}
+ .scene--title .dek{font-size:calc(var(--u)*2);max-width:calc(var(--u)*57)}
+ .small-callout{font-size:calc(var(--u)*1.65);margin-top:calc(var(--u)*1.7);max-width:calc(var(--u)*58)}
+ .scene--title .reading-bar{margin-top:calc(var(--u)*2.2);max-width:calc(var(--u)*65)}
+ .scene--title .hero-art{width:48%;height:94%;top:1%;right:0}.scene--title .art-caption{max-width:30%;right:3%;bottom:3%}
+ .overview-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:calc(var(--u)*1.2);margin:calc(var(--u)*1.3) 0 0;max-height:none;min-height:0;flex:0 0 auto}
+ .overview-card{padding:calc(var(--u)*1.35);min-height:0;overflow:visible;display:grid;grid-template-rows:auto auto 1fr;gap:calc(var(--u)*.7)}
+ .overview-card .num{font-size:calc(var(--u)*3.6);line-height:1;opacity:.65}
+ .overview-card .word{font-size:calc(var(--u)*2.04);line-height:1.12;margin:0;overflow-wrap:normal}
+ .overview-card .desc{font-size:calc(var(--u)*1.55);line-height:1.4;margin:0}
+ .overview-card .icon{font-size:calc(var(--u)*1.8);top:calc(var(--u)*1.35);right:calc(var(--u)*1.35)}
+ .overview-line{font-size:calc(var(--u)*2);line-height:1.25;margin:calc(var(--u)*1.1) 0 0}
+ .three-grid{gap:calc(var(--u)*1.35);margin:calc(var(--u)*1.35) 0 0;max-height:none;flex:0 0 auto;min-height:0}
+ .three-card{padding:calc(var(--u)*1.5);border-radius:calc(var(--u)*.9)}
+ .three-card .sym{font-size:calc(var(--u)*3.2);line-height:1}
+ .three-card h3{font-size:calc(var(--u)*2.25);line-height:1.15;margin:calc(var(--u)*.8) 0}
+ .three-card p{font-size:calc(var(--u)*1.65);line-height:1.4}
+ .recap-rows{margin:calc(var(--u)*1) 0 0;max-width:none}
+ .recap-row{grid-template-columns:minmax(0,.5fr) minmax(0,1fr) minmax(0,1.1fr);gap:calc(var(--u)*1.5);padding:calc(var(--u)*.65) calc(var(--u)*.5)}
+ .recap-row .recap-label{font-size:calc(var(--u)*2.05)}.recap-row .recap-event,.recap-row .recap-gift{font-size:calc(var(--u)*1.5);line-height:1.35}
+ .recap-result{font-size:calc(var(--u)*1.8);line-height:1.25;margin-top:calc(var(--u)*.95)}
+ .scene--reveal .headline{font-size:calc(var(--u)*4.5);line-height:1.1;max-width:none}
+ .reveal-well{min-height:0;max-width:none;margin:calc(var(--u)*1.3) 0 0;padding:calc(var(--u)*2)}
+ .reveal-well .hidden-text{font-size:calc(var(--u)*2.6);line-height:1.3}.reveal-well .before-reveal{font-size:calc(var(--u)*1.9)}
+ .reveal-button{font-size:calc(var(--u)*1.1);padding:calc(var(--u)*1) calc(var(--u)*1.6);margin-top:calc(var(--u)*1)}
+ .sacrament-grid{gap:calc(var(--u)*1.5);margin:calc(var(--u)*1.2) 0 0;max-height:none;flex:0 0 auto;min-height:0}
+ .sacrament-card{padding:calc(var(--u)*1.7);overflow:visible}
+ .sacrament-card .over{font-size:calc(var(--u)*.9);padding-right:calc(var(--u)*2)}
+ .sacrament-card h3{font-size:calc(var(--u)*3.2);line-height:1.1;margin:calc(var(--u)*.75) 0}
+ .sacrament-card p{font-size:calc(var(--u)*1.65);line-height:1.4;margin:0}
+ .sacrament-card small{font-size:calc(var(--u)*1.3);line-height:1.35;margin-top:calc(var(--u)*1);display:block}
+ .sacrament-card .glyph{font-size:calc(var(--u)*4.5);right:calc(var(--u)*1.5);top:calc(var(--u)*.4)}
+ .scene--final .headline{font-size:calc(var(--u)*5);line-height:1.1;max-width:calc(var(--u)*86)}
+ .scene--final .dek{font-size:calc(var(--u)*2);max-width:calc(var(--u)*80)}
+ .opening-quote{font-size:calc(var(--u)*2.8);line-height:1.3;max-width:calc(var(--u)*75);margin-top:calc(var(--u)*2)}
+ .scene--final .reading-bar{max-width:none}
+ .insight-toggle{right:calc(var(--u)*3.5);top:calc(var(--u)*1.65);font-size:calc(var(--u)*.8);padding:calc(var(--u)*.6) calc(var(--u)*.9)}
+ .insight-panel{top:calc(var(--u)*5);right:calc(var(--u)*3.5);width:calc(var(--u)*31);max-height:calc(100% - var(--u)*7);overflow:auto;padding:calc(var(--u)*2)}
+ .insight-panel h4{font-size:calc(var(--u)*1);margin-bottom:calc(var(--u)*1)}.insight-panel p{font-size:calc(var(--u)*1.6);line-height:1.45}
+ .bottombar{min-height:calc(var(--u)*4.5);padding-bottom:calc(var(--u)*.7);gap:calc(var(--u)*1.2);flex-shrink:0}
+ .nav-btn{min-height:calc(var(--u)*3.4);padding:0 calc(var(--u)*1.3);font-size:calc(var(--u)*1);gap:calc(var(--u)*1)}
+ .progress-center{font-size:calc(var(--u)*.85);gap:calc(var(--u)*1.1);max-width:60%;}.progress-num{min-width:calc(var(--u)*4.5)}
+ .key-hint{min-width:calc(var(--u)*10)}
+}
+/* On smaller or unusually short screens, content reflows and remains reachable. */
+@media (max-width:1000px) and (min-width:751px){
+ .stages{display:none}.brand{margin-right:auto}.split-layout{grid-template-columns:minmax(0,1.8fr) minmax(0,1fr)}
+ .overview-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (max-width:750px){
+ .overview-card{overflow:visible}.overview-card .word{margin:10px 0}.overview-card .desc{margin:0}
+ .scene--recap .headline,.scene--three .headline,.scene--sacraments .headline{font-size:clamp(34px,8vw,56px)}
+ .insight-panel{max-height:calc(100dvh - 100px);overflow:auto}
+ .scene .kicker{padding-right:0;margin-top:24px}.scene:has(.insight-toggle) .kicker{padding-top:15px}
+ .reading-bar{margin-top:22px}.read-box,.salvation-box{flex-wrap:wrap}.minilabel{white-space:normal}
+ .notes-shell{overflow-wrap:anywhere}
+}
+.notes-sources{font-size:15px;line-height:1.5;border-top:1px solid #ffffff35;padding-top:16px;color:#bfcbd2}
+.notes-sources a{color:#efc47f}.scene>*{min-width:0}
+
+</style>
+<style>
+.theme-gifts,.theme-rite,.theme-salvation,.theme-living{--a:#efc47f}
+.bridge-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:calc(var(--u)*1.1);margin:calc(var(--u)*1.2) 0}
+.bridge-step{border-top:1px solid #efc47f55;padding:calc(var(--u)*.65) 0;min-width:0}.bridge-step>span{color:var(--gold);font-size:calc(var(--u)*1);font-weight:700}.bridge-step h3{font:400 calc(var(--u)*1.9)/1.2 Georgia,serif;margin:calc(var(--u)*.4) 0}.bridge-step p{font-size:calc(var(--u)*1.55);line-height:1.35;margin:0;color:#d2d6d6}
+.exit-questions{padding-left:1.5em;display:grid;gap:calc(var(--u)*1.3);font-size:calc(var(--u)*1.85);line-height:1.4;margin:calc(var(--u)*2) 0}.exit-questions li::marker{color:var(--gold)}
+.scene--title .copy-column{max-width:72%}.scene--title .headline{font-size:calc(var(--u)*6.8)}.scene--title .hero-art{right:0;width:43%;opacity:.72}
+@media(min-width:751px){.scene--diagram .flow-node p,.comparison-point{font-size:calc(var(--u)*1.55);line-height:1.4}}
+.scene--compare .compare-arrow{display:none}
+@media(max-width:750px){.scene::after{left:0;width:100%}.bridge-grid{grid-template-columns:1fr;gap:14px;margin:24px 0}.bridge-step{padding:12px 0}.bridge-step>span{font-size:14px}.bridge-step h3{font-size:26px;margin:8px 0}.bridge-step p{font-size:18px}.exit-questions{font-size:20px;gap:18px;margin:24px 0}.scene--title .copy-column{max-width:100%}.scene--title .headline{font-size:clamp(45px,11vw,76px)}.scene--title .hero-art{width:100%;right:0;opacity:.24}}
+</style><style>.theme-priest,.theme-king,.theme-prophet{--a:#efc47f}.scene--title .headline{font-size:calc(var(--u)*5.7)}@media(max-width:750px){.scene--title .headline{font-size:clamp(42px,10vw,70px)}}</style><style>.theme-identity,.theme-freedom,.theme-calling,.theme-society{--a:#efc47f}.scene--title .headline{font-size:calc(var(--u)*6.8)}@media(max-width:750px){.scene--title .headline{font-size:clamp(48px,12vw,76px)}}</style><style>.theme-understanding,.theme-scripture,.theme-hope{--a:#efc47f}</style></head>
+<body>
+<div id="app">
+ <header class="topbar">
+   <div class="brand"><div class="brand-emblem" aria-hidden="true">✝</div><div><div class="brand-name">HRE4M1 · CHRIST & CULTURE</div><div class="brand-sub">UNIT 1.9 · FOUNDATIONS OF FAITH</div></div></div>
+   <nav class="stages" aria-label="Lecture chapters" id="chapterNav"></nav>
+   <div class="utilities">
+     <button class="utility-btn" id="notesBtn" title="Presenter notes (N)" aria-label="Presenter notes"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4zM8 9h8M8 13h8M8 17h5"/></svg></button>
+     <button class="utility-btn" id="overviewBtn" title="Slide overview (O)" aria-label="Slide overview"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></button>
+     <button class="utility-btn" id="fullBtn" title="Fullscreen (F)" aria-label="Fullscreen"><svg viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5"/></svg></button>
+     <button class="utility-btn" id="helpBtn" title="Keyboard shortcuts (?)" aria-label="Help"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.7 9a2.5 2.5 0 1 1 4.4 1.6c-.7.7-2.1 1.2-2.1 2.7M12 17h.01"/></svg></button>
+   </div>
+ </header>
+ <main id="stage" aria-label="Lecture slide" aria-live="polite"></main>
+ <footer class="bottombar">
+   <button class="nav-btn prev" id="prevBtn">← <span>PREVIOUS</span></button>
+   <div class="progress-center"><span class="progress-num" id="progressNum">01 / 20</span><div class="progress-track"><div class="progress-fill" id="progressFill"></div></div><span class="key-hint">← → TO NAVIGATE</span></div>
+   <button class="nav-btn next" id="nextBtn"><span>NEXT SLIDE</span> →</button>
+ </footer>
+</div>
+<div id="overlay" class="overlay" role="dialog" aria-modal="true" aria-labelledby="overlayTitle"></div>
+<script>
+'use strict';
+const slides=[
+  {
+    "kind": "title",
+    "stage": "identity",
+    "tone": "gold",
+    "art": "person",
+    "artCaption": "Body and spiritual soul belong to one human person.",
+    "readingLabel": "TODAY’S STARTING POINT · NRSV-CE",
+    "notes": [
+      "Learning goals: explain body–soul unity; distinguish immortality from resurrection; connect eternal destiny with daily choices and care for persons.",
+      "Allow about 55–65 minutes. Seven core readings appear on slides 3, 9, 10, 11, 12, 15 and 16. References are provided for an NRSV-CE Bible; the passages are not reproduced.",
+      "The source’s four sections, understanding questions, Think Deeper prompt and final reflection are covered. Philosophical arguments and analogies are distinguished from Church teaching."
+    ],
+    "sources": [],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "UNIT 1.9 · THE SOUL",
+    "title": "The<br><em>soul</em>",
+    "dek": "One human person: body and soul, created by God and called to eternal life.",
+    "callout": "Our hope is the salvation of the whole person.",
+    "scripture": "Genesis 2:7",
+    "listen": "We will read this together on slide 3.",
+    "salvation": "Christ’s death and Resurrection open the way to life with God.",
+    "prompt": "What does it mean to care for a person beyond their appearance or achievements?"
+  },
+  {
+    "kind": "bridge",
+    "stage": "identity",
+    "tone": "gold",
+    "art": "person",
+    "artCaption": "Body and spiritual soul belong to one human person.",
+    "readingLabel": "RECALL · NRSV-CE",
+    "notes": [
+      "Use this as retrieval rather than repeating the earlier lessons. Invite one sentence connecting an earlier concept to today’s topic.",
+      "Lessons 1.1–1.2 considered God and causation; 1.3 the Trinity. The Incarnation, Paschal Mystery, Baptism and threefold mission lead into the dignity and vocation explored in 1.8.",
+      "Creation grounds everyone’s dignity. Baptism gives new life in Christ; it does not mean that unbaptized people lack a soul or human worth."
+    ],
+    "sources": [],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "THE THREAD THROUGH UNIT 1",
+    "title": "From human dignity <em>to eternal destiny</em>",
+    "dek": "Today develops the body-and-soul connection introduced in Lesson 1.8.",
+    "steps": [
+      [
+        "1.1–1.3",
+        "God and creation",
+        "Our life has its source in God."
+      ],
+      [
+        "1.4",
+        "Incarnation",
+        "The Son takes real human nature."
+      ],
+      [
+        "1.5",
+        "Paschal Mystery",
+        "Christ overcomes sin and death."
+      ],
+      [
+        "1.6",
+        "Baptism",
+        "We share in Christ’s new life."
+      ],
+      [
+        "1.7",
+        "Shared mission",
+        "We worship, witness and serve."
+      ],
+      [
+        "1.8",
+        "Human dignity",
+        "The whole person deserves care."
+      ]
+    ],
+    "scripture": "John 1:14; Romans 6:3–5",
+    "listen": "Why do the Incarnation and Resurrection matter for how we view the body?",
+    "salvation": "Salvation brings us into communion with God as human persons.",
+    "prompt": "How would rejecting the goodness of the body conflict with the Incarnation?"
+  },
+  {
+    "kind": "split",
+    "stage": "identity",
+    "tone": "gold",
+    "art": "person",
+    "artCaption": "Body and spiritual soul belong to one human person.",
+    "readingLabel": "READ ALOUD · NRSV-CE",
+    "notes": [
+      "Read Genesis 2:7. The NRSV-CE says living being; the note’s living soul wording reflects another translation. Do not silently substitute that phrase when reading.",
+      "This theological creation account communicates dependence on God and the unity of the living person. It is not a biological account of how organs begin to work.",
+      "The image of divine breath does not mean the soul is air, energy or a piece of God. Each soul is created; God and creation remain distinct."
+    ],
+    "sources": [
+      [
+        "CCC 362–366: body and soul",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_6_man.html"
+      ]
+    ],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "READ ALOUD 1 · LIFE AS GIFT",
+    "title": "A living <em>human being</em>",
+    "dek": "Genesis presents human life as a gift of the Creator.",
+    "points": [
+      "The human being is formed from the earth.",
+      "God gives the breath of life.",
+      "Our bodily life and relationship with God belong together."
+    ],
+    "scripture": "Genesis 2:7",
+    "listen": "What do the earth and the breath of life communicate about our existence?",
+    "salvation": "The God who gives life also calls us into lasting communion.",
+    "prompt": "How does receiving life as a gift shape our responsibility toward it?"
+  },
+  {
+    "kind": "split",
+    "stage": "identity",
+    "tone": "gold",
+    "art": "person",
+    "artCaption": "Body and spiritual soul belong to one human person.",
+    "readingLabel": "CATECHISM CONNECTION",
+    "notes": [
+      "Aquinas develops Aristotle’s language of matter and form. Here form is an organizing and life-giving principle, not an external outline.",
+      "The soul animates the whole living body; it is not an additional physical organ that could be found through dissection. This does not deny the indispensable functions of the brain and other organs.",
+      "Body and soul are naturally united. Death separates them; resurrection restores bodily life. Avoid saying they can never be separated in any sense."
+    ],
+    "sources": [
+      [
+        "CCC 363–365",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_6_man.html"
+      ],
+      [
+        "Aquinas, Summa Theologiae I, question 76",
+        "https://www.newadvent.org/summa/1076.htm"
+      ]
+    ],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "WHAT IS THE SOUL?",
+    "title": "The form <em>of the body</em>",
+    "dek": "The spiritual soul is the principle of life and unity in a human person.",
+    "points": [
+      "For Aquinas, form means what makes a body a living human body.",
+      "The soul is not an organ located in one small place.",
+      "Body and soul together constitute one human nature."
+    ],
+    "scripture": "CCC 363–365",
+    "listen": "Explain “form” using life and unity, rather than shape or appearance.",
+    "salvation": "The body shares in the dignity of the person whom God saves.",
+    "insight": "The soul is not a ghost driving a machine. In Catholic teaching, the body belongs to who we are; it is not a disposable container for a separate “real self.”",
+    "prompt": "Why does this teaching support respect for people’s bodies?"
+  },
+  {
+    "kind": "three",
+    "stage": "identity",
+    "tone": "gold",
+    "art": "person",
+    "artCaption": "Body and spiritual soul belong to one human person.",
+    "readingLabel": "CATECHISM CONNECTION",
+    "notes": [
+      "Intellect and will name spiritual powers of the soul. Human knowing and choosing happen in our embodied lives, not independently of all bodily conditions.",
+      "Memory, personality and conscious experience are affected by bodily and neurological conditions. The claim that the person has a spiritual soul does not make those facts unimportant.",
+      "Human dignity does not depend on demonstrating these abilities. Infants, unconscious people and people with profound disabilities possess full human worth."
+    ],
+    "sources": [
+      [
+        "CCC 362–366",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_6_man.html"
+      ]
+    ],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "INTELLECT, WILL AND PERSONAL LIFE",
+    "title": "Knowing, choosing <em>and loving</em>",
+    "dek": "The note connects the spiritual soul with our capacity for moral life.",
+    "cards": [
+      [
+        "01",
+        "Intellect",
+        "Seek truth, understand and reflect."
+      ],
+      [
+        "02",
+        "Will",
+        "Choose freely and pursue the good."
+      ],
+      [
+        "03",
+        "Relationship",
+        "Respond to God and other persons in love."
+      ]
+    ],
+    "scripture": "CCC 362–366",
+    "listen": "Connect these capacities to freedom and conscience from Lesson 1.8.",
+    "salvation": "Grace heals and strengthens our response to God.",
+    "prompt": "How can a person’s dignity remain intact when their abilities change?"
+  },
+  {
+    "kind": "three",
+    "stage": "understanding",
+    "tone": "gold",
+    "art": "person",
+    "artCaption": "Body and spiritual soul belong to one human person.",
+    "readingLabel": "CATECHISM CONNECTION",
+    "notes": [
+      "The source asks how consciousness and longing point beyond a purely material description. Present this as a philosophical question worth examining, rather than a settled scientific experiment.",
+      "Aristotle and Aquinas reason about living beings and the powers of understanding. Their arguments require philosophical premises; a short classroom analogy does not establish every conclusion.",
+      "Science can study correlates and mechanisms of experience. Whether such explanations exhaust what a person is remains a further philosophical question. Do not claim that unexplained phenomena automatically prove a soul.",
+      "People who hold materialist views can value love, justice and beauty. Ask students to compare explanations respectfully, rather than suggesting that nonreligious people cannot have moral commitments."
+    ],
+    "sources": [],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "THINK DEEPER · SCIENCE AND THE SOUL",
+    "title": "Questions about <em>the whole person</em>",
+    "dek": "Different kinds of inquiry can contribute to our understanding of human life.",
+    "cards": [
+      [
+        "01",
+        "Science",
+        "Studies bodily processes and observable patterns."
+      ],
+      [
+        "02",
+        "Philosophy",
+        "Asks about personhood, meaning and the basis of knowing."
+      ],
+      [
+        "03",
+        "Faith",
+        "Receives God’s revelation about creation and our destiny."
+      ]
+    ],
+    "scripture": "CCC 365–366",
+    "listen": "Distinguish an observation, a philosophical argument and a claim of faith.",
+    "salvation": "Christian hope rests on God’s promise, not on a gap in current science.",
+    "insight": "Experiences of love, beauty, conscience and longing invite reflection about the soul. They are not, by themselves, a laboratory proof of an immaterial reality.",
+    "prompt": "Does explaining a physical process settle every question about its meaning? Explain."
+  },
+  {
+    "kind": "compare",
+    "stage": "understanding",
+    "tone": "gold",
+    "art": "person",
+    "artCaption": "Body and spiritual soul belong to one human person.",
+    "readingLabel": "CATECHISM CONNECTION",
+    "notes": [
+      "Ask students first what the analogy illuminates. Then require one limitation. A useful analogy is not a literal description or proof.",
+      "Software and hardware remain artifacts with an external designer and different relationships from the substantial unity described by Aquinas. Do not equate the soul with code, electricity or stored memories.",
+      "The note’s spark image is also metaphorical. A soul is created by God; it is not a fragment of God’s being."
+    ],
+    "sources": [
+      [
+        "CCC 365: one human nature",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_6_man.html"
+      ]
+    ],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "AN ANALOGY · USE WITH CARE",
+    "title": "Like hardware <em>and software?</em>",
+    "dek": "The note’s computer analogy can start a conversation, but it has limits.",
+    "left": {
+      "over": "WHAT IT HELPS US NOTICE",
+      "heading": "A functioning unity",
+      "points": [
+        "An organized whole is more than a pile of parts.",
+        "Bodily and spiritual care both matter."
+      ]
+    },
+    "right": {
+      "over": "WHERE IT BREAKS DOWN",
+      "heading": "A person is not a machine",
+      "points": [
+        "The soul is not a program we can copy or upload.",
+        "The body belongs to our identity, not just our equipment."
+      ]
+    },
+    "scripture": "CCC 365",
+    "listen": "Keep the idea of unity; set aside the idea of interchangeable parts.",
+    "salvation": "God promises resurrection, not an escape into disembodied information.",
+    "prompt": "What mistaken conclusion might someone draw if they took the analogy literally?"
+  },
+  {
+    "kind": "overview",
+    "stage": "understanding",
+    "tone": "gold",
+    "art": "person",
+    "artCaption": "Body and spiritual soul belong to one human person.",
+    "readingLabel": "CATECHISM CONNECTION",
+    "notes": [
+      "Correct a citation in the supplied note: immediate creation and immortality are stated in CCC 366; CCC 365 explains soul as the form of the body.",
+      "Direct creation of the soul does not deny biological parenthood or imply that a soul existed before its bodily life. Immortal means it does not perish at bodily death, not that it has always existed.",
+      "Survival of the soul and resurrection are related but distinct. The final Christian hope is bodily resurrection, not permanent separation from the body."
+    ],
+    "sources": [
+      [
+        "CCC 363–366",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_6_man.html"
+      ]
+    ],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "CATECHISM · FOUR ANCHORS",
+    "title": "Created, united <em>and called to life</em>",
+    "dek": "These teachings hold our present dignity and future hope together.",
+    "cards": [
+      [
+        "363",
+        "Spiritual principle",
+        "The soul names the person’s spiritual depth.",
+        "✦"
+      ],
+      [
+        "364–365",
+        "Bodily dignity",
+        "Body and soul form one human nature.",
+        "◇"
+      ],
+      [
+        "366",
+        "Created by God",
+        "Each spiritual soul is directly created.",
+        "✧"
+      ],
+      [
+        "366",
+        "Immortal",
+        "The soul survives death and awaits reunion with the body.",
+        "↗"
+      ]
+    ],
+    "quote": "Immortality is not the same thing as resurrection.",
+    "scripture": "CCC 363–366",
+    "listen": "Which point explains why the body continues to matter?",
+    "salvation": "Christian hope includes the resurrection of the body.",
+    "prompt": "Explain the difference between having an immortal soul and having always existed."
+  },
+  {
+    "kind": "split",
+    "stage": "scripture",
+    "tone": "gold",
+    "art": "shelter",
+    "artCaption": "God’s care gives courage without making suffering unreal.",
+    "readingLabel": "READ ALOUD · NRSV-CE",
+    "notes": [
+      "Read the whole selection so that verse 28 is heard alongside the repeated encouragement not to fear and the Father’s knowledge of each person.",
+      "The passage supports the soul’s endurance beyond bodily death. Its language of destruction is not a stand-alone statement that the spiritual soul ceases to exist; interpret within the wider Christian teaching on judgment.",
+      "Avoid using the reading to dismiss threats, abuse or suffering. Seeking safety and help is compatible with trusting God."
+    ],
+    "sources": [],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "READ ALOUD 2 · COURAGE AND TRUST",
+    "title": "Known and valued <em>by the Father</em>",
+    "dek": "Jesus speaks to disciples facing opposition and fear.",
+    "points": [
+      "Human violence cannot erase our ultimate destiny.",
+      "Our whole life remains accountable to God.",
+      "The Father’s care gives grounds for courage."
+    ],
+    "scripture": "Matthew 10:26–31",
+    "listen": "How does Jesus bring together warning, courage and the Father’s care?",
+    "salvation": "Our hope reaches beyond what earthly powers can take away.",
+    "prompt": "Why might confidence in God change the way a disciple responds to pressure?"
+  },
+  {
+    "kind": "split",
+    "stage": "scripture",
+    "tone": "gold",
+    "art": "word",
+    "artCaption": "Scripture invites honest examination and a response to God.",
+    "readingLabel": "READ ALOUD · NRSV-CE",
+    "notes": [
+      "Read Hebrews 4:12–13. The vivid image emphasizes the penetrating power of God’s word, not a biological or anatomical map.",
+      "Connect with conscience in 1.8: conscience is a judgment of reason about a concrete act and must be formed. It is not simply a private feeling or an automatic inner voice that is always correct.",
+      "Invite a hypothetical example of an outwardly good action done for a mixed motive. Students need not disclose personal wrongdoing."
+    ],
+    "sources": [
+      [
+        "CCC 367: soul and spirit",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_6_man.html"
+      ]
+    ],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "READ ALOUD 3 · GOD KNOWS OUR DEPTHS",
+    "title": "The word reaches <em>the heart</em>",
+    "dek": "God’s word exposes the truth of our intentions and choices.",
+    "points": [
+      "God knows us more deeply than outward appearances.",
+      "Soul and spirit language expresses the depth of personal life.",
+      "Honest reflection can lead to repentance and growth."
+    ],
+    "scripture": "Hebrews 4:12–13",
+    "listen": "What does the passage say God’s word discerns?",
+    "salvation": "God’s truth calls us toward conversion and healing.",
+    "insight": "“Soul and spirit” does not mean that each person has two separate souls. CCC 367 explains that this distinction does not divide human nature into two spiritual beings.",
+    "prompt": "How might Scripture help someone examine a choice more honestly?"
+  },
+  {
+    "kind": "split",
+    "stage": "scripture",
+    "tone": "gold",
+    "art": "path",
+    "artCaption": "Discipleship gives direction to the choices we make.",
+    "readingLabel": "READ ALOUD · NRSV-CE",
+    "notes": [
+      "Read Mark 8:34–37. The NRSV-CE uses life in this passage; some translations use soul. Explain the connection to the note without replacing the wording of the classroom Bible.",
+      "Taking up the cross means discipleship and self-giving love; it does not mean that abuse should be endured without help or that suffering is good for its own sake.",
+      "Use an ordinary example such as cheating for a grade or exploiting someone for popularity. Bodily comfort, work and achievement are not evil, but they must be ordered toward the true good."
+    ],
+    "sources": [],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "READ ALOUD 4 · WHAT IS WORTH GAINING?",
+    "title": "Success and <em>the good of the person</em>",
+    "dek": "Jesus connects the value of life with the call to follow him.",
+    "points": [
+      "Achievement and possessions cannot become our highest good.",
+      "A choice can bring an advantage while damaging integrity.",
+      "Following Christ places love and faithfulness at the center."
+    ],
+    "scripture": "Mark 8:34–37",
+    "listen": "What tension does Jesus describe between gaining and losing?",
+    "salvation": "Life in Christ is a gift that calls for a faithful response.",
+    "prompt": "When might gaining an advantage cost someone something more important?"
+  },
+  {
+    "kind": "split",
+    "stage": "scripture",
+    "tone": "gold",
+    "art": "vine",
+    "artCaption": "A living vine evokes growth, dependence and the search for life.",
+    "readingLabel": "READ ALOUD · NRSV-CE",
+    "notes": [
+      "Read Psalm 42:1–5. Let students notice the movement among thirst, tears, memory and hope rather than treating the psalm as a formula for instant happiness.",
+      "The note cites CCC 44 on the human vocation toward God. Augustine’s restless-heart theme is a useful optional connection to Lesson 1.8.",
+      "People experience religious longing differently. Lack of a strong feeling does not establish that a person lacks spiritual depth, dignity or moral concern.",
+      "Sadness, anxiety or emptiness can have many causes. Do not diagnose spiritual neglect from someone’s distress. Prayer and appropriate support can belong together."
+    ],
+    "sources": [],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "READ ALOUD 5 · LONGING FOR GOD",
+    "title": "Thirsting for <em>something more</em>",
+    "dek": "The psalm gives words to desire, sadness, memory and hope.",
+    "points": [
+      "Christians understand their deepest fulfillment as communion with God.",
+      "Beauty, truth and love can awaken questions of meaning.",
+      "Faith can include longing and struggle, not only certainty or comfort."
+    ],
+    "scripture": "Psalm 42:1–5",
+    "listen": "Which words express longing, and which turn toward hope?",
+    "salvation": "God invites us into a communion deeper than temporary satisfaction.",
+    "prompt": "How can longing become an invitation to reflection rather than only a problem to escape?"
+  },
+  {
+    "kind": "split",
+    "stage": "hope",
+    "tone": "gold",
+    "art": "person",
+    "artCaption": "Body and spiritual soul belong to one human person.",
+    "readingLabel": "CATECHISM CONNECTION",
+    "notes": [
+      "Particular judgment concerns each person at death. Distinguish it from the final judgment associated with the resurrection of the dead.",
+      "God knows a person’s knowledge, freedom, circumstances and response to grace fully. We should not claim certainty about the eternal destiny of a particular deceased person.",
+      "Connect to 1.8: freedom and responsibility are real, yet salvation is God’s gift. Good works are a response to grace, not a way of purchasing heaven.",
+      "Death is a real rupture, not the ideal state of the human person. This prepares for the distinction between immortality and resurrection."
+    ],
+    "sources": [
+      [
+        "CCC 1021–1022: particular judgment",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_three/article_12/i_the_particular_judgment.html"
+      ]
+    ],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "DEATH AND PARTICULAR JUDGMENT",
+    "title": "Our choices have <em>lasting significance</em>",
+    "dek": "Catholic teaching holds that personal existence continues beyond bodily death.",
+    "points": [
+      "At death, the soul is separated from the body.",
+      "Each person encounters Christ’s judgment of their life.",
+      "Our response to grace, truth and love matters."
+    ],
+    "scripture": "CCC 1021–1022",
+    "listen": "Hold together God’s mercy, justice and the seriousness of freedom.",
+    "salvation": "We depend on Christ’s grace, not on earning eternal life by ourselves.",
+    "prompt": "How can belief in judgment encourage both accountability and trust?"
+  },
+  {
+    "kind": "three",
+    "stage": "hope",
+    "tone": "gold",
+    "art": "person",
+    "artCaption": "Body and spiritual soul belong to one human person.",
+    "readingLabel": "CATECHISM CONNECTION",
+    "notes": [
+      "Heaven is fulfillment in communion with God, not merely endless earthly entertainment. Christian hope also includes the final resurrection of the body.",
+      "Purgatory concerns those who die in God’s grace but still need purification. It is not a second chance to choose God after definitively rejecting him and is not a competing eternal outcome.",
+      "Hell is definitive self-exclusion from communion with God. Do not reduce it to God casually rejecting someone or to ordinary loneliness. God predestines no one to hell (CCC 1037).",
+      "Avoid speculative maps, timelines or claims about named individuals. Emphasize mercy, conversion, prayer and hope."
+    ],
+    "sources": [
+      [
+        "CCC 1023–1029: heaven",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_three/article_12/ii_heaven.html"
+      ],
+      [
+        "CCC 1030–1032: purgatory",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_three/article_12/iii_the_final_purification,_or_purgatory.html"
+      ],
+      [
+        "CCC 1033–1037: hell",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_three/article_12/iv_hell.html"
+      ]
+    ],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "ETERNAL LIFE · CLARIFY THE TERMS",
+    "title": "Called to communion <em>with God</em>",
+    "dek": "Purgatory is purification on the way to heaven, not a third final destination.",
+    "cards": [
+      [
+        "01",
+        "Heaven",
+        "Full communion with God and all who live in his love."
+      ],
+      [
+        "02",
+        "Purgatory",
+        "Final purification of those already assured of salvation."
+      ],
+      [
+        "03",
+        "Hell",
+        "Definitive separation from God through freely rejecting his love."
+      ]
+    ],
+    "scripture": "CCC 1023–1037",
+    "listen": "Why must purgatory be understood in relation to heaven?",
+    "salvation": "God desires our salvation; his grace calls for a free response.",
+    "prompt": "How does purification express God’s desire to bring a person fully into love?"
+  },
+  {
+    "kind": "split",
+    "stage": "hope",
+    "tone": "gold",
+    "art": "tombLight",
+    "artCaption": "The empty tomb points to Christ’s victory over death.",
+    "readingLabel": "READ ALOUD · NRSV-CE",
+    "notes": [
+      "Read John 11:21–27. The scene precedes the raising of Lazarus; do not confuse Lazarus’s return to mortal life with Christ’s glorified Resurrection.",
+      "Connect directly to 1.5: the Paschal Mystery grounds Christian hope. The soul’s immortality alone does not express the fullness of what Christ promises.",
+      "Grief is compatible with faith. Jesus himself weeps later in this chapter. Invite reflection without asking students to share bereavement publicly.",
+      "We entrust the dead to God’s mercy and hope for reunion. Avoid guaranteeing the eternal destiny of a particular person."
+    ],
+    "sources": [],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "READ ALOUD 6 · HOPE IN CHRIST",
+    "title": "Resurrection <em>and life</em>",
+    "dek": "Martha’s conversation with Jesus places hope in him amid real loss.",
+    "points": [
+      "Martha brings grief and faith into the same conversation.",
+      "Jesus identifies himself as the source of resurrection and life.",
+      "Christian hope trusts God while taking death and sorrow seriously."
+    ],
+    "scripture": "John 11:21–27",
+    "listen": "How does Martha’s understanding of hope become centered on Jesus?",
+    "salvation": "Our hope rests in the risen Christ, not only in the soul’s survival.",
+    "prompt": "What difference is there between hoping vaguely and placing hope in someone?"
+  },
+  {
+    "kind": "split",
+    "stage": "hope",
+    "tone": "gold",
+    "art": "harvest",
+    "artCaption": "The seed image helps express continuity through transformation.",
+    "readingLabel": "READ ALOUD · NRSV-CE",
+    "notes": [
+      "Read both selections, pausing between verses 44 and 51 to identify the skipped section. Recall the chapter’s earlier seed comparison if students need context.",
+      "Distinguish three ideas: immortality of the soul, bodily resurrection, and resuscitation back to ordinary mortal life. Christian resurrection is transformed bodily life.",
+      "The Church teaches that the soul is reunited with the body at the final resurrection (CCC 366). Do not present death as an escape from a worthless body.",
+      "Connect to 1.4–1.6: the Incarnation affirms human nature, the Paschal Mystery conquers death, and Baptism joins believers to Christ’s death and new life."
+    ],
+    "sources": [
+      [
+        "CCC 366: reunion at the final resurrection",
+        "https://www.vatican.va/content/catechism/en/part_one/section_two/chapter_one/article_1/paragraph_6_man.html"
+      ]
+    ],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "READ ALOUD 7 · THE RESURRECTION OF THE BODY",
+    "title": "The whole person <em>made new</em>",
+    "dek": "Paul describes transformation into imperishable life through God’s power.",
+    "points": [
+      "The soul’s survival is not the final completion of human life.",
+      "God will raise the dead to bodily life.",
+      "Christ’s victory gives the basis for this hope."
+    ],
+    "scripture": "1 Corinthians 15:42–44, 51–55",
+    "listen": "What contrasts describe the transformation Paul expects?",
+    "salvation": "Salvation fulfills the whole person, body and soul.",
+    "insight": "Paul’s “spiritual body” does not mean a ghost or an immaterial body. It means bodily life transformed and fully enlivened by God’s Spirit.",
+    "prompt": "Why would “the soul lives on” be an incomplete summary of Christian hope?"
+  },
+  {
+    "kind": "three",
+    "stage": "living",
+    "tone": "gold",
+    "art": "person",
+    "artCaption": "Body and spiritual soul belong to one human person.",
+    "readingLabel": "RECALL / OPTIONAL · NRSV-CE",
+    "notes": [
+      "Return to the note’s examples: education, art, meaningful relationships, reflection and prayer can enrich life. Habitual dishonesty or treating people as objects damages relationships and character.",
+      "Reconciliation brings forgiveness and healing; Eucharist nourishes communion with Christ. Avoid portraying sacraments as automatic techniques detached from faith and conversion.",
+      "Conscience needs formation through Scripture, Church teaching, honest reasoning and wise guidance. Link this to Lesson 1.8 rather than repeating its full explanation.",
+      "Illness, addiction and emotional distress need compassionate care and appropriate help. They are not automatic evidence of weak faith or neglect of the soul.",
+      "Respect a difficult person as someone loved by God while maintaining necessary boundaries. Bodily safety and spiritual care are compatible."
+    ],
+    "sources": [],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "CARE FOR BODY AND SOUL",
+    "title": "A life that <em>nourishes the person</em>",
+    "dek": "Spiritual growth and bodily care belong together.",
+    "cards": [
+      [
+        "01",
+        "Receive",
+        "Prayer, Scripture, Eucharist and Reconciliation."
+      ],
+      [
+        "02",
+        "Practice",
+        "Truthfulness, forgiveness, service and a formed conscience."
+      ],
+      [
+        "03",
+        "Care",
+        "Rest, friendship, beauty, learning and appropriate support."
+      ]
+    ],
+    "scripture": "Mark 8:34–37; Matthew 6:19–21",
+    "listen": "How can daily habits express what we truly treasure?",
+    "salvation": "Grace is received and lived through love, not reduced to self-improvement.",
+    "prompt": "Name one habit that cares for your spiritual life and one that supports bodily well-being."
+  },
+  {
+    "kind": "reveal",
+    "stage": "living",
+    "tone": "gold",
+    "art": "person",
+    "artCaption": "Body and spiritual soul belong to one human person.",
+    "readingLabel": "USE AS EVIDENCE · NRSV-CE",
+    "notes": [
+      "Allow pairs two minutes before revealing the sample. Look for a moral explanation, practical bodily care and spiritual growth.",
+      "The goal is not to condemn effort or ambition. Achievement can be good when ordered toward learning, service and integrity.",
+      "Relate to the threefold mission in 1.7: offer daily work to God, witness truthfully and serve others rather than treating them as competitors or tools.",
+      "Support does not erase responsibility for cheating. Responsibility should lead to repair and growth rather than defining the person permanently by the wrong action."
+    ],
+    "sources": [],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "APPLY · ONE PERSON, MANY NEEDS",
+    "title": "More than <em>a good grade</em>",
+    "dek": "A student cheats to protect a perfect record, skips sleep and says achievement is all that matters.",
+    "before": "Use body–soul unity, conscience and Mark 8 to propose a response that respects the whole person.",
+    "hidden": "A grade cannot measure a person’s worth. Acknowledge the dishonesty and repair it. Seek realistic study support, rest and honest conversation. Make room for prayer or reflection. Care for integrity and bodily health together.",
+    "scripture": "Mark 8:34–37",
+    "listen": "Explain why success cannot justify every means used to obtain it.",
+    "salvation": "Conversion involves truth, grace and concrete changes in how we live.",
+    "prompt": "Which part of your response addresses integrity, and which addresses bodily needs?"
+  },
+  {
+    "kind": "reveal",
+    "stage": "living",
+    "tone": "gold",
+    "art": "person",
+    "artCaption": "Body and spiritual soul belong to one human person.",
+    "readingLabel": "RETURN TO THE READING · NRSV-CE",
+    "notes": [
+      "This combines the source’s Think Deeper and final reflection. Students may write a short paragraph or letter, using gratitude, an honest question and a concrete practice.",
+      "Possible practices include Scripture, prayer, journaling, meaningful conversation, uplifting art or service. Ask why the practice matters rather than merely listing activities.",
+      "A student may reflect on someone’s lasting influence after death, but this is optional. Do not require discussion of grief, personal belief or mental health.",
+      "Assess thoughtful understanding and reasoning, not the intensity of religious feeling or a declaration of faith."
+    ],
+    "sources": [],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "REFLECT · MEANING AND DAILY LIFE",
+    "title": "An inner life <em>worth attending to</em>",
+    "dek": "Use a personal or hypothetical example; you do not need to disclose private experiences.",
+    "before": "Choose an experience of beauty, love, conscience or longing. Explain the questions it raises, then choose one practice for the coming week.",
+    "hidden": "Example: An act of unexpected kindness raises questions about love and human worth. It invites reflection without proving every claim about the soul. I could make time for quiet prayer and one deliberate act of service this week.",
+    "scripture": "Psalm 42:1–5",
+    "listen": "Allow room for gratitude, questions and hope.",
+    "salvation": "Responding to God can begin with a small, faithful act of attention and love.",
+    "prompt": "How would your chosen practice support a more attentive and loving way of living?"
+  },
+  {
+    "kind": "exit",
+    "stage": "living",
+    "tone": "gold",
+    "art": "person",
+    "artCaption": "Body and spiritual soul belong to one human person.",
+    "readingLabel": "USE AS EVIDENCE · NRSV-CE",
+    "notes": [
+      "Model 1: the spiritual soul is the principle of life and unity, the form of the body; body and soul constitute one human nature. It is not a ghost or an organ.",
+      "Model 2: the soul survives bodily death; resurrection is God’s raising of the body and its reunion with the soul. The soul is created, not eternal without a beginning.",
+      "Model 3: our response to God’s grace and our choices of truth and love matter beyond immediate rewards. Salvation remains God’s gift. Particular judgment, heaven, purification and the possibility of definitive rejection give moral life lasting seriousness.",
+      "Model 4: a strong response combines bodily needs, spiritual practices, relationships and moral responsibility. Dignity is not conditional on health, talent, appearance or success.",
+      "Use the teaching guide to locate the note’s understanding questions across this lesson. Invite one remaining question for a later discussion."
+    ],
+    "sources": [],
+    "sourceNote": "Lesson source: supplied Unit 1.9.docx, “The Soul – The Immortal Essence of Human Identity.” Connections build on Lessons 1.1–1.8. Read Scripture from an NRSV-CE Bible.",
+    "eyebrow": "EXIT TICKET · EXPLAIN AND APPLY",
+    "title": "One person, <em>an eternal calling</em>",
+    "dek": "Use a Scripture reference and a concrete example to show your understanding.",
+    "questions": [
+      "What is the soul, and how is it united with the body?",
+      "How does immortality differ from resurrection?",
+      "Why does eternal destiny give daily choices significance?",
+      "How would you care for the whole person in a practical situation?"
+    ],
+    "scripture": "Genesis 2:7; Mark 8:34–37; 1 Corinthians 15:42–44",
+    "listen": "Explain the relevance of one passage in your own words.",
+    "salvation": "Created by God, redeemed in Christ and called to lasting communion.",
+    "prompt": "Complete the thought: Because the person is a unity of body and soul…"
+  }
+];
+
+const stages=[['identity','Identity'],['understanding','Understanding'],['scripture','Scripture'],['hope','Hope'],['living','Living it']];
+let current=0, reveal=false, insight=false, overlayMode=null;
+const byId=id=>document.getElementById(id);
+const escapeHTML=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const progressStr=n=>String(n).padStart(2,'0');
+const artDefs="<defs><radialGradient id=\"bhalo\"><stop stop-color=\"#efc47f\" stop-opacity=\".27\"/><stop offset=\"1\" stop-color=\"#efc47f\" stop-opacity=\"0\"/></radialGradient><linearGradient id=\"water\" x2=\"0\" y2=\"1\"><stop stop-color=\"#a7d9de\" stop-opacity=\".8\"/><stop offset=\"1\" stop-color=\"#7ba8b4\" stop-opacity=\".12\"/></linearGradient></defs><circle cx=\"315\" cy=\"290\" r=\"270\" fill=\"url(#bhalo)\"/>";
+const baptismArt={"font":"<g fill=\"none\" stroke=\"#efd5a5\" stroke-width=\"3\"><circle cx=\"315\" cy=\"290\" r=\"237\" opacity=\".22\"/><path d=\"M315 70v103M280 105h70\"/><path d=\"M155 302Q180 406 315 418Q450 406 475 302\" fill=\"#223342\"/><ellipse cx=\"315\" cy=\"300\" rx=\"160\" ry=\"44\" fill=\"url(#water)\"/><path d=\"M284 416v96h62v-96M234 522h162\"/><path d=\"M230 290q85 24 170 0M250 309q65 17 130 0\" stroke=\"#a7d9de\" opacity=\".65\"/><path d=\"M315 188q-27 39-27 57a27 27 0 0054 0q0-18-27-57\" fill=\"url(#water)\" stroke=\"#a7d9de\"/></g>","trinity":"<g fill=\"none\" stroke=\"#efc47f\" stroke-width=\"3\"><circle cx=\"315\" cy=\"168\" r=\"82\"/><circle cx=\"198\" cy=\"370\" r=\"82\"/><circle cx=\"432\" cy=\"370\" r=\"82\"/><path d=\"M274 239l-35 60M280 370h70M391 299l-35-60\" opacity=\".55\"/><circle cx=\"315\" cy=\"301\" r=\"211\" opacity=\".2\"/></g><g fill=\"#f6f1e7\" font-family=\"Georgia,serif\" font-size=\"27\" text-anchor=\"middle\"><text x=\"315\" y=\"179\">Father</text><text x=\"198\" y=\"381\">Son</text><text x=\"432\" y=\"363\">Holy</text><text x=\"432\" y=\"395\">Spirit</text><text x=\"315\" y=\"530\" fill=\"#efc47f\">One God</text></g>","vine":"<g fill=\"none\" stroke=\"#d2bf91\" stroke-width=\"9\" stroke-linecap=\"round\"><path d=\"M306 523Q322 393 306 282T332 91M311 403q-104-21-136-121M313 323q83-38 132-141M308 239q-74-14-105-80\"/></g><g fill=\"#90b89c\" stroke=\"#afc9ac\" stroke-width=\"2\"><path d=\"M197 329q-115 5-104-91q102-2 104 91M250 211q-100 14-112-69q94-22 112 69M392 272q5-100 112-110q5 107-112 110M322 160q-19-105 66-110q28 87-66 110\"/></g><g fill=\"#c7aabf\" opacity=\".8\"><circle cx=\"410\" cy=\"343\" r=\"18\"/><circle cx=\"441\" cy=\"346\" r=\"18\"/><circle cx=\"425\" cy=\"371\" r=\"18\"/><circle cx=\"455\" cy=\"374\" r=\"18\"/><circle cx=\"439\" cy=\"399\" r=\"18\"/></g>","community":"<g fill=\"none\" stroke=\"#efc47f\" stroke-width=\"3\"><circle cx=\"315\" cy=\"306\" r=\"218\" opacity=\".27\"/><path d=\"M315 166v131M270 210h90\"/></g><g fill=\"#e2c99d\"><circle cx=\"315\" cy=\"370\" r=\"25\"/><path d=\"M274 460q0-60 41-60t41 60z\" opacity=\".65\"/></g><g fill=\"#e2c99d\"><circle cx=\"165\" cy=\"309\" r=\"25\"/><path d=\"M124 399q0-60 41-60t41 60z\" opacity=\".65\"/></g><g fill=\"#e2c99d\"><circle cx=\"465\" cy=\"309\" r=\"25\"/><path d=\"M424 399q0-60 41-60t41 60z\" opacity=\".65\"/></g><g fill=\"#e2c99d\"><circle cx=\"230\" cy=\"184\" r=\"25\"/><path d=\"M189 274q0-60 41-60t41 60z\" opacity=\".65\"/></g><g fill=\"#e2c99d\"><circle cx=\"400\" cy=\"184\" r=\"25\"/><path d=\"M359 274q0-60 41-60t41 60z\" opacity=\".65\"/></g>","seal":"<g fill=\"none\" stroke=\"#efc47f\"><circle cx=\"315\" cy=\"280\" r=\"165\" stroke-width=\"3\"/><circle cx=\"315\" cy=\"280\" r=\"145\" stroke-width=\"1\"/><path d=\"M315 180v190M257 238h116\" stroke-width=\"10\"/><path d=\"M239 428l-37 116 95-56M391 428l37 116-95-56\" stroke-width=\"3\"/></g><g fill=\"#efc47f\"><circle cx=\"500\" cy=\"280\" r=\"2\"/><circle cx=\"493.69627786347763\" cy=\"327.88152334396636\" r=\"2\"/><circle cx=\"475.2146997001212\" cy=\"372.5\" r=\"2\"/><circle cx=\"445.8147545195113\" cy=\"410.81475451951127\" r=\"2\"/><circle cx=\"407.5\" cy=\"440.2146997001212\" r=\"2\"/><circle cx=\"362.88152334396636\" cy=\"458.69627786347763\" r=\"2\"/><circle cx=\"315\" cy=\"465\" r=\"2\"/><circle cx=\"267.1184766560337\" cy=\"458.69627786347763\" r=\"2\"/><circle cx=\"222.50000000000006\" cy=\"440.2146997001212\" r=\"2\"/><circle cx=\"184.18524548048873\" cy=\"410.8147545195113\" r=\"2\"/><circle cx=\"154.78530029987883\" cy=\"372.5\" r=\"2\"/><circle cx=\"136.3037221365224\" cy=\"327.88152334396636\" r=\"2\"/><circle cx=\"130\" cy=\"280\" r=\"2\"/><circle cx=\"136.30372213652237\" cy=\"232.11847665603364\" r=\"2\"/><circle cx=\"154.78530029987883\" cy=\"187.50000000000006\" r=\"2\"/><circle cx=\"184.18524548048865\" cy=\"149.1852454804888\" r=\"2\"/><circle cx=\"222.49999999999991\" cy=\"119.78530029987888\" r=\"2\"/><circle cx=\"267.1184766560337\" cy=\"101.30372213652237\" r=\"2\"/><circle cx=\"314.99999999999994\" cy=\"95\" r=\"2\"/><circle cx=\"362.88152334396625\" cy=\"101.30372213652234\" r=\"2\"/><circle cx=\"407.5\" cy=\"119.78530029987886\" r=\"2\"/><circle cx=\"445.81475451951127\" cy=\"149.18524548048867\" r=\"2\"/><circle cx=\"475.21469970012106\" cy=\"187.49999999999991\" r=\"2\"/><circle cx=\"493.6962778634776\" cy=\"232.11847665603352\" r=\"2\"/></g>"};
+const artLabels={"font":"Baptismal font, water and a cross","trinity":"Father, Son and Holy Spirit: three Persons, one God","vine":"A vine gives life to its branches","community":"A community gathered around the cross","seal":"A lasting seal bearing the cross"};
+Object.assign(baptismArt,{"mission":"<circle cx=\"315\" cy=\"295\" r=\"231\" fill=\"none\" stroke=\"#efc47f\" stroke-width=\"2\" opacity=\".25\"/><path d=\"M315 114v180M260 169h110\" fill=\"none\" stroke=\"#efc47f\" stroke-width=\"9\" stroke-linecap=\"round\"/><path d=\"M188 385l-19-77 83 42 63-72 63 72 83-42-19 77z\" fill=\"#efc47f18\" stroke=\"#efc47f\" stroke-width=\"3\"/><path d=\"M165 418q80-22 150 17q70-39 150-17v85q-80-22-150 17q-70-39-150-17zM315 435v85\" fill=\"#243b49\" stroke=\"#d7c59f\" stroke-width=\"3\"/>","word":"<circle cx=\"315\" cy=\"295\" r=\"231\" fill=\"none\" stroke=\"#efc47f\" stroke-width=\"2\" opacity=\".25\"/><path d=\"M315 114v180M260 169h110\" fill=\"none\" stroke=\"#efc47f\" stroke-width=\"9\" stroke-linecap=\"round\"/><path d=\"M107 291q96-30 208 24q112-54 208-24v164q-98-29-208 22q-110-51-208-22z\" fill=\"#203544\" stroke=\"#d7c59f\" stroke-width=\"3\"/><path d=\"M315 315v162M140 332q71-13 141 18M140 370q71-13 141 18M350 350q71-31 141-18M350 388q71-31 141-18\" fill=\"none\" stroke=\"#d7c59f\" stroke-width=\"3\" opacity=\".7\"/>","crown":"<circle cx=\"315\" cy=\"295\" r=\"231\" fill=\"none\" stroke=\"#efc47f\" stroke-width=\"2\" opacity=\".25\"/><path d=\"M171 325l-25-122 102 62 67-112 67 112 102-62-25 122z\" fill=\"#efc47f20\" stroke=\"#efc47f\" stroke-width=\"4\"/><path d=\"M171 345h288\" stroke=\"#efc47f\" stroke-width=\"7\"/><path d=\"M315 380v109M281 416h68\" stroke=\"#efc47f\" stroke-width=\"6\"/>","basin":"<circle cx=\"315\" cy=\"295\" r=\"231\" fill=\"none\" stroke=\"#efc47f\" stroke-width=\"2\" opacity=\".25\"/><ellipse cx=\"315\" cy=\"325\" rx=\"190\" ry=\"42\" fill=\"#89b6c340\" stroke=\"#d4c29d\" stroke-width=\"3\"/><path d=\"M125 325q23 137 190 137t190-137\" fill=\"none\" stroke=\"#d4c29d\" stroke-width=\"4\"/><path d=\"M340 330l18-147q57-8 104 22l-24 242q-58-8-106-32z\" fill=\"#e5dece\" stroke=\"#b3ad9d\" stroke-width=\"3\"/><path d=\"M364 195l-20 207M385 197l-20 207M406 200l-20 207\" stroke=\"#b3ad9d\" stroke-width=\"2\" opacity=\".6\"/>","anointing":"<circle cx=\"315\" cy=\"295\" r=\"231\" fill=\"none\" stroke=\"#efc47f\" stroke-width=\"2\" opacity=\".25\"/><path d=\"M270 183h90v65l42 53v197H228V301l42-53z\" fill=\"#efc47f1c\" stroke=\"#efc47f\" stroke-width=\"4\"/><path d=\"M267 164h96M285 140h60M275 354h80M315 317v95\" stroke=\"#efc47f\" stroke-width=\"5\"/><path d=\"M440 105q-25 39-25 58a25 25 0 0050 0q0-19-25-58\" fill=\"#efc47f40\" stroke=\"#efc47f\" stroke-width=\"3\"/>"});
+Object.assign(artLabels,{"mission":"Cross, crown and open book: Christ’s threefold mission","word":"The cross above an open book","crown":"A crown interpreted by the cross","basin":"A basin and towel for servant leadership","anointing":"Oil vessel and a drop of oil, symbols of anointing"});
+Object.assign(baptismArt,{"person":"<circle cx=\"315\" cy=\"295\" r=\"230\" fill=\"none\" stroke=\"#efc47f\" stroke-width=\"2\" opacity=\".25\"/><circle cx=\"315\" cy=\"207\" r=\"58\" fill=\"#e5c797\"/><path d=\"M216 433q0-146 99-146t99 146z\" fill=\"#c0aa89\" opacity=\".75\"/><path d=\"M142 418q50 90 173 95q123-5 173-95\" fill=\"none\" stroke=\"#a8ccd0\" stroke-width=\"7\" stroke-linecap=\"round\"/>","door":"<circle cx=\"315\" cy=\"295\" r=\"230\" fill=\"none\" stroke=\"#efc47f\" stroke-width=\"2\" opacity=\".25\"/><path d=\"M196 493V151h235v342z\" fill=\"#e8c48218\" stroke=\"#e8c482\" stroke-width=\"4\"/><path d=\"M196 151l164 39v331l-164-28z\" fill=\"#233a49\" stroke=\"#e8c482\" stroke-width=\"3\"/><circle cx=\"329\" cy=\"350\" r=\"7\" fill=\"#e8c482\"/><path d=\"M366 211l58-13M366 300l58 9M366 415l58 24\" stroke=\"#e8c482\" stroke-width=\"3\" opacity=\".5\"/>","path":"<circle cx=\"315\" cy=\"295\" r=\"230\" fill=\"none\" stroke=\"#efc47f\" stroke-width=\"2\" opacity=\".25\"/><path d=\"M160 516q160-79 118-178t111-208\" fill=\"none\" stroke=\"#efc47f\" stroke-width=\"42\" opacity=\".55\"/><path d=\"M160 516q160-79 118-178t111-208\" fill=\"none\" stroke=\"#f7e9cc\" stroke-width=\"3\"/><path d=\"M385 76v85M354 107h62\" stroke=\"#efc47f\" stroke-width=\"5\"/>","shelter":"<circle cx=\"315\" cy=\"295\" r=\"230\" fill=\"none\" stroke=\"#efc47f\" stroke-width=\"2\" opacity=\".25\"/><path d=\"M116 275l199-150 199 150M161 243v251h308V243\" fill=\"none\" stroke=\"#efc47f\" stroke-width=\"5\" stroke-linecap=\"round\"/><g transform=\"translate(126 175) scale(.6)\"><circle cx=\"315\" cy=\"207\" r=\"58\" fill=\"#e5c797\"/><path d=\"M216 433q0-146 99-146t99 146z\" fill=\"#c0aa89\" opacity=\".75\"/></g>"});
+Object.assign(artLabels,{"person":"A human figure surrounded by a gesture of care","door":"A doorway opening toward light","path":"A path toward a cross","shelter":"A human person within a protective shelter"});
+function artSVG(type){if(baptismArt[type])return `<svg class="illustration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 600" role="img" aria-label="${escapeHTML(artLabels[type])}">${artDefs}${baptismArt[type]}</svg>`;
+const defs=`<defs><radialGradient id="halo"><stop stop-color="#ffe4aa" stop-opacity=".8"/><stop offset=".45" stop-color="#ffb968" stop-opacity=".23"/><stop offset="1" stop-color="#e59c5b" stop-opacity="0"/></radialGradient><linearGradient id="shine" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#fff3cf"/><stop offset=".5" stop-color="#d6ac73"/><stop offset="1" stop-color="#946f5a"/></linearGradient><linearGradient id="darksky" x1="0" y1="0" x2=".8" y2="1"><stop stop-color="#9bb6c9" stop-opacity=".3"/><stop offset="1" stop-color="#0e1f31" stop-opacity=".05"/></linearGradient><linearGradient id="pathGlow" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#ffe6a8" stop-opacity=".8"/><stop offset="1" stop-color="#ffe6a8" stop-opacity="0"/></linearGradient></defs>`;
+const stars=`<g fill="#e7dfcc" opacity=".6"><circle cx="130" cy="88" r="2"/><circle cx="450" cy="137" r="1.8"/><circle cx="390" cy="67" r="2"/><circle cx="205" cy="174" r="1.4"/><circle cx="540" cy="260" r="1.7"/></g>`;
+const ground=`<path d="M30 504 Q175 471 300 498 Q426 473 603 509 L603 580 L30 580Z" fill="#112331"/><path d="M39 506 Q170 478 294 501 T591 509" fill="none" stroke="#c19b70" stroke-opacity=".4" stroke-width="2"/>`;
+const cross=`<g fill="#070f18"><path d="M286 137h47v364h-47z"/><path d="M180 241h258v43H180z"/></g><path d="M291 137h4v363h-4M180 244h258" stroke="#cf9a65" opacity=".3" stroke-width="2"/>`;
+let body='';
+switch(type){
+case 'cross': body=`<circle cx="322" cy="280" r="283" fill="url(#halo)"/><g fill="none" stroke="#d2b387" opacity=".19"><circle cx="324" cy="292" r="238"/><circle cx="324" cy="292" r="193"/><circle cx="324" cy="292" r="148"/></g>${stars}${cross}${ground}<path d="M36 556 Q305 525 590 557" stroke="#ecc889" opacity=".3" stroke-width="2" fill="none"/>`;break;
+case 'garden': body=`<circle cx="362" cy="228" r="229" fill="url(#halo)" opacity=".4"/>${stars}<path d="M475 580V190Q495 130 541 106M475 302Q423 239 377 224M475 250Q536 207 581 187" fill="none" stroke="#b9a385" stroke-width="25" stroke-linecap="round" opacity=".67"/><g fill="#5c917e" opacity=".55"><ellipse cx="374" cy="214" rx="79" ry="25" transform="rotate(-25 374 214)"/><ellipse cx="554" cy="184" rx="72" ry="25" transform="rotate(19 554 184)"/><ellipse cx="546" cy="104" rx="80" ry="31" transform="rotate(-34 546 104)"/></g><path d="M115 548Q218 434 330 479Q408 435 568 520" fill="#273441" opacity=".75"/><path d="M265 483q-50-42-60-100c-9-43 15-84 47-88 28-3 53 27 45 55-5 16-24 31-24 31q73 26 72 108" fill="#e6c8a9" opacity=".7"/><path d="M203 388q37-2 73 15l24 86h-136z" fill="#884f52" opacity=".85"/><path d="M138 530q87-62 199-20" fill="none" stroke="#d3b38b" stroke-width="2" opacity=".3"/>`;break;
+case 'servant': body=`<circle cx="326" cy="244" r="272" fill="url(#halo)" opacity=".32"/><g fill="none" stroke="#bfc5ba" opacity=".25" stroke-width="2"><path d="M80 142Q314 63 536 142M80 207Q314 128 536 207M81 274Q312 195 537 274"/></g><path d="M240 522q20-152 42-203c14-29 59-34 79 0q39 89 54 203" fill="#a67366" opacity=".66"/><circle cx="319" cy="260" r="59" fill="#d4af8b" opacity=".65"/><path d="M168 333Q319 255 466 355" fill="none" stroke="#e8d2b1" opacity=".3" stroke-width="8"/><path d="M170 353q145-54 294 9" fill="none" stroke="#dfc8aa" opacity=".4" stroke-width="50" stroke-linecap="round"/><path d="M184 381q146-50 274 4" stroke="#7d4c52" opacity=".7" stroke-width="9" fill="none"/><path d="M153 523Q323 500 505 529" stroke="#e8c89a" opacity=".3" stroke-width="2" fill="none"/>`;break;
+case 'chalice':body=`<circle cx="320" cy="265" r="274" fill="url(#halo)" opacity=".51"/><g fill="none" stroke="#ddbe8c" stroke-width="2" opacity=".4"><circle cx="320" cy="276" r="215"/><circle cx="320" cy="276" r="172"/></g><path d="M184 204Q312 178 429 204L416 287Q389 381 322 388Q254 383 207 294Z" fill="#cb9c63" opacity=".83" stroke="#f7dbaa" stroke-width="4"/><path d="M200 229Q316 250 417 228" fill="none" stroke="#6a3644" stroke-width="18"/><path d="M315 389V485M260 502H378" fill="none" stroke="#e1be82" stroke-width="19" stroke-linecap="round"/><path d="M117 507q46-63 110-41q56 9 77 49q-88 29-187-8z" fill="#efd0a0" opacity=".85"/><path d="M117 507Q213 476 302 515" fill="none" stroke="#bb8957" stroke-width="3" opacity=".65"/><path d="M134 506Q198 525 296 516" fill="none" stroke="#b89566" stroke-width="3"/>`;break;
+case 'veil':body=`<circle cx="311" cy="309" r="249" fill="url(#halo)"/><path d="M305 95v413" stroke="url(#pathGlow)" stroke-width="120" opacity=".57"/><path d="M101 105h423v378H101z" fill="none" stroke="#e5c696" stroke-width="9"/><path d="M101 112h169l-65 255 73 113H101z" fill="#926e76" stroke="#bc9391" stroke-width="3"/><path d="M523 112H353l65 255-73 113h178z" fill="#906d77" stroke="#b98c8f" stroke-width="3"/><g stroke="#c8a3a1" opacity=".4" stroke-width="6"><path d="M137 117Q220 280 137 476M196 117Q266 310 209 458M488 117Q404 280 488 476M427 117Q367 310 408 457" fill="none"/></g><path d="M280 482l25-365 37 363z" fill="url(#pathGlow)" opacity=".6"/>`;break;
+case 'tombDark':body=`<circle cx="356" cy="216" r="270" fill="url(#halo)" opacity=".26"/>${stars}<path d="M100 501V329q5-131 205-145 215 8 230 157v160z" fill="#77828a" opacity=".35"/><path d="M161 503V346q7-123 153-123t148 123v157" fill="#09151f" stroke="#8b938e" stroke-width="10"/><circle cx="461" cy="427" r="110" fill="#8c8e86" stroke="#a2a098" stroke-width="12"/><path d="M392 365Q457 355 522 417" fill="none" stroke="#d3bc9e" stroke-width="5" opacity=".2"/>${ground}`;break;
+case 'tombLight':body=`<circle cx="330" cy="213" r="305" fill="url(#halo)"/><g stroke="#eed49c" stroke-width="4" opacity=".34"><path d="M302 15L291 140M493 50L433 160M573 237L465 260M128 60L208 177M50 235L158 262"/></g><path d="M85 510V335q9-143 226-162 223 18 238 162v175" fill="#8e918d" opacity=".55"/><path d="M152 512V352q5-119 160-119t154 119v160" fill="#061522" stroke="#e3c99f" stroke-width="9"/><path d="M197 510q15-144 114-172q91 31 113 173" fill="#ffe2a0" opacity=".24"/><circle cx="496" cy="441" r="105" fill="#7e8889" stroke="#c4bba5" stroke-width="13"/><path d="M446 394Q501 373 544 421" fill="none" stroke="#fff1d2" stroke-width="6" opacity=".26"/>${ground}<path d="M191 510L311 352 419 509" fill="url(#pathGlow)" opacity=".4"/>`;break;
+case 'harvest':body=`<circle cx="326" cy="229" r="260" fill="url(#halo)" opacity=".6"/>${ground}<g fill="none" stroke="#9dbb95" stroke-width="6" stroke-linecap="round"><path d="M319 528V224M242 529V322M396 529V340M168 527V423M465 527V414"/></g><g fill="#e6c27e" opacity=".82"><ellipse cx="285" cy="240" rx="15" ry="29" transform="rotate(-34 285 240)"/><ellipse cx="353" cy="232" rx="15" ry="29" transform="rotate(35 353 232)"/><ellipse cx="295" cy="284" rx="14" ry="28" transform="rotate(-38 295 284)"/><ellipse cx="347" cy="283" rx="14" ry="28" transform="rotate(38 347 283)"/><ellipse cx="216" cy="352" rx="13" ry="24" transform="rotate(-35 216 352)"/><ellipse cx="272" cy="362" rx="13" ry="24" transform="rotate(35 272 362)"/><ellipse cx="374" cy="365" rx="13" ry="25" transform="rotate(-35 374 365)"/><ellipse cx="419" cy="357" rx="13" ry="25" transform="rotate(30 419 357)"/><ellipse cx="147" cy="450" rx="12" ry="22" transform="rotate(-27 147 450)"/><ellipse cx="192" cy="455" rx="12" ry="22" transform="rotate(28 192 455)"/><ellipse cx="442" cy="450" rx="12" ry="23" transform="rotate(-25 442 450)"/><ellipse cx="489" cy="444" rx="12" ry="23" transform="rotate(30 489 444)"/></g><path d="M318 216v-69" stroke="#fee3a7" stroke-width="4" opacity=".8"/>`;break;
+case 'ascension':body=`<circle cx="313" cy="248" r="290" fill="url(#halo)" opacity=".65"/><g fill="none" stroke="#f3daa2" opacity=".35"><ellipse cx="317" cy="266" rx="204" ry="258" stroke-width="3"/><ellipse cx="317" cy="266" rx="149" ry="206" stroke-width="2"/></g><path d="M315 55l-63 389h126z" fill="url(#pathGlow)" opacity=".22"/><g fill="#fff0cd" opacity=".85"><circle cx="317" cy="175" r="31"/><path d="M286 212q31-31 62 0l30 131-118 0z"/><path d="M285 228l-70 68 16 18 79-48M351 226l76 70-17 18-84-52"/></g><g fill="#9bb6c7" opacity=".35"><ellipse cx="170" cy="483" rx="153" ry="45"/><ellipse cx="403" cy="501" rx="159" ry="54"/><ellipse cx="313" cy="471" rx="190" ry="37"/></g><path d="M110 500Q310 467 525 501" stroke="#e4cca4" stroke-width="2" opacity=".5" fill="none"/>`;break;
+case 'bridge':body=`<circle cx="305" cy="244" r="286" fill="url(#halo)" opacity=".58"/><g fill="none" stroke="#e1cfb3" opacity=".22"><circle cx="306" cy="253" r="219" stroke-width="3"/><circle cx="306" cy="253" r="166" stroke-width="2"/></g><path d="M50 506Q168 485 240 420T324 280Q348 229 367 204Q390 168 469 126" fill="none" stroke="#e6c692" stroke-width="37" opacity=".67" stroke-linecap="round"/><path d="M50 506Q168 485 240 420T324 280Q348 229 367 204Q390 168 469 126" fill="none" stroke="#fff1cb" stroke-width="6" opacity=".8" stroke-linecap="round"/><g fill="#ead7b4" opacity=".5"><circle cx="469" cy="126" r="37"/><circle cx="50" cy="506" r="24"/></g><path d="M39 544H589" stroke="#a3bdc8" opacity=".25" stroke-width="2"/>`;break;
+default:body=`<circle cx="312" cy="255" r="270" fill="url(#halo)"/>${cross}${ground}`;
+}
+return `<svg class="illustration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 630 600" role="img" aria-label="Symbolic religious illustration">${defs}${body}</svg>`;
+}
+function readingMarkup(s){if(!s.scripture&&!s.salvation)return'';return `<div class="reading-bar"><div class="read-box"><span class="read-glyph" aria-hidden="true">✝</span><span class="minilabel">${escapeHTML(s.readingLabel||(s.scripture?.startsWith('CCC')?'CATECHISM':'READ ALOUD · NRSV-CE'))}</span><div class="read-copy">${escapeHTML(s.scripture||'')}<small>${escapeHTML(s.listen||'Refer to the notes.')}</small></div></div><div class="salvation-box"><span class="minilabel">SALVATION</span><div class="saviour-text">${escapeHTML(s.salvation||'Read, reflect and connect the event to Christian salvation.')}</div></div></div>`}
+function insightMarkup(s){if(!s.insight)return'';return `<button class="insight-toggle" id="insightBtn" aria-pressed="${insight}" aria-expanded="${insight}"><span class="dot"></span>DEEPER CONNECTION ${insight?'−':'+'}</button>${insight?`<div class="insight-panel" id="insightPanel"><button id="insightClose" aria-label="Close insight">×</button><h4>GO A LEVEL DEEPER</h4><p>${escapeHTML(s.insight)}</p></div>`:''}`}
+function cardHeading(s){return `<div class="kicker">${escapeHTML(s.eyebrow)}</div><h1 class="headline">${s.title}</h1>${s.dek?`<p class="dek">${escapeHTML(s.dek)}</p>`:''}`}
+function renderBody(s){switch(s.kind){
+case 'bridge':return `${cardHeading(s)}<div class="bridge-grid">${s.steps.map(c=>`<div class="bridge-step"><span>${c[0]}</span><h3>${escapeHTML(c[1])}</h3><p>${escapeHTML(c[2])}</p></div>`).join('')}</div>${readingMarkup(s)}`;
+case 'exit':return `${cardHeading(s)}<ol class="exit-questions">${s.questions.map(q=>`<li>${escapeHTML(q)}</li>`).join('')}</ol>${readingMarkup(s)}`;
+case 'title':return `<div class="copy-column"><div class="title-eyebrow">${escapeHTML(s.eyebrow)}</div><h1 class="headline">${s.title}</h1><p class="dek">${escapeHTML(s.dek)}</p><div class="small-callout">${escapeHTML(s.callout)}</div></div><div class="hero-art">${artSVG(s.art)}</div><span class="art-caption">${escapeHTML(s.artCaption)}</span>${readingMarkup(s)}`;
+case 'question':return `<div class="question-mark" aria-hidden="true">?</div>${cardHeading(s)}${readingMarkup(s)}`;
+case 'overview':return `${cardHeading(s)}<div class="overview-grid">${s.cards.map(c=>`<div class="overview-card"><span class="num">${c[0]}</span><span class="icon" aria-hidden="true">${c[3]}</span><h3 class="word">${c[1]}</h3><div class="desc">${c[2]}</div></div>`).join('')}</div><div class="overview-line">${escapeHTML(s.quote)}</div>${readingMarkup(s)}`;
+case 'compare':return `${cardHeading(s)}<div class="compare-grid">${[s.left,s.right].map(o=>`<div class="compare-col"><small>${escapeHTML(o.over)}</small><h3>${escapeHTML(o.heading)}</h3>${o.points.map(p=>`<div class="comparison-point">${escapeHTML(p)}</div>`).join('')}</div>`).join('')}<div class="compare-arrow" aria-hidden="true">→</div></div>${readingMarkup(s)}`;
+case 'split':return `<div class="split-layout"><div class="copy-column">${cardHeading(s)}<ul class="points">${s.points.map(p=>`<li><span class="bullet-mark">✧</span><span class="txt">${p}</span></li>`).join('')}</ul></div><figure class="art-container">${artSVG(s.art)}<figcaption class="art-caption">${escapeHTML(s.artCaption)}</figcaption></figure></div>${readingMarkup(s)}`;
+case 'three':return `${cardHeading(s)}<div class="three-grid">${s.cards.map(c=>`<div class="three-card"><span class="sym">${c[0]}</span><h3>${escapeHTML(c[1])}</h3><p>${escapeHTML(c[2])}</p></div>`).join('')}</div>${readingMarkup(s)}`;
+case 'diagram':return `${cardHeading(s)}<div class="flowline">${s.nodes.map((c,i)=>`${i?'<div class="flow-arrow" aria-hidden="true">→</div>':''}<div class="flow-node"><span class="num">${c[0]}</span><h3>${escapeHTML(c[1])}</h3><p>${escapeHTML(c[2])}</p></div>`).join('')}</div><div class="flow-below">${escapeHTML(s.after)}</div>${readingMarkup(s)}`;
+case 'reveal':return `${cardHeading(s)}<div class="reveal-well">${reveal?`<div class="hidden-text">${escapeHTML(s.hidden)}</div>`:`<div class="before-reveal">${escapeHTML(s.before)}</div>`}</div><button class="reveal-button" id="revealBtn" aria-pressed="${reveal}">${reveal?'↶  HIDE THE ANSWER':'✦  REVEAL A RESPONSE'}</button>${readingMarkup(s)}`;
+case 'sacraments':return `${cardHeading(s)}<div class="sacrament-grid">${[s.left,s.right].map(c=>`<div class="sacrament-card"><span class="glyph" aria-hidden="true">${c.glyph}</span><div class="over">${escapeHTML(c.over)}</div><h3>${escapeHTML(c.heading)}</h3><p>${escapeHTML(c.text)}</p><small>READ: ${escapeHTML(c.verse)}</small></div>`).join('')}</div>${readingMarkup(s)}`;
+case 'recap':return `${cardHeading(s)}<div class="recap-rows">${s.rows.map(c=>`<div class="recap-row"><div class="recap-label">${escapeHTML(c[0])}</div><div class="recap-event">${escapeHTML(c[1])}</div><div class="recap-gift">${escapeHTML(c[2])}</div></div>`).join('')}</div><div class="recap-result">${escapeHTML(s.after)}</div>${readingMarkup(s)}`;
+case 'final':return `${cardHeading(s)}<div class="opening-quote">The last word is not death. It is life in Christ.</div>${readingMarkup(s)}`;
+default:return cardHeading(s)}
+}
+function render(){const s=slides[current];document.title=`${progressStr(current+1)} · ${s.title.replace(/<[^>]*>/g,'')} | The Soul`;byId('stage').innerHTML=`<section class="scene scene--${s.kind} theme-${s.stage}${s.tone?' tone-'+s.tone:''}" aria-label="Slide ${current+1} of ${slides.length}">${renderBody(s)}${insightMarkup(s)}</section>`;
+byId('progressNum').textContent=`${progressStr(current+1)} / ${progressStr(slides.length)}`;byId('progressFill').style.width=`${(current+1)/slides.length*100}%`;byId('prevBtn').disabled=current===0;byId('nextBtn').disabled=current===slides.length-1;byId('nextBtn').querySelector('span').textContent=current===slides.length-1?'END OF LECTURE':'NEXT SLIDE';
+byId('chapterNav').innerHTML=stages.map(([id,label])=>`<button class="stage-btn ${s.stage===id?'active':''}" data-stage="${id}" aria-current="${s.stage===id?'step':'false'}">${label}</button>`).join('');document.querySelectorAll('[data-stage]').forEach(btn=>btn.addEventListener('click',()=>go(slides.findIndex(x=>x.stage===btn.dataset.stage))));
+const iBtn=byId('insightBtn');if(iBtn)iBtn.onclick=()=>{insight=!insight;render()};const iClose=byId('insightClose');if(iClose)iClose.onclick=()=>{insight=false;render()};const rBtn=byId('revealBtn');if(rBtn)rBtn.onclick=()=>{reveal=!reveal;render()};
+}
+function go(index){if(index<0||index>=slides.length)return;if(index===current){closeOverlay();return}current=index;reveal=false;insight=false;closeOverlay();render();}
+function showOverlay(mode){overlayMode=mode;const wrap=byId('overlay');if(mode==='overview'){wrap.innerHTML=`<div class="overlay-header"><div><h2 class="overlay-title" id="overlayTitle">All slides</h2><div class="overlay-desc">Select any part of the lecture to jump there.</div></div><button class="overlay-close" id="closeBtn">✕ Close (Esc)</button></div><div class="overview-list">${slides.map((s,i)=>`<button class="overview-choice ${i===current?'selected':''}" data-index="${i}"><span class="slide-number">${progressStr(i+1)}</span><span class="overview-stage">${stages.find(x=>x[0]===s.stage)?.[1]}</span><span class="overview-title">${s.title.replace(/<[^>]*>/g,'')}</span></button>`).join('')}</div>`}else if(mode==='notes'){
+const s=slides[current];wrap.innerHTML=`<div class="overlay-header"><div><h2 class="overlay-title" id="overlayTitle">Presenter notes</h2><div class="overlay-desc">Slide ${current+1} of ${slides.length} · ${stages.find(x=>x[0]===s.stage)?.[1]}</div></div><button class="overlay-close" id="closeBtn">✕ Close (Esc)</button></div><div class="notes-shell"><h3>${s.title.replace(/<[^>]*>/g,'')}</h3><div class="ref-note">${s.readingLabel==='SOCIAL CONNECTION'?'Reference':s.scripture?.startsWith('CCC')?'Catechism':'Scripture (NRSV-CE)'}: ${escapeHTML(s.scripture||'—')}</div><ol>${(s.notes||[]).map(n=>`<li>${escapeHTML(n)}</li>`).join('')}</ol><div class="teacher-prompt"><strong>ASK STUDENTS:</strong> ${escapeHTML(s.prompt||'What stands out?')}</div><div class="notes-sources">${escapeHTML(s.sourceNote)}${s.sources.length?'<br>'+s.sources.map(([label,url])=>`<a href="${escapeHTML(url)}" target="_blank" rel="noopener">${escapeHTML(label)}</a>`).join(' · '):''}</div></div>`;
+}else{wrap.innerHTML=`<div class="overlay-header"><div><h2 class="overlay-title" id="overlayTitle">Presentation controls</h2><div class="overlay-desc">Works entirely offline in your browser. No sign-in required.</div></div><button class="overlay-close" id="closeBtn">✕ Close (Esc)</button></div><div class="help-grid"><div class="help-item"><span>Next slide</span><span class="key">→ / Space / Page Down</span></div><div class="help-item"><span>Previous slide</span><span class="key">← / Page Up</span></div><div class="help-item"><span>Go to first / last slide</span><span class="key">Home / End</span></div><div class="help-item"><span>Slide overview</span><span class="key">O</span></div><div class="help-item"><span>Presenter notes</span><span class="key">N</span></div><div class="help-item"><span>Fullscreen</span><span class="key">F</span></div><div class="help-item"><span>Deeper connection</span><span class="key">D</span></div><div class="help-item"><span>Close panel</span><span class="key">Esc</span></div></div>`}
+wrap.classList.add('open');wrap.querySelector('#closeBtn').onclick=closeOverlay;wrap.querySelectorAll('[data-index]').forEach(b=>b.onclick=()=>go(Number(b.dataset.index)));wrap.scrollTop=0;byId('app').inert=true;wrap.querySelector('#closeBtn').focus();
+}
+function closeOverlay(){const restore=overlayMode;overlayMode=null;byId('app').inert=false;byId('overlay').classList.remove('open');byId('overlay').innerHTML='';if(restore)byId(restore==='notes'?'notesBtn':restore==='overview'?'overviewBtn':'helpBtn').focus()}
+function toggleOverlay(mode){if(overlayMode===mode)closeOverlay();else showOverlay(mode)}
+function toggleFull(){if(document.fullscreenElement){document.exitFullscreen?.()}else{document.documentElement.requestFullscreen?.().catch(()=>{})}}
+byId('prevBtn').onclick=()=>go(current-1);byId('nextBtn').onclick=()=>go(current+1);
+byId('notesBtn').onclick=()=>toggleOverlay('notes');byId('overviewBtn').onclick=()=>toggleOverlay('overview');byId('fullBtn').onclick=toggleFull;byId('helpBtn').onclick=()=>toggleOverlay('help');
+byId('overlay').addEventListener('click',e=>{if(e.target===byId('overlay'))closeOverlay()});
+document.addEventListener('keydown',e=>{if(e.altKey||e.ctrlKey||e.metaKey)return;const key=e.key;if(e.target.closest('input,textarea,select')||((key===' '||key==='Enter')&&e.target.closest('button,a')))return;if(['ArrowRight','ArrowLeft','PageDown','PageUp',' ','Home','End','Escape'].includes(key))e.preventDefault();if(key==='Escape'){if(overlayMode)closeOverlay();else if(insight){insight=false;render()}return}if(overlayMode){if(key.toLowerCase()==='n'&&overlayMode==='notes'||key.toLowerCase()==='o'&&overlayMode==='overview')closeOverlay();return}if(key==='ArrowRight'||key==='PageDown'||key===' '){go(current+1)}else if(key==='ArrowLeft'||key==='PageUp'){go(current-1)}else if(key==='Home'){go(0)}else if(key==='End'){go(slides.length-1)}else if(key.toLowerCase()==='o'){showOverlay('overview')}else if(key.toLowerCase()==='n'){showOverlay('notes')}else if(key.toLowerCase()==='f'){toggleFull()}else if(key.toLowerCase()==='d'&&slides[current].insight){insight=!insight;render()}else if(key==='?'){showOverlay('help')}});
+let touchX=0,touchY=0;byId('stage').addEventListener('touchstart',e=>{touchX=e.changedTouches[0].screenX;touchY=e.changedTouches[0].screenY},{passive:true});byId('stage').addEventListener('touchend',e=>{const dx=e.changedTouches[0].screenX-touchX,dy=e.changedTouches[0].screenY-touchY;if(Math.abs(dx)>70&&Math.abs(dx)>Math.abs(dy)*1.5){go(current+(dx<0?1:-1))}},{passive:true});
+document.addEventListener('keydown',e=>{if(e.key!=='Tab'||!overlayMode)return;const focusable=[...byId('overlay').querySelectorAll('button,a[href]')];const first=focusable[0],last=focusable[focusable.length-1];if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}});
+render();
+</script>
+</body>
+</html>
