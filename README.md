@@ -8,6 +8,7 @@ A course library organized by unit and lesson. Each lecture is a self-contained 
 
 | Unit | Lesson | Presentation |
 | --- | --- | --- |
+| 1 | 1.1 | [The Existence of God — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-1-existence-of-god.html) |
 | 1 | 1.5 | [The Paschal Mystery — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-5-paschal-mystery.html) |
 | 1 | 1.6 | [One True Baptism — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-6-one-true-baptism.html) |
 | 1 | 1.7 | [Jesus: Priest, Prophet and King — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-7-priest-prophet-king.html) |
@@ -17,7 +18,7 @@ A course library organized by unit and lesson. Each lecture is a self-contained 
 | 1 | 1.11 | [Catholic Objective Moral Truth — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-11-objective-moral-truth.html) |
 | 1 | 1.12 | [Conscience, Morality and Ethics — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-12-conscience-morality-ethics.html) |
 
-Lessons 1.1–1.4 and subsequent lessons will be added as they are completed. The library includes sections for Units 1–4; only completed lessons have launch links.
+Lessons 1.2–1.4 and subsequent lessons will be added as they are completed. The library includes sections for Units 1–4; only completed lessons have launch links.
 
 ## Present a lesson
 
@@ -41,6 +42,7 @@ On-screen navigation is also available. Scripture prompts supply NRSV-CE referen
 index.html                              Course menu
 units/
   unit-1/
+    1-1-existence-of-god.html            Unit 1.1 presentation
     1-5-paschal-mystery.html              Approved Unit 1.5 presentation
     1-6-one-true-baptism.html             Unit 1.6 presentation
     1-7-priest-prophet-king.html           Unit 1.7 presentation
@@ -50,6 +52,7 @@ units/
     1-11-objective-moral-truth.html       Unit 1.11 presentation
     1-12-conscience-morality-ethics.html  Unit 1.12 presentation
 docs/
+  Unit_1_1_Teaching_Guide.md              Existence of God coverage and reading plan
   Unit_1_Presentation_Workflow.txt        Content, design and QA checklist
   Unit_1_6_Teaching_Guide.md              Baptism coverage map and reading plan
   Unit_1_7_Teaching_Guide.md              Threefold mission coverage and reading plan
@@ -93,3 +96,5 @@ Unit 1.10 follows the supplied “Unit 1.10.docx” and covers reason, the gift 
 Unit 1.11 follows the supplied “Unit 1.11.docx” and covers objective moral truth, natural law, the commandments, Christ’s fulfillment of the law and daily moral choices. Its [teaching guide](docs/Unit_1_11_Teaching_Guide.md) maps all four source sections, seven core Scripture reading pauses, activities and teaching clarifications. It connects with Lessons 1.1–1.10 and retains the established standalone format.
 
 Unit 1.12 follows the supplied “Unit 1.12.docx” and covers conscience and its formation, Christian moral life, ethical approaches and responsible decision-making. Its [teaching guide](docs/Unit_1_12_Teaching_Guide.md) maps all six source sections, seven Scripture pauses, classroom cases and teaching clarifications. It connects with Lessons 1.1–1.11 and retains the standalone offline format.
+
+Unit 1.1 follows the supplied “Unit 1.1.docx” and introduces cosmological, teleological, moral and experiential approaches to God’s existence, with careful distinctions between scientific evidence and philosophical interpretation. Its [teaching guide](docs/Unit_1_1_Teaching_Guide.md) maps all nine note sections, seven reading pauses and teaching clarifications. It introduces connections developed later in Unit 1 and retains the standalone offline format.
