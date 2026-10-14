@@ -15,6 +15,7 @@
     .layout{display:grid;grid-template-columns:190px minmax(0,1fr);gap:clamp(40px,6vw,88px);padding:56px 0 64px}.sidebar{align-self:start;position:sticky;top:24px}.eyebrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin:0 0 20px}.unit-nav{display:grid;gap:8px}.unit-nav a{display:flex;align-items:center;justify-content:space-between;min-height:48px;text-decoration:none;padding:9px 14px;border-left:2px solid transparent;transition:background .16s,border-color .16s}.unit-nav a:hover{background:var(--surface);border-color:var(--gold)}.unit-nav .available{color:var(--gold);border-left-color:var(--gold);background:var(--surface)}.count{font-size:12px;color:var(--muted)}
     main{min-width:0}.intro{padding-bottom:34px}h1,h2,h3{font-family:Georgia,"Times New Roman",serif;font-weight:400;line-height:1.12}h1{font-size:clamp(40px,4.5vw,64px);letter-spacing:-.035em;margin:0 0 16px}.intro p{color:var(--muted);margin:0;max-width:650px}
     .unit{border-top:1px solid var(--line);padding:27px 0 32px;scroll-margin-top:24px}.unit-heading{display:flex;gap:24px;align-items:baseline;justify-content:space-between;margin-bottom:25px}h2{font-size:30px;margin:0}.status{font-size:13px;color:var(--muted)}.lesson{display:grid;grid-template-columns:64px minmax(0,1fr);gap:20px;align-items:start}.lesson-number{font:26px Georgia,serif;color:var(--gold);padding-top:5px}h3{font-size:clamp(29px,3vw,38px);letter-spacing:-.02em;margin:0 0 12px}.lesson p{color:var(--muted);margin:0;max-width:650px}.metadata{font-size:13px;margin-top:16px!important;letter-spacing:.01em}.actions{display:flex;align-items:center;flex-wrap:wrap;gap:18px 24px;margin:24px 0 2px}.primary{display:inline-flex;min-height:48px;align-items:center;justify-content:center;gap:20px;padding:11px 20px;border-radius:4px;background:var(--gold);color:var(--bg);font-weight:700;text-decoration:none;transition:background .16s,transform .16s}.primary:hover{color:var(--bg);background:#ffda9f;transform:translateY(-2px)}.download{font-size:15px;padding:10px 0}.planned{font-size:14px;color:var(--muted);margin:30px 0 0 84px}.empty .unit-heading{margin-bottom:9px}.empty p{color:var(--muted);font-size:15px;margin:0}.empty{padding-bottom:27px}
+    .lesson + .lesson{margin-top:32px;padding-top:32px;border-top:1px solid var(--line)}
     .guide{margin-top:12px;padding:24px 0 0;border-top:1px solid var(--line)}.guide h2{font:600 16px "Segoe UI",Arial,sans-serif;margin:0 0 12px}.guide p{font-size:14px;color:var(--muted);margin:7px 0}.guide strong{color:var(--text);font-weight:600}kbd{display:inline-block;min-width:23px;text-align:center;border:1px solid var(--line);border-radius:4px;padding:0 5px;color:var(--text);font:12px/1.8 "Segoe UI",Arial,sans-serif}
     footer{border-top:1px solid var(--line);padding:22px 0 30px;display:flex;justify-content:space-between;gap:16px;color:var(--muted);font-size:13px}footer p{margin:0}
     @media(max-width:760px){header{padding:23px 0}.layout{grid-template-columns:1fr;gap:30px;padding:28px 0 40px}.sidebar{position:static}.sidebar .eyebrow{margin-bottom:10px}.unit-nav{grid-template-columns:repeat(4,minmax(0,1fr));gap:3px}.unit-nav a{justify-content:center;padding:9px 3px;font-size:14px;border-left:0;border-bottom:2px solid transparent}.unit-nav .available{border-left:0;border-bottom-color:var(--gold)}.unit-nav a:hover{border-bottom-color:var(--gold)}.count{display:none}.intro{padding-bottom:28px}.lesson{grid-template-columns:42px minmax(0,1fr);gap:12px}.lesson-number{font-size:22px}.planned{margin-left:54px}.unit-heading{gap:12px}footer{flex-direction:column;gap:7px}.repository{font-size:12px}.brand{font-size:12px;letter-spacing:.1em}}
@@ -32,7 +33,7 @@
       <aside class="sidebar">
         <p class="eyebrow">Browse by unit</p>
         <nav class="unit-nav" aria-label="Course units">
-          <a class="available" href="#unit-1">Unit 1 <span class="count">1 lesson</span></a>
+          <a class="available" href="#unit-1">Unit 1 <span class="count">2 lessons</span></a>
           <a href="#unit-2">Unit 2</a>
           <a href="#unit-3">Unit 3</a>
           <a href="#unit-4">Unit 4</a>
@@ -44,7 +45,7 @@
           <p>Choose a lesson to present in class, or download a copy to use offline.</p>
         </div>
         <section class="unit" id="unit-1" aria-labelledby="unit-1-title">
-          <div class="unit-heading"><h2 id="unit-1-title">Unit 1</h2><span class="status">1 lesson available</span></div>
+          <div class="unit-heading"><h2 id="unit-1-title">Unit 1</h2><span class="status">2 lessons available</span></div>
           <article class="lesson">
             <span class="lesson-number">1.5</span>
             <div>
@@ -54,6 +55,18 @@
               <div class="actions">
                 <a class="primary" href="units/unit-1/1-5-paschal-mystery.html" target="_blank" rel="noopener" aria-label="Open The Paschal Mystery lecture in a new tab">Open lecture <span aria-hidden="true">↗</span></a>
                 <a class="download" href="units/unit-1/1-5-paschal-mystery.html" download="Paschal_Mystery_Lecture.html">Download for offline use</a>
+              </div>
+            </div>
+          </article>
+          <article class="lesson">
+            <span class="lesson-number">1.6</span>
+            <div>
+              <h3>One True Baptism</h3>
+              <p>New life in Christ: what Baptism gives, its necessity for salvation, and the Christian life it begins.</p>
+              <p class="metadata">20 slides · Presenter notes · Scripture prompts · Deeper connections</p>
+              <div class="actions">
+                <a class="primary" href="units/unit-1/1-6-one-true-baptism.html" target="_blank" rel="noopener" aria-label="Open One True Baptism lecture in a new tab">Open lecture <span aria-hidden="true">↗</span></a>
+                <a class="download" href="units/unit-1/1-6-one-true-baptism.html" download="One_True_Baptism_Lecture.html">Download for offline use</a>
               </div>
             </div>
           </article>
