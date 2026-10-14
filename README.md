@@ -14,6 +14,7 @@ A course library organized by unit and lesson. Each lecture is a self-contained 
 | 1 | 1.8 | [Humanity: What Does It Mean to Be Human? — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-8-humanity.html) |
 | 1 | 1.9 | [The Soul — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-9-the-soul.html) |
 | 1 | 1.10 | [Faith and Reason — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-10-faith-and-reason.html) |
+| 1 | 1.11 | [Catholic Objective Moral Truth — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-11-objective-moral-truth.html) |
 
 Lessons 1.1–1.4 and subsequent lessons will be added as they are completed. The library includes sections for Units 1–4; only completed lessons have launch links.
 
@@ -45,6 +46,7 @@ units/
     1-8-humanity.html                     Unit 1.8 presentation
     1-9-the-soul.html                     Unit 1.9 presentation
     1-10-faith-and-reason.html            Unit 1.10 presentation
+    1-11-objective-moral-truth.html       Unit 1.11 presentation
 docs/
   Unit_1_Presentation_Workflow.txt        Content, design and QA checklist
   Unit_1_6_Teaching_Guide.md              Baptism coverage map and reading plan
@@ -52,6 +54,7 @@ docs/
   Unit_1_8_Teaching_Guide.md              Humanity coverage and reading plan
   Unit_1_9_Teaching_Guide.md              Soul coverage and reading plan
   Unit_1_10_Teaching_Guide.md             Faith and reason coverage and reading plan
+  Unit_1_11_Teaching_Guide.md             Moral truth coverage and reading plan
 .nojekyll                                Serve these static files directly
 ```
 
@@ -83,3 +86,5 @@ Unit 1.8 follows the supplied “Unit 1.8.docx” and connects human dignity, fr
 Unit 1.9 follows the supplied “Unit 1.9.docx” and develops body–soul unity, immortality, resurrection, eternal destiny and daily care. Its [teaching guide](docs/Unit_1_9_Teaching_Guide.md) maps all four note sections, seven core NRSV-CE readings, activities and teaching clarifications. It connects with Lessons 1.1–1.8 and retains the established standalone presentation format.
 
 Unit 1.10 follows the supplied “Unit 1.10.docx” and covers reason, the gift of faith, their harmony, natural law and practical applications. Its [teaching guide](docs/Unit_1_10_Teaching_Guide.md) maps all five source sections, seven NRSV-CE readings, activities and teaching clarifications. It connects with Lessons 1.1–1.9 and retains the established standalone format.
+
+Unit 1.11 follows the supplied “Unit 1.11.docx” and covers objective moral truth, natural law, the commandments, Christ’s fulfillment of the law and daily moral choices. Its [teaching guide](docs/Unit_1_11_Teaching_Guide.md) maps all four source sections, seven core Scripture reading pauses, activities and teaching clarifications. It connects with Lessons 1.1–1.10 and retains the established standalone format.
