@@ -4,7 +4,9 @@ const {chromium}=require(process.env.PLAYWRIGHT_PACKAGE);
 const root=path.resolve(__dirname,'..');
 const manifest=JSON.parse(fs.readFileSync(path.join(root,'output/audio-build.json')));
 const base=process.argv[2]||'https://fslb10.github.io/4M_Interactive-Lectures/';
-const digest=b=>crypto.createHash('sha256').update(b).digest('hex');
+// Git publishes LF; the Windows working tree can use CRLF. Compare the full
+// HTML after that sole normalization, including every embedded audio byte.
+const digest=b=>crypto.createHash('sha256').update(b.toString('utf8').replace(/\r\n/g,'\n')).digest('hex');
 (async()=>{
  const browser=await chromium.launch({headless:true,executablePath:process.env.PLAYWRIGHT_CHROMIUM_EXECUTABLE});
  const context=await browser.newContext({viewport:{width:1280,height:720},hasTouch:true,reducedMotion:'reduce'});
@@ -18,7 +20,7 @@ const digest=b=>crypto.createHash('sha256').update(b).digest('hex');
   assert.equal(await page.locator('a[href*="-overview"]').count(),0);
   for(const doc of manifest.documents){
    const url=new URL(doc.file,base).href,response=await page.goto(url,{waitUntil:'load'});
-   assert.equal(response.status(),200);assert.equal(digest(await response.body()),doc.sha256,'Published file differs: '+doc.id);
+   assert.equal(response.status(),200);assert.equal(digest(await response.body()),digest(fs.readFileSync(path.join(root,doc.file))),'Published file differs: '+doc.id);
    const data=await page.locator('#scriptureAudioData').evaluate(e=>JSON.parse(e.textContent));
    assert.equal(data.voice,doc.voice);assert.equal(data.readings.length,7);
    await page.evaluate(i=>go(i),doc.core[0].slide-1);
