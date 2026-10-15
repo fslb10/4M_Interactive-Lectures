@@ -11,6 +11,7 @@ A course library organized by unit and lesson. Each lecture is a self-contained 
 | 1 | 1.1 | [The Existence of God — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-1-existence-of-god.html) |
 | 1 | 1.2 | [Causation Theory — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-2-causation-theory.html) |
 | 1 | 1.3 | [The Nature of God — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-3-nature-of-god.html) |
+| 1 | 1.4 | [The Incarnation — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-4-incarnation.html) |
 | 1 | 1.5 | [The Paschal Mystery — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-5-paschal-mystery.html) |
 | 1 | 1.6 | [One True Baptism — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-6-one-true-baptism.html) |
 | 1 | 1.7 | [Jesus: Priest, Prophet and King — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-7-priest-prophet-king.html) |
@@ -20,7 +21,7 @@ A course library organized by unit and lesson. Each lecture is a self-contained 
 | 1 | 1.11 | [Catholic Objective Moral Truth — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-11-objective-moral-truth.html) |
 | 1 | 1.12 | [Conscience, Morality and Ethics — 20 slides](https://fslb10.github.io/4M_Interactive-Lectures/units/unit-1/1-12-conscience-morality-ethics.html) |
 
-Lesson 1.4 and subsequent lessons will be added as they are completed. The library includes sections for Units 1–4; only completed lessons have launch links.
+All twelve lessons from Unit 1.1 through Unit 1.12 are available. Lessons for subsequent units will be added as they are completed. The library includes sections for Units 1–4; only completed lessons have launch links.
 
 ## Present a lesson
 
@@ -47,6 +48,7 @@ units/
     1-1-existence-of-god.html            Unit 1.1 presentation
     1-2-causation-theory.html            Unit 1.2 presentation
     1-3-nature-of-god.html               Unit 1.3 presentation
+    1-4-incarnation.html                 Unit 1.4 presentation
     1-5-paschal-mystery.html              Approved Unit 1.5 presentation
     1-6-one-true-baptism.html             Unit 1.6 presentation
     1-7-priest-prophet-king.html           Unit 1.7 presentation
@@ -59,6 +61,7 @@ docs/
   Unit_1_1_Teaching_Guide.md              Existence of God coverage and reading plan
   Unit_1_2_Teaching_Guide.md              Causation coverage and reading plan
   Unit_1_3_Teaching_Guide.md              Nature of God coverage and reading plan
+  Unit_1_4_Teaching_Guide.md              Incarnation coverage and reading plan
   Unit_1_Presentation_Workflow.txt        Content, design and QA checklist
   Unit_1_6_Teaching_Guide.md              Baptism coverage map and reading plan
   Unit_1_7_Teaching_Guide.md              Threefold mission coverage and reading plan
@@ -108,3 +111,5 @@ Unit 1.1 follows the supplied “Unit 1.1.docx” and introduces cosmological, t
 Unit 1.2 follows the supplied “Unit 1.2.docx” and develops primary and secondary causality, natural processes, freedom, Aquinas and divine providence. Its [teaching guide](docs/Unit_1_2_Teaching_Guide.md) maps all six source sections, seven Scripture pauses, classroom activities and teaching clarifications. It builds on Lesson 1.1 and retains the standalone offline format.
 
 Unit 1.3 follows the supplied “Unit 1.3.docx” and develops monotheism, the Trinity, divine attributes and God’s saving love. Its [teaching guide](docs/Unit_1_3_Teaching_Guide.md) maps the source, seven Scripture pauses, discussion activities and teaching clarifications. It connects to Lessons 1.1 and 1.2 and retains the standalone offline format.
+
+Unit 1.4 follows the supplied “Unit 1.4.docx” and develops the Incarnation, its four purposes, Christ’s complete divine and human natures, early doctrinal clarifications and their significance for Christian life. Its [teaching guide](docs/Unit_1_4_Teaching_Guide.md) maps all five source sections, seven Scripture pauses, activities and teaching clarifications. It connects to Lessons 1.1–1.3 and leads into the Paschal Mystery in 1.5.
