@@ -20,7 +20,8 @@
     footer{border-top:1px solid var(--line);padding:22px 0 30px;display:flex;justify-content:space-between;gap:16px;color:var(--muted);font-size:13px}footer p{margin:0}
     @media(max-width:760px){header{padding:23px 0}.layout{grid-template-columns:1fr;gap:30px;padding:28px 0 40px}.sidebar{position:static}.sidebar .eyebrow{margin-bottom:10px}.unit-nav{grid-template-columns:repeat(4,minmax(0,1fr));gap:3px}.unit-nav a{justify-content:center;padding:9px 3px;font-size:14px;border-left:0;border-bottom:2px solid transparent}.unit-nav .available{border-left:0;border-bottom-color:var(--gold)}.unit-nav a:hover{border-bottom-color:var(--gold)}.count{display:none}.intro{padding-bottom:28px}.lesson{grid-template-columns:42px minmax(0,1fr);gap:12px}.lesson-number{font-size:22px}.planned{margin-left:54px}.unit-heading{gap:12px}footer{flex-direction:column;gap:7px}.repository{font-size:12px}.brand{font-size:12px;letter-spacing:.1em}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
-  </style>
+  .audio-label{color:var(--gold)!important;font-size:14px;margin-top:10px!important}.audio-guide{padding:18px 20px;margin:0 0 28px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}.audio-guide p{margin:5px 0;font-size:15px;color:var(--muted)}.audio-guide strong{color:var(--gold)}
+</style>
 </head>
 <body>
   <a class="skip" href="#lectures">Skip to lectures</a>
@@ -42,8 +43,9 @@
       <main id="lectures">
         <div class="intro">
           <h1>Interactive Lectures</h1>
-          <p>Choose a lesson to present in class, or download a copy to use offline.</p>
+          <p>Open a Unit 1 lesson and tap a highlighted Scripture passage to hear it read aloud. Each 20-slide lesson includes prerecorded NRSV-CE audio.</p>
         </div>
+        <aside class="audio-guide" aria-label="Scripture audio instructions"><strong>Ready for the Smartboard</strong><p>Tap a gold passage reference to play or pause. Tap ↺ to restart. Changing slides stops the recording.</p><p>One narrator per lesson: Heart, Michael and Emma rotate through Unit 1. Recordings begin directly with Scripture. Keyboard: <kbd>P</kbd> play/pause · <kbd>R</kbd> replay.</p></aside>
         <section class="unit" id="unit-1" aria-labelledby="unit-1-title">
           <div class="unit-heading"><h2 id="unit-1-title">Unit 1</h2><span class="status">12 lessons available</span></div>
           <article class="lesson">
@@ -51,7 +53,8 @@
             <div>
               <h3>The Existence of God</h3>
               <p>Explore creation, order, morality and human experience through science, philosophy and Catholic faith.</p>
-              <p class="metadata">20 slides · Presenter notes · Scripture prompts · Deeper connections</p>
+              <p class="metadata">20 slides · Presenter notes · Scripture audio · Deeper connections</p>
+              <p class="audio-label">▶ Tap-to-play Scripture · Heart</p>
               <div class="actions">
                 <a class="primary" href="units/unit-1/1-1-existence-of-god.html" target="_blank" rel="noopener" aria-label="Open The Existence of God lecture in a new tab">Open lecture <span aria-hidden="true">↗</span></a>
                 <a class="download" href="units/unit-1/1-1-existence-of-god.html" download="Existence_of_God_Lecture.html">Download for offline use</a>
@@ -63,7 +66,8 @@
             <div>
               <h3>Causation Theory</h3>
               <p>Explore God’s sustaining action, real natural causes, human freedom and providence through Aquinas and Scripture.</p>
-              <p class="metadata">20 slides · Presenter notes · Scripture prompts · Deeper connections</p>
+              <p class="metadata">20 slides · Presenter notes · Scripture audio · Deeper connections</p>
+              <p class="audio-label">▶ Tap-to-play Scripture · Michael</p>
               <div class="actions">
                 <a class="primary" href="units/unit-1/1-2-causation-theory.html" target="_blank" rel="noopener" aria-label="Open Causation Theory lecture in a new tab">Open lecture <span aria-hidden="true">↗</span></a>
                 <a class="download" href="units/unit-1/1-2-causation-theory.html" download="Causation_Theory_Lecture.html">Download for offline use</a>
@@ -75,7 +79,8 @@
             <div>
               <h3>The Nature of God</h3>
               <p>Explore the Trinity, God’s holiness, presence, knowledge and power, and the personal love that calls us to salvation.</p>
-              <p class="metadata">20 slides · Presenter notes · Scripture prompts · Deeper connections</p>
+              <p class="metadata">20 slides · Presenter notes · Scripture audio · Deeper connections</p>
+              <p class="audio-label">▶ Tap-to-play Scripture · Emma</p>
               <div class="actions">
                 <a class="primary" href="units/unit-1/1-3-nature-of-god.html" target="_blank" rel="noopener" aria-label="Open The Nature of God lecture in a new tab">Open lecture <span aria-hidden="true">↗</span></a>
                 <a class="download" href="units/unit-1/1-3-nature-of-god.html" download="Nature_of_God_Lecture.html">Download for offline use</a>
@@ -87,7 +92,8 @@
             <div>
               <h3>The Incarnation</h3>
               <p>Explore the Son becoming fully human, the four purposes of the Incarnation, and Christ’s divine and human natures united for our salvation.</p>
-              <p class="metadata">20 slides · Presenter notes · Scripture prompts · Deeper connections</p>
+              <p class="metadata">20 slides · Presenter notes · Scripture audio · Deeper connections</p>
+              <p class="audio-label">▶ Tap-to-play Scripture · Heart</p>
               <div class="actions">
                 <a class="primary" href="units/unit-1/1-4-incarnation.html" target="_blank" rel="noopener" aria-label="Open The Incarnation lecture in a new tab">Open lecture <span aria-hidden="true">↗</span></a>
                 <a class="download" href="units/unit-1/1-4-incarnation.html" download="Incarnation_Lecture.html">Download for offline use</a>
@@ -99,7 +105,8 @@
             <div>
               <h3>The Paschal Mystery</h3>
               <p>Christ’s Passion, Death, Resurrection and Ascension — and our participation in his saving work.</p>
-              <p class="metadata">20 slides · Presenter notes · Scripture prompts · Deeper connections</p>
+              <p class="metadata">20 slides · Presenter notes · Scripture audio · Deeper connections</p>
+              <p class="audio-label">▶ Tap-to-play Scripture · Michael</p>
               <div class="actions">
                 <a class="primary" href="units/unit-1/1-5-paschal-mystery.html" target="_blank" rel="noopener" aria-label="Open The Paschal Mystery lecture in a new tab">Open lecture <span aria-hidden="true">↗</span></a>
                 <a class="download" href="units/unit-1/1-5-paschal-mystery.html" download="Paschal_Mystery_Lecture.html">Download for offline use</a>
@@ -111,7 +118,8 @@
             <div>
               <h3>One True Baptism</h3>
               <p>New life in Christ: what Baptism gives, its necessity for salvation, and the Christian life it begins.</p>
-              <p class="metadata">20 slides · Presenter notes · Scripture prompts · Deeper connections</p>
+              <p class="metadata">20 slides · Presenter notes · Scripture audio · Deeper connections</p>
+              <p class="audio-label">▶ Tap-to-play Scripture · Emma</p>
               <div class="actions">
                 <a class="primary" href="units/unit-1/1-6-one-true-baptism.html" target="_blank" rel="noopener" aria-label="Open One True Baptism lecture in a new tab">Open lecture <span aria-hidden="true">↗</span></a>
                 <a class="download" href="units/unit-1/1-6-one-true-baptism.html" download="One_True_Baptism_Lecture.html">Download for offline use</a>
@@ -123,7 +131,8 @@
             <div>
               <h3>Jesus: Priest, Prophet and King</h3>
               <p>Christ’s saving mission and our baptismal calling to worship, truthful witness and servant leadership.</p>
-              <p class="metadata">20 slides · Presenter notes · Scripture prompts · Deeper connections</p>
+              <p class="metadata">20 slides · Presenter notes · Scripture audio · Deeper connections</p>
+              <p class="audio-label">▶ Tap-to-play Scripture · Heart</p>
               <div class="actions">
                 <a class="primary" href="units/unit-1/1-7-priest-prophet-king.html" target="_blank" rel="noopener" aria-label="Open Jesus: Priest, Prophet and King lecture in a new tab">Open lecture <span aria-hidden="true">↗</span></a>
                 <a class="download" href="units/unit-1/1-7-priest-prophet-king.html" download="Priest_Prophet_King_Lecture.html">Download for offline use</a>
@@ -135,7 +144,8 @@
             <div>
               <h3>Humanity: What Does It Mean to Be Human?</h3>
               <p>Created in God’s image: dignity, conscience, grace, vocation and our responsibility for one another.</p>
-              <p class="metadata">20 slides · Presenter notes · Scripture prompts · Deeper connections</p>
+              <p class="metadata">20 slides · Presenter notes · Scripture audio · Deeper connections</p>
+              <p class="audio-label">▶ Tap-to-play Scripture · Michael</p>
               <div class="actions">
                 <a class="primary" href="units/unit-1/1-8-humanity.html" target="_blank" rel="noopener" aria-label="Open Humanity lecture in a new tab">Open lecture <span aria-hidden="true">↗</span></a>
                 <a class="download" href="units/unit-1/1-8-humanity.html" download="Humanity_Lecture.html">Download for offline use</a>
@@ -147,7 +157,8 @@
             <div>
               <h3>The Soul</h3>
               <p>Body and soul, immortality, resurrection and caring for the whole person in light of eternal life.</p>
-              <p class="metadata">20 slides · Presenter notes · Scripture prompts · Deeper connections</p>
+              <p class="metadata">20 slides · Presenter notes · Scripture audio · Deeper connections</p>
+              <p class="audio-label">▶ Tap-to-play Scripture · Emma</p>
               <div class="actions">
                 <a class="primary" href="units/unit-1/1-9-the-soul.html" target="_blank" rel="noopener" aria-label="Open The Soul lecture in a new tab">Open lecture <span aria-hidden="true">↗</span></a>
                 <a class="download" href="units/unit-1/1-9-the-soul.html" download="The_Soul_Lecture.html">Download for offline use</a>
@@ -159,7 +170,8 @@
             <div>
               <h3>Faith and Reason</h3>
               <p>Seeking truth through faith and reason: Scripture, science, moral judgment and thoughtful compassion.</p>
-              <p class="metadata">20 slides · Presenter notes · Scripture prompts · Deeper connections</p>
+              <p class="metadata">20 slides · Presenter notes · Scripture audio · Deeper connections</p>
+              <p class="audio-label">▶ Tap-to-play Scripture · Heart</p>
               <div class="actions">
                 <a class="primary" href="units/unit-1/1-10-faith-and-reason.html" target="_blank" rel="noopener" aria-label="Open Faith and Reason lecture in a new tab">Open lecture <span aria-hidden="true">↗</span></a>
                 <a class="download" href="units/unit-1/1-10-faith-and-reason.html" download="Faith_and_Reason_Lecture.html">Download for offline use</a>
@@ -171,7 +183,8 @@
             <div>
               <h3>Catholic Objective Moral Truth</h3>
               <p>Natural law, the commandments and Christ’s teaching: choosing the good with courage, grace and love.</p>
-              <p class="metadata">20 slides · Presenter notes · Scripture prompts · Deeper connections</p>
+              <p class="metadata">20 slides · Presenter notes · Scripture audio · Deeper connections</p>
+              <p class="audio-label">▶ Tap-to-play Scripture · Michael</p>
               <div class="actions">
                 <a class="primary" href="units/unit-1/1-11-objective-moral-truth.html" target="_blank" rel="noopener" aria-label="Open Catholic Moral Truth lecture in a new tab">Open lecture <span aria-hidden="true">↗</span></a>
                 <a class="download" href="units/unit-1/1-11-objective-moral-truth.html" download="Catholic_Moral_Truth_Lecture.html">Download for offline use</a>
@@ -183,7 +196,8 @@
             <div>
               <h3>Conscience, Morality and Ethics</h3>
               <p>Forming conscience, comparing ethical approaches and choosing responsibly through truth, grace and love.</p>
-              <p class="metadata">20 slides · Presenter notes · Scripture prompts · Deeper connections</p>
+              <p class="metadata">20 slides · Presenter notes · Scripture audio · Deeper connections</p>
+              <p class="audio-label">▶ Tap-to-play Scripture · Emma</p>
               <div class="actions">
                 <a class="primary" href="units/unit-1/1-12-conscience-morality-ethics.html" target="_blank" rel="noopener" aria-label="Open Conscience, Morality and Ethics lecture in a new tab">Open lecture <span aria-hidden="true">↗</span></a>
                 <a class="download" href="units/unit-1/1-12-conscience-morality-ethics.html" download="Conscience_Morality_Ethics_Lecture.html">Download for offline use</a>
@@ -211,7 +225,8 @@
         </section>
       </main>
     </div>
-    <footer><p>HRE4M1 · Interactive Lectures</p><a href="docs/Unit_1_Presentation_Workflow.txt">Lesson design &amp; QA workflow</a></footer>
+    <footer><p>HRE4M1 · Interactive Lectures</p><a href="docs/Unit_1_Presentation_Workflow.txt">Lesson design &amp; QA workflow</a><p><a href="docs/Scripture_Audio.html">Scripture audio credits</a></p>
+    </footer>
   </div>
 </body>
 </html>
