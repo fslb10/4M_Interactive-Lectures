@@ -34,3 +34,8 @@
  .scene--attributeTable .attribute-table{margin:7px 0}
  .scene--attributeTable .attribute-table th,.scene--attributeTable .attribute-table td{padding:5px 10px}
 }
+/* Stacked diagram cards must reserve their full height before the reading bar. */
+@media(max-width:750px){
+ .flowline,.scene--diagram .flowline{max-height:none;flex-shrink:0;margin:22px 0}
+ .scene--diagram .flow-node{min-height:0}
+}
