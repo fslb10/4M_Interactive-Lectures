@@ -3,6 +3,7 @@ const path=require('node:path');
 const {pathToFileURL}=require('node:url');
 const assert=require('node:assert/strict');
 const {chromium}=require(process.env.PLAYWRIGHT_PACKAGE);
+const {checkCaptionReading, checkCaptionControls}=require('./verify_captions.cjs');
 const root=path.resolve(__dirname,'..');
 const manifest=JSON.parse(fs.readFileSync(path.join(root,'output/audio-build.json'),'utf8'));
 fs.mkdirSync(path.join(root,'output/playwright'),{recursive:true});
@@ -41,6 +42,8 @@ const report=fs.existsSync(reportPath)?JSON.parse(fs.readFileSync(reportPath,'ut
     await page.locator('#scripturePlay').tap();
     await page.waitForFunction(t=>document.querySelector('#scriptureAudio').currentTime>t+.08,at);
     await page.locator('#scripturePlay').tap();
+    await checkCaptionReading(page, clip);
+    if(core === doc.core[0]) await checkCaptionControls(page, clip);
    }
    await page.evaluate(i=>go(i),doc.core[0].slide-1);
    await page.keyboard.press('p');await playing();
@@ -83,7 +86,7 @@ const report=fs.existsSync(reportPath)?JSON.parse(fs.readFileSync(reportPath,'ut
      assert.equal(state.horizontal,false,`${doc.id} slide ${i+1}: horizontal overflow at ${width}`);
      if(state.barBottom)assert.ok(state.barBottom<=state.sceneBottom+1,`${doc.id} slide ${i+1}: reading bar clipped at ${width} ${JSON.stringify(state)}`);
      if(state.copyBottom&&state.barTop)assert.ok(state.copyBottom<=state.barTop+2,`${doc.id} slide ${i+1}: reading overlaps slide content at ${width} ${JSON.stringify(state)}`);
-     if(await page.locator('#scripturePlay').count())for(const selector of ['#scripturePlay','#scriptureReplay']){
+     if(await page.locator('#scripturePlay').count())for(const selector of ['#scripturePlay','#scriptureReplay','#scriptureCC']){
       const box=await page.locator(selector).boundingBox();assert.ok(box.width>=48&&box.height>=48,doc.id+' touch target');
      }
      if(await page.locator('#revealBtn').count()){
@@ -101,7 +104,7 @@ const report=fs.existsSync(reportPath)?JSON.parse(fs.readFileSync(reportPath,'ut
    if(doc.version==='Full lesson')await page.screenshot({path:path.join(root,'output/playwright',doc.id+'-preview.png')});
    assert.deepEqual(errors,[]);assert.deepEqual(requests,[]);
    report.documents[doc.id]={sha256:doc.sha256,voice:doc.voice,recordingsDecoded:doc.core.length,layout,
-    checks:['Starts paused; all core recordings decode offline','Touch play, pause, resume and replay','Notes and unit map pause without reset','Slide navigation stops and resets','Same-slide rendering preserves playback','Keyboard P, Enter and Space work without accidental advance','Translation credit and correct narrator','48px touch targets; both projector sizes and narrow layout','No JavaScript errors or HTTP requests']};
+    checks:['All caption cues, verse labels and transcript completeness','CC toggle, timed transition, replay, seeking, pause, panels, slide changes and ending','Longest captions fit both projector sizes and narrow layout','Starts paused; all core recordings decode offline','Touch play, pause, resume and replay','Notes and unit map pause without reset','Slide navigation stops and resets','Same-slide rendering preserves playback','Keyboard P, Enter and Space work without accidental advance','Translation credit and correct narrator','48px touch targets; both projector sizes and narrow layout','No JavaScript errors or HTTP requests']};
    save();console.log('Passed: '+doc.id+' ('+doc.voice_name+')');
    } catch(error) {
     report.documents[doc.id]={sha256:doc.sha256,error:error.message};save();console.error('FAILED: '+doc.id+': '+error.message);

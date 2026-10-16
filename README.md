@@ -37,7 +37,7 @@ Open the library and choose **Open lecture**. It opens in a new tab, keeping the
 | O | Slide overview |
 | Escape | Close an open panel |
 
-On-screen navigation is also available. The twelve 20-slide lessons contain embedded NRSV-CE recordings. Tap a gold reference to play/pause, or ↺ to replay. P and R provide the same keyboard controls. Slide changes stop playback; opening notes pauses it. Transcripts and the translation credit appear in notes. Each lesson keeps one Kokoro voice: Heart, Michael, Emma, repeating in lesson order. Recordings begin directly with the passage. No paid service or live text-to-speech is required.
+On-screen navigation is also available. The twelve 20-slide lessons contain embedded NRSV-CE recordings. Tap a gold reference to play/pause, or ↺ to replay. P and R provide the same keyboard controls. Slide changes stop playback; opening notes pauses it. Captions appear automatically, following the recording phrase by phrase with the current verse reference. CC hides or restores them. Captions follow pause, resume and replay and work offline. Transcripts and the translation credit appear in notes. Each lesson keeps one Kokoro voice: Heart, Michael, Emma, repeating in lesson order. Recordings begin directly with the passage. No paid service or live text-to-speech is required.
 
 The 10-slide lessons are outside this audio release. The files open through GitHub Pages and the existing offline downloads retain their embedded audio.
 
@@ -121,3 +121,5 @@ Unit 1.4 follows the supplied “Unit 1.4.docx” and develops the Incarnation, 
 The playback code and approved recording manifest are in `source/scripture-audio/`. After editing them, run `python scripts/build_scripture_audio.py`; it reuses the MP3 data already embedded in the published lesson HTML. For a new recording, pass `--audio-dir PATH` containing the matching ID.mp3 files. The builder checks the audio hash, one narrator per lesson, 20 slides, and the passage at each selected slide. It never adds audio to overview files.
 
 Run `node scripts/verify_scripture_audio.cjs` with `PLAYWRIGHT_PACKAGE` and `PLAYWRIGHT_CHROMIUM_EXECUTABLE` set for the local Playwright installation. Generated verification output stays under ignored `output/`.
+
+Caption timings, alignment provenance and regeneration instructions are in [source/scripture-audio/Captions.md](source/scripture-audio/Captions.md).

@@ -21,6 +21,7 @@ def sha(data):
 
 def build(audio_dir=None):
     spec = json.loads((SOURCE / 'manifest.json').read_text(encoding='utf-8'))
+    captions = json.loads((SOURCE / 'captions.json').read_text(encoding='utf-8'))['recordings']
     css = (SOURCE / 'player.css').read_text(encoding='utf-8')
     js = (SOURCE / 'player.js').read_text(encoding='utf-8')
     report = []
@@ -46,7 +47,12 @@ def build(audio_dir=None):
                 encoded = 'data:audio/mpeg;base64,' + base64.b64encode((audio_dir / (core['recording'] + '.mp3')).read_bytes()).decode()
             assert encoded and encoded.startswith('data:audio/mpeg;base64,'), 'Missing audio: ' + core['recording']
             assert sha(base64.b64decode(encoded.split(',', 1)[1])) == reading['sha256'], 'Audio hash mismatch'
-            data['readings'].append({k: reading[k] for k in ['id', 'reference', 'segments', 'seconds']} | {'audio': encoded})
+            caption = captions[reading['id']]
+            assert caption['audio_sha256'] == reading['sha256'], 'Stale caption timings'
+            assert ' '.join(c['text'] for c in caption['cues']) == ' '.join(s['text'] for s in reading['segments']), 'Caption text mismatch'
+            assert all(0 <= c['start'] < c['end'] <= reading['seconds'] + .2 for c in caption['cues'])
+            assert all(a['end'] <= b['start'] for a, b in zip(caption['cues'], caption['cues'][1:]))
+            data['readings'].append({k: reading[k] for k in ['id', 'reference', 'segments', 'seconds']} | {'audio': encoded, 'captions': caption['cues']})
         packed = json.dumps(data, ensure_ascii=False, separators=(',', ':')).replace('</', '<\\/')
         style = '<!-- SCRIPTURE AUDIO STYLE START -->\n<style>\n' + css + '\n</style>\n<!-- SCRIPTURE AUDIO STYLE END -->\n'
         player = '<!-- SCRIPTURE AUDIO PLAYER START -->\n<script id="scriptureAudioData" type="application/json">' + packed + '</script>\n<script>\n(() => {\nconst scriptureData = JSON.parse(document.getElementById("scriptureAudioData").textContent);\n' + js + '\n})();\n</script>\n<!-- SCRIPTURE AUDIO PLAYER END -->\n'
